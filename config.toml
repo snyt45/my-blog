@@ -1,4 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "https://snyt45.com/"
 languageCode = "ja"
 title = "Come on, come one! Let's go!"
 theme = "hyde-hyde"
+hasCJKLanguage = true
+
+[[menu.main]]
+    name = "Posts"
+    identifier = "posts"
+    url = "/posts/"
