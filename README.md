@@ -30,7 +30,9 @@ hugo server
 https://snyt45.com/posts/20200627/hugo_post_with_add_images/
 
 画像パスの記載方法：
+```
 ![代替テキスト](./image.jpg)
+```
 
 # デプロイ
 ホスティング先をNetlifyにしている｡
