@@ -2,28 +2,22 @@
 Sites created with Hugo
 
 # ローカルでの記事確認
-記事作成
+１． 記事作成
 ```
 hugo new posts/20200627/test_post/index.md
 ```
 
-↓
-
-ビルド
+２． ビルド
 ```
 hugo
 ```
 
-↓
-
-サーバー起動
+３． サーバー起動
 ```
 hugo server
 ```
 
-↓
-
-生成されたURLにアクセス
+４． 生成されたURLにアクセス
 
 
 # 画像管理方法
