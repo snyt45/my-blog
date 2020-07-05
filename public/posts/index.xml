@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Come on, come one! Let&#39;s go!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 27 Jun 2020 23:36:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 13:47:35 +0900</lastBuildDate>
     
 	<atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>趣味としてのコンピュータサイエンス(低レイヤ)</title>
+      <link>https://snyt45.com/posts/20200705/computer_science_as_a_hobby/</link>
+      <pubDate>Sun, 05 Jul 2020 13:47:35 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20200705/computer_science_as_a_hobby/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hugoの記事に画像を追加する方法</title>
