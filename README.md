@@ -35,3 +35,6 @@ https://snyt45.com/posts/20200627/hugo_post_with_add_images/
 
 ## ツイートの埋め込み
 参考：https://foresuke.com/post/hugo_embed/
+
+## 改行
+文末尾に半角スペース2つ
