@@ -1,8 +1,8 @@
 # TechDiary
 Sites created with Hugo
 
-## 運用
-# ローカルでの記事確認
+# 運用
+## ローカルでの記事確認
 １． 記事作成
 ```
 hugo new posts/20200627/test_post/index.md
@@ -20,7 +20,7 @@ hugo server
 
 ４． 生成されたURLにアクセス
 
-# デプロイ
+## デプロイ
 ホスティング先をNetlifyにしている｡
 リモートにプッシュすると､自動でデプロイしてくれる｡
 
