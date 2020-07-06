@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Come on, come one! Let&#39;s go!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 05 Jul 2020 13:47:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 20:39:19 +0900</lastBuildDate>
     
 	<atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>エンジニアに限らず大事なこと</title>
+      <link>https://snyt45.com/posts/20200706/not_only_engineers_but_important_things/</link>
+      <pubDate>Mon, 06 Jul 2020 20:39:19 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20200706/not_only_engineers_but_important_things/</guid>
+      <description>後輩に自己啓発で何をすればいいですかと聞かれたので色々回答したんだけど､ 自分なりに整理しているうちに､一番大事なことが見えてきた｡ それは､ 達</description>
+    </item>
     
     <item>
       <title>趣味としてのコンピュータサイエンス(低レイヤ)</title>
@@ -17,7 +26,7 @@
       <pubDate>Sun, 05 Jul 2020 13:47:35 +0900</pubDate>
       
       <guid>https://snyt45.com/posts/20200705/computer_science_as_a_hobby/</guid>
-      <description></description>
+      <description>久しぶりに我ながらエモいツイートをしてしまったのですが、 ・140文字でなかなか言語化できなかった ・結構自分的に重要なこと なので、改めて記事に</description>
     </item>
     
     <item>
