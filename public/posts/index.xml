@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 31 Oct 2020 02:59:31 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Oct 2020 06:30:05 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>実験：twitterのプロフィールの見栄えをよくする</title>
+      <link>https://snyt45.com/posts/20201031/edit_twitter_profile/</link>
+      <pubDate>Sat, 31 Oct 2020 06:30:05 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201031/edit_twitter_profile/</guid>
+      <description>ふと思ったので、勢いで色々やってみる。 まず、何のためにするのかというところを考えてみたい。 ・エンジニア同士のつながりを作るためにSNS上での</description>
+    </item>
+    
     <item>
       <title>Hugoのtitle変更方法</title>
       <link>https://snyt45.com/posts/202001031/hugo_title_edit/</link>
