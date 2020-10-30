@@ -1,6 +1,6 @@
 baseURL = "https://snyt45.com/"
 languageCode = "ja"
-title = "Come on, come one! Let's go!"
+title = "tech diary"
 theme = "hyde-hyde"
 hasCJKLanguage = true
 

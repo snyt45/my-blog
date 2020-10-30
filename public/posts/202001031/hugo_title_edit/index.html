@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.76.5" />
+
+    
+    
+    
+
+<title>Hugoのtitle変更方法 • tech diary</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugoのtitle変更方法"/>
+<meta name="twitter:description" content="久しぶりに触るのでgit cloneから。 git clone https://github.com/snyt45/TechDiary.git PCをリストアしたので、hugoのインストールが必要だった。 Powershellを管理者として"/>
+
+<meta property="og:title" content="Hugoのtitle変更方法" />
+<meta property="og:description" content="久しぶりに触るのでgit cloneから。 git clone https://github.com/snyt45/TechDiary.git PCをリストアしたので、hugoのインストールが必要だった。 Powershellを管理者として" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/202001031/hugo_title_edit/" />
+<meta property="article:published_time" content="2020-10-31T02:59:31+09:00" />
+<meta property="article:modified_time" content="2020-10-31T02:59:31+09:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">tech diary</a>
+      </span>
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">tech diary</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Hugoのtitle変更方法</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 31, 2020
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <h3 id="久しぶりに触るのでgit-cloneから">久しぶりに触るのでgit cloneから。</h3>
+<pre><code>git clone https://github.com/snyt45/TechDiary.git
+</code></pre><p>PCをリストアしたので、hugoのインストールが必要だった。</p>
+<p>Powershellを管理者として実行。</p>
+<pre><code>choco install hugo
+</code></pre><p>インストールできたか確認。</p>
+<pre><code>hugo version
+=&gt; Hugo Static Site Generator v0.76.5-60F0725B windows/amd64 BuildDate: 2020-10-14T15:16:53Z
+</code></pre><p>hugoのテーマは、submoduleで管理してあるのでローカルにコードを持ってくる必要がある。</p>
+<pre><code>git submodule init
+
+git submodule update
+</code></pre><p>ローカルでライブプレビューしてみる。</p>
+<pre><code>hugo server
+
+=&gt;
+Start building sites …
+WARNING: calling IsSet with unsupported type &quot;invalid&quot; (&lt;nil&gt;) will always return false.
+
+
+                   | EN
+-------------------+-----
+  Pages            | 12
+  Paginator pages  |  0
+  Non-page files   |  1
+  Static files     | 19
+  Processed images |  0
+  Aliases          |  1
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Built in 21 ms
+Watching for changes in C:\Users\snyt45\desktop\TechDiary\{archetypes,content,themes}
+Watching for config changes in C:\Users\snyt45\desktop\TechDiary\config.toml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre><h3 id="スタイルが反映されない">スタイルが反映されない</h3>
+<p>警告は出るし、http://localhost:1313/にアクセスしてもスタイルが反映されていない。。</p>
+<p>コンソールエラーが出ている。</p>
+<pre><code>Failed to find a valid digest in the 'integrity' attribute for resource 'http://localhost:1313/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css' with computed SHA-256 integrity 'Ree0cXVMgQve+6xwh4SmToLk0Gtk8WL6PVkML2YozxM='. The resource has been blocked.
+localhost/:39 Failed to find a valid digest in the 'integrity' attribute for resource 'http://localhost:1313/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css' with computed SHA-256 integrity 'XbmXo+oo5YTltkt54vaQHERd0Yix1Bu4WiiLxbVt4iM='. The resource has been blocked.
+</code></pre><p><img src="./console-error.png" alt="コンソールエラー"></p>
+<p>同じようなエラーが発生している人もいるようだ。<br>
+<a href="https://blog.gerardbeckerleg.com/posts/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource/">Hugo - Failed to find a valid digest in the &lsquo;integrity&rsquo; attribute for resource</a></p>
+<h3 id="原因は改行コード">原因は改行コード</h3>
+<p>いくつか見る限り、windowsの改行コードが問題のようだ。<br>
+確かにhugoでサイトを作ったときはMacで作った。そして、いまwindowsで作業している。<br>
+<a href="https://github.com/xianmin/hugo-theme-jane/issues/269">Failed to find a valid digest in the &lsquo;integrity&rsquo; attribute for resource · Issue #269 · xianmin/hugo-theme-jane</a></p>
+<blockquote>
+<p>Windowsでは、ファイルをチェックアウトすると、新しい行が\ nから\ r \ nに変更され、チェックサムが無効になります。</p>
+</blockquote>
+<p><a href="https://github.com/htr3n/hyde-hyde/issues/65">Failed to find a valid digest in the &lsquo;integrity&rsquo; attribute for resource · Issue #65 · htr3n/hyde-hyde</a></p>
+<p>git config -lすると、core.autocrlf=trueになっている。</p>
+<p>core.autocrlf=trueのときの挙動はqiitaの記事が参考になる。<br>
+<a href="https://qiita.com/uggds/items/00a1974ec4f115616580">気をつけて！Git for Windowsにおける改行コード - Qiita</a></p>
+<p>ということは、<br>
+・リモートはLF<br>
+・ローカルはCRLF<br>
+になっている</p>
+<p>実際は、LFとCRLFが混在しているようだ。</p>
+<h3 id="解決方法">解決方法</h3>
+<p>以下のことを行ったら、WindowsでもCSSが正しく反映された。</p>
+<p>一時的に autocrlf を false にする。これで、GitHubからclone時に改行コードがLFのまま持ってこれる。</p>
+<pre><code>git config core.autocrlf false
+</code></pre><p>autocrlf が false になったことを確認する。</p>
+<pre><code>git config core.autocrlf
+=&gt; false
+</code></pre><p>改めて、clone</p>
+<pre><code>git clone https://github.com/snyt45/TechDiary.git
+</code></pre><p>サブモジュールも反映。</p>
+<pre><code>git submodule init
+git submodule update
+</code></pre><p>ライブプレビュー起動。</p>
+<pre><code>hugo server
+</code></pre><p>正しくCSSが反映された！</p>
+<p>Github上はLFのコードをLFのまま編集してプッシュするので、問題はなさそう。
+手元でCRLFで動かさないといけない場面では、autocrlf を true にしていたほうがよさそうだ。</p>
+<h3 id="やっと本題のタイトル編集方法">やっと本題のタイトル編集方法</h3>
+<p>config.tomlのtitleを変更するだけ！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://snyt45.com/&#34;</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;ja&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;tech diary&#34;</span> <span style="color:#75715e"># titleを変更する</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hyde-hyde&#34;</span>
+<span style="color:#a6e22e">hasCJKLanguage</span> = <span style="color:#66d9ef">true</span>
+
+[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Posts&#34;</span>
+    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;posts&#34;</span>
+    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/posts/&#34;</span>
+</code></pre></div>
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20200706/not_only_engineers_but_important_things/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">エンジニアに限らず大事なこと</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>

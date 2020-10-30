@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Come on, come one! Let&#39;s go!</title>
+    <title>Posts on tech diary</title>
     <link>https://snyt45.com/posts/</link>
-    <description>Recent content in Posts on Come on, come one! Let&#39;s go!</description>
+    <description>Recent content in Posts on tech diary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 06 Jul 2020 20:39:19 +0900</lastBuildDate>
-    
-	<atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 31 Oct 2020 02:59:31 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugoのtitle変更方法</title>
+      <link>https://snyt45.com/posts/202001031/hugo_title_edit/</link>
+      <pubDate>Sat, 31 Oct 2020 02:59:31 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/202001031/hugo_title_edit/</guid>
+      <description>久しぶりに触るのでgit cloneから。 git clone https://github.com/snyt45/TechDiary.git PCをリストアしたので、hugoのインストールが必要だった。 Powershellを管理者として</description>
+    </item>
     
     <item>
       <title>エンジニアに限らず大事なこと</title>
@@ -17,7 +22,7 @@
       <pubDate>Mon, 06 Jul 2020 20:39:19 +0900</pubDate>
       
       <guid>https://snyt45.com/posts/20200706/not_only_engineers_but_important_things/</guid>
-      <description>後輩に自己啓発で何をすればいいですかと聞かれたので色々回答したんだけど､ 自分なりに整理しているうちに､一番大事なことが見えてきた｡ それは､ 達</description>
+      <description>後輩に自己啓発で何をすればいいですかと聞かれたので 自分なりに整理しているうちに､一番大事なことが見えてきた｡ それは､ 達成可能な目標設定・期間</description>
     </item>
     
     <item>
