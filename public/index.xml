@@ -6,7 +6,25 @@
     <description>Recent content on Small Changs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 31 Oct 2020 06:30:05 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Oct 2020 23:47:12 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@18日目</title>
+      <link>https://snyt45.com/posts/20201031/docker_kubernetes_18days/</link>
+      <pubDate>Sat, 31 Oct 2020 23:47:12 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201031/docker_kubernetes_18days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 途中からですが、学習ログ取っていきます。 4.3 API Serviceの構築 TODOアプリのドメインを担当す</description>
+    </item>
+    
+    <item>
+      <title>受託開発のWebエンジニア2年目の悩み</title>
+      <link>https://snyt45.com/posts/20201031/engineer_worries/</link>
+      <pubDate>Sat, 31 Oct 2020 18:38:28 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201031/engineer_worries/</guid>
+      <description>ざっくり現在のWebエンジニアになってからの経歴です。 ・Webエンジニア2年目 ・経験案件3案件目 ・現在はRails+Vue(AWS、Bitb</description>
+    </item>
+    
     <item>
       <title>実験：twitterのプロフィールの見栄えをよくする</title>
       <link>https://snyt45.com/posts/20201031/edit_twitter_profile/</link>
@@ -18,10 +36,10 @@
     
     <item>
       <title>Hugoのtitle変更方法</title>
-      <link>https://snyt45.com/posts/202001031/hugo_title_edit/</link>
+      <link>https://snyt45.com/posts/20201031/hugo_title_edit/</link>
       <pubDate>Sat, 31 Oct 2020 02:59:31 +0900</pubDate>
       
-      <guid>https://snyt45.com/posts/202001031/hugo_title_edit/</guid>
+      <guid>https://snyt45.com/posts/20201031/hugo_title_edit/</guid>
       <description>久しぶりに触るのでgit cloneから。 git clone https://github.com/snyt45/TechDiary.git PCをリストアしたので、hugoのインストールが必要だった。 Powershellを管理者として</description>
     </item>
     

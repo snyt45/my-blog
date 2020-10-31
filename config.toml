@@ -1,10 +1,76 @@
+## Basic Configuration
 baseURL = "https://snyt45.com/"
 languageCode = "ja"
+
 title = "Small Changs"
 theme = "hyde-hyde"
+
 hasCJKLanguage = true
 
+## Hugo Built-in Features
+# disqusShortname = "your-disqus-shortname"
+# googleAnalytics = "your-google-analytics-id"
+# enableRobotsTXT = true
+
+# summarylength = 30
+
+# paginate = 5
+
+## Site Settings
+[params]
+    author = "snyt45"
+    title = "Title"
+    # description = "..."
+    authorimage = "/img/hugo.png"
+    dateformat = "2006/01/02"
+
+    # sidebar, copyright & license
+    copyright = "snyt45"
+    since = 2020
+    # license = "CC BY-SA 4.0"
+    # licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+    showBuiltWith = true
+
+    # https://highlightjs.org
+    highlightjs = true
+    highlightjsstyle = "github"
+
+    # please choose either GraphComment or Disqus or Utterances
+    #GraphCommentId = "..."
+    #UtterancesRepo = "..." # https://utteranc.es/
+    #UtterancesIssueTerm = "..." # pathname, url, title, og:title
+    #UtterancesTheme = "..." # github-light or github-dark
+
+    # Table of contents
+    toc = "tocbot"
+
+## Social Accounts
+[params.social]
+    github = "snyt45"
+    # instagram = "<username>"
+    # xing = "<username>"
+    # linkedin = "<username>"
+    twitter = "snyt45"
+    # facebook = "<username>"
+    # stackoverflow = "<username>"
+    # telegram = "<username>"
+    # orcid = "<xxxx-xxxx-xxxx-xxxx>"
+    # email = "your-email@example.com"
+    # gravatar = "your-email@example.com"
+
+## Main Menu
 [[menu.main]]
     name = "Posts"
+    weight = 100
     identifier = "posts"
     url = "/posts/"
+#[[menu.main]]
+#    name = "Portfolio"
+#    identifier = "portfolio"
+#    weight = 200
+#    url = "/portfolio/"
+#[[menu.main]]
+#    name = "About"
+#    identifier = "about"
+#    weight = 300
+#    url = "/about/"
