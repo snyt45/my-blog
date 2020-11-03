@@ -21,7 +21,7 @@ hasCJKLanguage = true
     author = "snyt45"
     title = "Title"
     # description = "..."
-    authorimage = "/img/hugo.png"
+    authorimage = "/img/prof-icon-01.jpg"
     dateformat = "2006/01/02"
 
     # sidebar, copyright & license
