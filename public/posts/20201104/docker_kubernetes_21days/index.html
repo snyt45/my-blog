@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+    
+    
+
+<title>Docker/Kubernetes 実践コンテナ開発入門@21日目 • Small Changs</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker/Kubernetes 実践コンテナ開発入門@21日目"/>
+<meta name="twitter:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 4章では主にDockerのSwarmモードを使って複数のサービスを同じネットワーク内で連携しあっ"/>
+
+<meta property="og:title" content="Docker/Kubernetes 実践コンテナ開発入門@21日目" />
+<meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 4章では主にDockerのSwarmモードを使って複数のサービスを同じネットワーク内で連携しあっ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/20201104/docker_kubernetes_21days/" />
+<meta property="article:published_time" content="2020-11-04T22:57:51+09:00" />
+<meta property="article:modified_time" content="2020-11-04T22:57:51+09:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">Small Changs</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://snyt45.com/img/prof-icon-01.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Small Changs</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/snyt45" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/snyt45" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 snyt45
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Docker/Kubernetes 実践コンテナ開発入門@21日目</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2020/11/04
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><a href="https://gihyo.jp/book/2018/978-4-297-10033-9">Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社</a></p>
+<p>4章では主にDockerのSwarmモードを使って複数のサービスを同じネットワーク内で連携しあって、TODOアプリを動かしました。</p>
+<p>5章ではKubernetes(クーベネティス)を使っていきます。</p>
+<h2 id="5kubernetes入門">5.Kubernetes入門</h2>
+<ul>
+<li>2017年秋に正式にDockerがKubernetesを統合・サポートすることを発表</li>
+<li>以降、kubernetesはk8s(ケーエイツ)と記載。</li>
+</ul>
+<h3 id="51-kubernetesとは">5.1 Kubernetesとは</h3>
+<ul>
+<li>k8sはGoogle主導で開発された、コンテナの運用を自動化するためのコンテナオーケストレーションシステム</li>
+<li>k8sは様々な部品を組み合わせることで柔軟性の高いアプリケーションを構築できるのが最大の特徴</li>
+</ul>
+<h4 id="511-dockerの隆盛とkubernetesの誕生">5.1.1 Dockerの隆盛とKubernetesの誕生</h4>
+<ul>
+<li>Dockerが利用され始めた頃、デプロイやコンテナの配置戦略、スケールイン・スケールアウト、サービスディスカバリ、運用のしやすさといった点で課題があった</li>
+<li>その間、様々なオーケストレーションシステムが登場。AWSではECSの登場でコンテナを使ったアプリケーション開発が現実的に</li>
+<li>その中でもここ数年特に存在感を発揮したのが2014年にGoogleがOSSとして公開したk8s</li>
+<li>様々なプラットフォームでk8sのサポートするサービスが増えた。
+<ul>
+<li>Googleでは、Google Kubernetes Engine(GKE)</li>
+<li>Microsoftでは、Azure Kubernetes(AKS)</li>
+<li>Amazonは、Amazon Elastic Container Service for Kubernetes(ECS)</li>
+</ul>
+</li>
+</ul>
+<h4 id="512-kubernetesの位置づけ">5.1.2 Kubernetesの位置づけ</h4>
+<ul>
+<li>Dockerはコンテナを管理するためのdockerdという常駐プログラムとCLIから成り立つ</li>
+<li>Swarmは複数のホストを束ねてコンテナオーケストレーションを実現。SwarmはDockerの関連技術。</li>
+<li>k8sはSwarmより機能が充実したコンテナオーケストレーション。Docker、rkt、containerdといったコンテナランタイムを扱える。</li>
+<li>Dockerコンテナを管理するという意味でk8s=Swarmとほぼ同じ立ち位置</li>
+<li>k8sはCompose/Stack/Swarmの機能を統合しつつ、より高度に管理できるもの</li>
+</ul>
+<h3 id="52-ローカル環境でkubernetesを実行する">5.2 ローカル環境でKubernetesを実行する</h3>
+<ul>
+<li>Docker上でk8sを利用する</li>
+<li>2018年7月よりDocker for Windows/Macのk8s連携がStable版でも利用できるようになった</li>
+<li>k8s連携はデフォルトでは無効になっているので有効にする必要がある</li>
+</ul>
+<h4 id="521-docker-for-windowsmacでローカルkubenetes環境を構築する">5.2.1 Docker for Windows/MacでローカルKubenetes環境を構築する</h4>
+<ul>
+<li>
+<p>Windows環境での構築をやっていきます</p>
+</li>
+<li>
+<p>Dockerのk8sの設定画面</p>
+</li>
+</ul>
+<p><img src="docker-k8s-settings.png" alt="Dockerのk8sの設定画面"></p>
+<ul>
+<li>
+<p>k8sの設定</p>
+<ul>
+<li>「Enable Kubernetes」にチェック</li>
+<li>「Deploy Docker Stacks to Kubernetes by default」にチェック</li>
+<li>「Show system containers (advanced)」にチェック</li>
+<li>Apply &amp; Restart =&gt; Install</li>
+</ul>
+</li>
+<li>
+<p>kubectlのインストール</p>
+<ul>
+<li>k8sを操作するためのコマンドラインツール</li>
+<li>ローカルでもマネージドでも利用する</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">kubectlのインストールおよびセットアップ | Kubernetes</a></p>
+<ol>
+<li>kubectlをインストール</li>
+</ol>
+<pre><code>$ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.4/bin/windows/amd64/kubectl.exe
+</code></pre><ol start="2">
+<li>
+<p>環境変数Pathに追加</p>
+</li>
+<li>
+<p>バージョン確認</p>
+</li>
+</ol>
+<pre><code>$ kubectl version --client
+Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;18&quot;, GitVersion:&quot;v1.18.8&quot;, GitCommit:&quot;9f2892aab98fe339f3bd70e3c470144299398ace&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2020-08-13T16:12:48Z&quot;, GoVersion:&quot;go1.13.15&quot;, Compiler:&quot;gc&quot;, Platform:&quot;windows/amd64&quot;}
+</code></pre><ul>
+<li>ダッシュボードのインストール
+<ul>
+<li>k8sにデプロイされているコンテナ等を確認できるWebベースの管理ツール</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>ダッシュボードをデプロイ</li>
+</ol>
+<pre><code>$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.8.3/src/deploy/recommended/kubernetes-dashboard.yaml
+/src/deploy/recommended/kubernetes-dashboard.yamlcom/kubernetes/dashboard/v1.8.3/
+secret/kubernetes-dashboard-certs created
+serviceaccount/kubernetes-dashboard created
+role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+service/kubernetes-dashboard created
+error: unable to recognize &quot;https://raw.githubusercontent.com/kubernetes/dashboard/v1.8.3/src/deploy/recommended/kubernetes-dashboard.yaml&quot;: no matches for kind &quot;Deployment&quot; in version &quot;apps/v1beta2
+</code></pre><p>errorが出ている。</p>
+<p>最新はこっちらしい。</p>
+<p><a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">Web UI（ダッシュボード）| Kubernetes</a></p>
+<pre><code>$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+namespace/kubernetes-dashboard created
+serviceaccount/kubernetes-dashboard created
+service/kubernetes-dashboard created
+secret/kubernetes-dashboard-certs created
+secret/kubernetes-dashboard-csrf created
+secret/kubernetes-dashboard-key-holder created
+configmap/kubernetes-dashboard-settings created
+role.rbac.authorization.k8s.io/kubernetes-dashboard created
+clusterrole.rbac.authorization.k8s.io/kubernetes-dashboard created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+deployment.apps/kubernetes-dashboard created
+service/dashboard-metrics-scraper created
+deployment.apps/dashboard-metrics-scraper created
+</code></pre><ol start="2">
+<li>デプロイ確認</li>
+</ol>
+<ul>
+<li>テキスト通りだと確認できない。</li>
+</ul>
+<pre><code>$ kubectl get pod --namespace=kube-system -l k8s-app=kubernetes-dashboard
+No resources found in kube-system namespace.
+</code></pre><ul>
+<li>起動している感じはする。</li>
+</ul>
+<pre><code>$ kubectl get pods --all-namespaces
+NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
+kube-system            coredns-66bff467f8-hlwqd                     1/1     Running   0          32m
+kube-system            coredns-66bff467f8-zjdfl                     1/1     Running   0          32m
+kube-system            etcd-docker-desktop                          1/1     Running   0          30m
+kube-system            kube-apiserver-docker-desktop                1/1     Running   0          31m
+kube-system            kube-controller-manager-docker-desktop       1/1     Running   0          30m
+kube-system            kube-proxy-jpglq                             1/1     Running   0          31m
+kube-system            kube-scheduler-docker-desktop                1/1     Running   0          31m
+kube-system            storage-provisioner                          1/1     Running   0          30m
+kube-system            vpnkit-controller                            1/1     Running   0          30m
+kubernetes-dashboard   dashboard-metrics-scraper-6b4884c9d5-p7ctj   1/1     Running   0          3m13s
+kubernetes-dashboard   kubernetes-dashboard-7b544877d5-rj7zf        1/1     Running   0          3m13s
+</code></pre><ol start="3">
+<li>ダッシュボードへのプロキシサーバを立ち上げ</li>
+</ol>
+<pre><code>$  kubectl proxy
+Starting to serve on 127.0.0.1:8001
+</code></pre><p>以下のURLにアクセス</p>
+<p>http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login</p>
+<ul>
+<li>k8sのダッシュボード画面</li>
+</ul>
+<p><img src="k8s-dashboard.png" alt="k8sのダッシュボード"></p>
+<ul>
+<li>
+<p>トークン設定の参考</p>
+<ul>
+<li><a href="https://tech.shiroshika.com/windows10-docker-kubernetes-5-kubernetes/">Windows10 でDocker環境のお勉強メモ | Docker / Kubernetes 実践コンテナ開発入門（5.Kubernetes入門） | Tech Memo</a></li>
+</ul>
+</li>
+<li>
+<p>ログインするためのトークンを作成</p>
+</li>
+<li>
+<p>ログインする権限をきめるために権限の一覧を表示</p>
+</li>
+</ul>
+<pre><code>$ kubectl -n kube-system get secret
+NAME                                             TYPE                                  DATA   AGE
+attachdetach-controller-token-xfngd              kubernetes.io/service-account-token   3      39m
+bootstrap-signer-token-hnj9t                     kubernetes.io/service-account-token   3      39m
+bootstrap-token-abcdef                           bootstrap.kubernetes.io/token         6      39m
+certificate-controller-token-2j4hd               kubernetes.io/service-account-token   3      39m
+clusterrole-aggregation-controller-token-pc7p7   kubernetes.io/service-account-token   3      39m
+coredns-token-6kpjb                              kubernetes.io/service-account-token   3      39m
+cronjob-controller-token-2dcmq                   kubernetes.io/service-account-token   3      39m
+daemon-set-controller-token-slwfc                kubernetes.io/service-account-token   3      39m
+default-token-k4nbg                              kubernetes.io/service-account-token   3      39m
+deployment-controller-token-k2vtj                kubernetes.io/service-account-token   3      39m
+disruption-controller-token-hghx4                kubernetes.io/service-account-token   3      39m
+endpoint-controller-token-bz5wl                  kubernetes.io/service-account-token   3      39m
+endpointslice-controller-token-b6rvh             kubernetes.io/service-account-token   3      39m
+expand-controller-token-h9fbq                    kubernetes.io/service-account-token   3      39m
+generic-garbage-collector-token-5699m            kubernetes.io/service-account-token   3      39m
+horizontal-pod-autoscaler-token-4x25f            kubernetes.io/service-account-token   3      39m
+job-controller-token-f7rxj                       kubernetes.io/service-account-token   3      39m
+kube-proxy-token-69cph                           kubernetes.io/service-account-token   3      39m
+kubernetes-dashboard-certs                       Opaque                                0      25m
+kubernetes-dashboard-token-d6xpr                 kubernetes.io/service-account-token   3      25m
+namespace-controller-token-svt2z                 kubernetes.io/service-account-token   3      39m
+node-controller-token-b6hxx                      kubernetes.io/service-account-token   3      39m
+persistent-volume-binder-token-hzhcz             kubernetes.io/service-account-token   3      39m
+pod-garbage-collector-token-tcjvt                kubernetes.io/service-account-token   3      39m
+pv-protection-controller-token-tb5rj             kubernetes.io/service-account-token   3      39m
+pvc-protection-controller-token-nlksk            kubernetes.io/service-account-token   3      39m
+replicaset-controller-token-p76dh                kubernetes.io/service-account-token   3      39m
+replication-controller-token-xvp4j               kubernetes.io/service-account-token   3      39m
+resourcequota-controller-token-blqfq             kubernetes.io/service-account-token   3      39m
+service-account-controller-token-fvbx8           kubernetes.io/service-account-token   3      39m
+service-controller-token-dghwr                   kubernetes.io/service-account-token   3      39m
+statefulset-controller-token-nn4dp               kubernetes.io/service-account-token   3      39m
+storage-provisioner-token-m9m5b                  kubernetes.io/service-account-token   3      38m
+token-cleaner-token-zkx4d                        kubernetes.io/service-account-token   3      39m
+ttl-controller-token-4pdjw                       kubernetes.io/service-account-token   3      39m
+vpnkit-controller-token-vw2xm                    kubernetes.io/service-account-token   3      38m
+</code></pre><ul>
+<li>「deployment-controller-token-k2vtj」の権限で入る。</li>
+<li>トークンを作成する</li>
+</ul>
+<pre><code>$ kubectl -n kube-system describe secret deployment-controller-token-k2vtj
+$ kubectl -n kube-system describe secret deployment-controller-token-k2vtj
+Name:         deployment-controller-token-k2vtj
+Namespace:    kube-system
+Labels:       &lt;none&gt;
+Annotations:  kubernetes.io/service-account.name: deployment-controller
+              kubernetes.io/service-account.uid: 5788d424-2204-4061-9751-7d10cd946406
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGc...(中略)
+ca.crt:     1025 bytes
+namespace:  11 bytes
+</code></pre><ul>
+<li>トークンを入力してログインできたー！</li>
+</ul>
+<p><img src="k8s-dashbord01.png" alt="k8sのダッシュボード画面"></p>
+<h4 id="コラム-minikube">コラム Minikube</h4>
+<ul>
+<li>Dockerにk8s連携がくるまではMinikubeがk8s環境構築に利用されていたい。</li>
+<li>Dockerのk8s連携は実行中のdockerdに対してk8s環境を構築</li>
+<li>Minikubeではローカルに新たに別のdockerdを立てk8s環境を構築</li>
+</ul>
+<h2 id="今日の学び">今日の学び</h2>
+<ul>
+<li>k8sの歴史が知れた！ここ最近ではあるけど急速に浸透していっている。この機会に触れてよかった。</li>
+<li>Dockerにはk8s連携があるので、ローカルでk8s環境構築が簡単にできた。</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20201103/docker_kubernetes_20days/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Docker/Kubernetes 実践コンテナ開発入門@20日目</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
