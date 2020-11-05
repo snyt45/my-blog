@@ -6,7 +6,16 @@
     <description>Recent content on Small Changs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 Nov 2020 22:57:51 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Nov 2020 22:35:32 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@22日目</title>
+      <link>https://snyt45.com/posts/20201105/docker_kubernetes_22days/</link>
+      <pubDate>Thu, 05 Nov 2020 22:35:32 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201105/docker_kubernetes_22days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回は、k8sのダッシュボードをブラウザから見れるように環境構築を行いました。 その続きをやってい</description>
+    </item>
+    
     <item>
       <title>Docker/Kubernetes 実践コンテナ開発入門@21日目</title>
       <link>https://snyt45.com/posts/20201104/docker_kubernetes_21days/</link>
