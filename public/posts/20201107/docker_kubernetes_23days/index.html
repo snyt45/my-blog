@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+    
+    
+
+<title>Docker/Kubernetes 実践コンテナ開発入門@23日目 • Small Changs</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker/Kubernetes 実践コンテナ開発入門@23日目"/>
+<meta name="twitter:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 今日はk8sのリソース（アプリケーションのデプロイ構成するための部品）のPod（ポッド）について"/>
+
+<meta property="og:title" content="Docker/Kubernetes 実践コンテナ開発入門@23日目" />
+<meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 今日はk8sのリソース（アプリケーションのデプロイ構成するための部品）のPod（ポッド）について" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/20201107/docker_kubernetes_23days/" />
+<meta property="article:published_time" content="2020-11-07T01:06:26+09:00" />
+<meta property="article:modified_time" content="2020-11-07T01:06:26+09:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">Small Changs</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://snyt45.com/img/prof-icon-01.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Small Changs</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/snyt45" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/snyt45" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 snyt45
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Docker/Kubernetes 実践コンテナ開発入門@23日目</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2020/11/07
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><a href="https://gihyo.jp/book/2018/978-4-297-10033-9">Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社</a></p>
+<p>今日はk8sのリソース（アプリケーションのデプロイ構成するための部品）のPod（ポッド）について学んでいきたいと思います。</p>
+<h2 id="56-pod">5.6 Pod</h2>
+<ul>
+<li>
+<p>Podはコンテナの集合体の単位。少なくとも1つのコンテナを持つ</p>
+</li>
+<li>
+<p>k8sとDockerを組み合わせる場合Podが持つのはDockerコンテナ単体あるはDockerコンテナの集合体 → DockerでいうServiceの単位に近い??</p>
+</li>
+<li>
+<p>k8sではPodの単位でデプロイする → <strong>デプロイする単位ということなので、Dockerでいうスタックという単位のほうが近いかも</strong></p>
+</li>
+<li>
+<p>Podの配置</p>
+<ul>
+<li>Nodeのどれかに配置される。</li>
+<li>同じPodを複数のNodeに配置する、1つのNodeに複数配置も可能</li>
+<li>1つのPod内のコンテナが複数Nodeに渡って配置することはできない</li>
+</ul>
+</li>
+<li>
+<p>Podの粒度</p>
+<ul>
+<li>リバースプロキシとしてのNginxと、その背後のアプリケーションで1つのPodにまとめるのはポピュラー</li>
+<li>同時にデプロイしないと整合性を保てないケースは、同一のPodにまとめる</li>
+<li>k8sのMaster Node
+<ul>
+<li>Docker Swarmでいうmanagerノードの役割</li>
+<li>Master Nodeは管理用のコンポーネントのPodだけがデプロイされたNode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>=&gt; <strong>クラスタがあり、その中にMaster Nodeが最低1つとそれ以外のNodeで構成される。そして、そのNode群の各Nodeの中にPodが配置されるイメージ</strong></p>
+</li>
+<li>
+<p>下のイメージの中にMaster Nodeがあるかんじ。</p>
+</li>
+</ul>
+<p><img src="k8s-pod.png" alt="k8sのPod"></p>
+<h3 id="561-podを作成してデプロイする">5.6.1 Podを作成してデプロイする</h3>
+<ul>
+<li>
+<p>Podの作成</p>
+<ul>
+<li>kubectlだけで行うことも可能</li>
+<li>バージョン管理の観点からyamlファイルとして定義することがほとんど</li>
+</ul>
+</li>
+<li>
+<p>マニフェストファイル</p>
+<ul>
+<li>k8sの各種リソースを定義するファイル</li>
+</ul>
+</li>
+<li>
+<p>simple-pod.yaml</p>
+<ul>
+<li>nginxとechoで構成されるPodを定義したマニフェストファイル</li>
+</ul>
+</li>
+</ul>
+<pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-echo
+spec:
+  containers:
+  - name: nginx
+    image: gihyodocker/nginx-proxy:latest
+    env:
+    - name: BACKEND_HOST
+      value: localhost:8080
+    ports:
+    - containerPort: 80
+  - name: echo
+    image: gihyodocker/echo:latest
+    ports:
+    - containerPort: 8080
+</code></pre><ul>
+<li>
+<p>マニフェストファイル</p>
+<ul>
+<li>kind
+<ul>
+<li>k8sのリソースの種類を指定</li>
+<li>kindの値次第でspec配下のスキーマが変わってくる</li>
+</ul>
+</li>
+<li>metadata
+<ul>
+<li>リソースに付与するメタデータ</li>
+<li>metadata.name属性で指定した値がリソースの名称</li>
+</ul>
+</li>
+<li>spec
+<ul>
+<li>リソースを定義するための属性</li>
+<li>Podの場合はPodを構成するコンテナ群をcontainersとして定義</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>containers以下</p>
+<ul>
+<li>name
+<ul>
+<li>コンテナ名</li>
+</ul>
+</li>
+<li>image
+<ul>
+<li>Docker Hubのイメージ保存先。ローカルでビルドしたイメージも指定可能</li>
+</ul>
+</li>
+<li>ports
+<ul>
+<li>コンテナがEXPOSEするポートを指定 ※Dockerfileで指定している場合は不要</li>
+</ul>
+</li>
+<li>env
+<ul>
+<li>環境変数を指定</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>このPodをk8sクラスタに反映</p>
+<ul>
+<li>apply
+<ul>
+<li>新規作成、内容に変更があった場合も反映</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>$ kubectl apply -f simple-pod.yaml
+pod/simple-echo created
+</code></pre><ul>
+<li>動作はするが、このままではPodにアクセスできないらしい</li>
+</ul>
+<h3 id="562-podを操作する">5.6.2 Podを操作する</h3>
+<ul>
+<li>Podの一覧取得
+<ul>
+<li>STATUSがRunning =&gt; Pod内のすべてのコンテナ実行状態</li>
+<li>READYの分母はPodに定義されたコンテナ数、分子は実行状態になったコンテナ数</li>
+</ul>
+</li>
+</ul>
+<pre><code>$ kubectl get pod
+</code></pre><ul>
+<li>kubectlを使ってコンテナの中に入る
+<ul>
+<li>-cでコンテナ名を指定</li>
+</ul>
+</li>
+</ul>
+<pre><code>$  kubectl exec -it simple-echo sh -c nginx
+kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl kubectl exec [POD] -- [COMMAND] instead.
+/ #
+</code></pre><ul>
+<li>Pod内コンテナの標準出力を表示</li>
+</ul>
+<pre><code>$ kubectl logs -f simple-echo -c echo
+2020/11/06 17:03:12 start server
+</code></pre><ul>
+<li>Podの削除</li>
+</ul>
+<pre><code>$ kubectl delete pod simple-echo
+pod &quot;simple-echo&quot; deleted
+</code></pre><ul>
+<li>マニフェストファイルベースでPod削除
+<ul>
+<li>マニフェストファイルに記述されている全てのリソースが削除される</li>
+</ul>
+</li>
+</ul>
+<pre><code>$ kubectl delete -f simple-pod.yaml
+</code></pre><h3 id="コラム-podとpod内コンテナのアドレス">コラム PodとPod内コンテナのアドレス</h3>
+<ul>
+<li>Podごとに固有の仮想IPアドレスが割り振られる</li>
+<li>同一Pod内の全てのコンテナの仮想IPアドレスは同じ</li>
+<li>同一Pod内であればlocalhost:80などでアクセスできる。</li>
+<li>別のPodであれば、172.17.0.4:80のようにPodの仮想IP:ポート名でアクセスできる。</li>
+</ul>
+<h2 id="今日の学び">今日の学び</h2>
+<ul>
+<li>マニフェストファイルはdocker-compose.ymlと書き方が似ているが、若干違うので慣れが必要そう。</li>
+<li>PodはDocker SwarmでいうStack。同じネットワーク内であればコンテナ間通信ができる。別のネットワークでも仮想IPを指定すれば通信可能。</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20201105/docker_kubernetes_22days/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Docker/Kubernetes 実践コンテナ開発入門@22日目</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
