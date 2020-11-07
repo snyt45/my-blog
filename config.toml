@@ -2,7 +2,7 @@
 baseURL = "https://snyt45.com/"
 languageCode = "ja"
 
-title = "Small Changs"
+title = "Small Changes"
 theme = "hyde-hyde"
 
 hasCJKLanguage = true
