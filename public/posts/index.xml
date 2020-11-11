@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 10 Nov 2020 22:28:07 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2020 22:54:20 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDocker/Kubernetes 実践コンテナ開発入門@28日目</title>
+      <link>https://snyt45.com/posts/20201111/docker_kubernetes_28days/</link>
+      <pubDate>Wed, 11 Nov 2020 22:54:20 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201111/docker_kubernetes_28days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回はGCP上でk8sクラスタを作成するための導入でした。 6章ではTODOアプリを公開していきま</description>
+    </item>
+    
     <item>
       <title>Docker/Kubernetes 実践コンテナ開発入門@27日目</title>
       <link>https://snyt45.com/posts/20201110/docker_kubernetes_27days/</link>
