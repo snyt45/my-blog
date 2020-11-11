@@ -1,5 +1,5 @@
 ---
-title: "DDocker/Kubernetes 実践コンテナ開発入門@28日目"
+title: "Docker/Kubernetes 実践コンテナ開発入門@28日目"
 date: 2020-11-11T22:54:20+09:00
 draft: false
 ---
