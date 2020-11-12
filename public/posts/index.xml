@@ -6,9 +6,18 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 11 Nov 2020 22:54:20 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2020 22:10:51 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DDocker/Kubernetes 実践コンテナ開発入門@28日目</title>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@29日目</title>
+      <link>https://snyt45.com/posts/20201112/docker_kubernetes_29days/</link>
+      <pubDate>Thu, 12 Nov 2020 22:10:51 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201112/docker_kubernetes_29days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回は、主にStatefulSetを使ったMySQLアプリケーションをk8sにデプロイしました。</description>
+    </item>
+    
+    <item>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@28日目</title>
       <link>https://snyt45.com/posts/20201111/docker_kubernetes_28days/</link>
       <pubDate>Wed, 11 Nov 2020 22:54:20 +0900</pubDate>
       
