@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 12 Nov 2020 22:10:51 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 22:20:51 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@30日目</title>
+      <link>https://snyt45.com/posts/20201113/docker_kubernetes_30days/</link>
+      <pubDate>Fri, 13 Nov 2020 22:20:51 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201113/docker_kubernetes_30days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回は、TODOAPIを構築しました。 今回も同じようにTODO Webアプリケーションを構築して、</description>
+    </item>
+    
     <item>
       <title>Docker/Kubernetes 実践コンテナ開発入門@29日目</title>
       <link>https://snyt45.com/posts/20201112/docker_kubernetes_29days/</link>
