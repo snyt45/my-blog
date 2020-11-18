@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 17 Nov 2020 22:15:23 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Nov 2020 23:44:51 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@34日目</title>
+      <link>https://snyt45.com/posts/20201118/docker_kubernetes_34days/</link>
+      <pubDate>Wed, 18 Nov 2020 23:44:51 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201118/docker_kubernetes_34days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回は、バッチ処理に便利なJob、スケジューリングしたタスクの実行に便利なcronJob、暗号化</description>
+    </item>
+    
     <item>
       <title>Docker/Kubernetes 実践コンテナ開発入門@33日目</title>
       <link>https://snyt45.com/posts/20201117/docker_kubernetes_33days/</link>
