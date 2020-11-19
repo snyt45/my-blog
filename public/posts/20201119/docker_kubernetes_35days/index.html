@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+    
+    
+
+<title>Docker/Kubernetes 実践コンテナ開発入門@35日目 • Small Changes</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker/Kubernetes 実践コンテナ開発入門@35日目"/>
+<meta name="twitter:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回はユーザー管理の途中で力尽きたので、ユーザー管理の続きから。 7.2.2 ServiceAccount クラスタ内で実行されている実"/>
+
+<meta property="og:title" content="Docker/Kubernetes 実践コンテナ開発入門@35日目" />
+<meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回はユーザー管理の途中で力尽きたので、ユーザー管理の続きから。 7.2.2 ServiceAccount クラスタ内で実行されている実" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/20201119/docker_kubernetes_35days/" />
+<meta property="article:published_time" content="2020-11-19T23:18:16+09:00" />
+<meta property="article:modified_time" content="2020-11-19T23:18:16+09:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">Small Changes</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://snyt45.com/img/prof-icon-01.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Small Changes</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/snyt45" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/snyt45" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 snyt45
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Docker/Kubernetes 実践コンテナ開発入門@35日目</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2020/11/19
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><a href="https://gihyo.jp/book/2018/978-4-297-10033-9">Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社</a></p>
+<p>前回はユーザー管理の途中で力尽きたので、ユーザー管理の続きから。</p>
+<h3 id="722-serviceaccount">7.2.2 ServiceAccount</h3>
+<ul>
+<li>
+<p>クラスタ内で実行されている実行されているPodからクラスタ内の他のリソースへのアクセスを制御するためのリソース</p>
+</li>
+<li>
+<p>kube-systemのnamespaceではk8sのリソースを制御するためのPodがいくつも実行されている</p>
+</li>
+<li>
+<p>これらのPodはServiceAccountの働きによって、他のnamespaceで実行されているPodやService、Ingressといったリソース情報の参照や操作ができる</p>
+</li>
+<li>
+<p>RBACによって制限することでフェールセーフなアプリケーション構築もできる</p>
+</li>
+<li>
+<p>ServiceAccountを作成し、ClusterRoleBindingでRoleとServiceAccountを紐づけ。</p>
+</li>
+<li>
+<p>その後Podの定義にてserviceAccountNameでServiceAccountを指定するとそのPodはServiceAccountの権限のみしか操作ができなくなる。</p>
+</li>
+</ul>
+<h2 id="73-helm">7.3 Helm</h2>
+<ul>
+<li>HelmはKubernetes chartsを管理するためのツール。 =&gt; パッケージ管理ツール</li>
+<li>chartsは設定済みのkubernetesリソースのパッケージ。 =&gt; リソースをまとめたパッケージ</li>
+</ul>
+<p><img src="helm-charts.png" alt="Helmとchartsの関係"></p>
+<ul>
+<li>HelmでChartsを管理することで、マニフェストファイルの管理をしやすくすることが大きな目的</li>
+<li>Helmがあれば、複数クラスタへのデプロイを簡潔に管理できる</li>
+<li>HelmはChartsを中心としたk8s開発の総合的な管理ツールとしても使える</li>
+</ul>
+<h3 id="731-helmのセットアップ">7.3.1 Helmのセットアップ</h3>
+<ul>
+<li>Helmの最新バージョンをインストール
+<ul>
+<li><a href="https://github.com/helm/helm/releases">Releases · helm/helm</a></li>
+</ul>
+</li>
+<li>最終的にはパッケージマネージャでインストールした</li>
+</ul>
+<pre><code># 管理者権限でPowerShellを開いて実行
+$ choco install kubernetes-helm
+# インストールできたことを確認
+$ helm help
+</code></pre><ul>
+<li>
+<p>クラスタに対して初期化処理を行って初めて利用可能になる</p>
+</li>
+<li>
+<p>バージョンが違ってhelm initできないようだ。(v3.4.1)</p>
+</li>
+</ul>
+<pre><code>$ helm init
+Error: unknown command &quot;init&quot; for &quot;helm&quot;
+
+Did you mean this?
+        lint
+
+Run 'helm --help' for usage.
+</code></pre><ul>
+<li>v2をダウンロードする</li>
+</ul>
+<pre><code>$ choco uninstall kubernetes-helm
+
+$ choco install kubernetes-helm --version=2.14.0
+
+$ helm version
+Client: &amp;version.Version{SemVer:&quot;v2.14.0&quot;, GitCommit:&quot;05811b84a3f93603dd6c2fcfe57944dfa7ab7fd0&quot;, GitTreeState:&quot;clean&quot;}
+Error: could not find tiller
+</code></pre><ul>
+<li>初期化</li>
+</ul>
+<pre><code>$ helm init
+Creating C:\Users\snyt45\.helm
+Creating C:\Users\snyt45\.helm\repository
+Creating C:\Users\snyt45\.helm\repository\cache
+Creating C:\Users\snyt45\.helm\repository\local
+Creating C:\Users\snyt45\.helm\plugins
+Creating C:\Users\snyt45\.helm\starters
+Creating C:\Users\snyt45\.helm\cache\archive
+Creating C:\Users\snyt45\.helm\repository\repositories.yaml
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com
+Adding local repo with URL: http://127.0.0.1:8879/charts
+$HELM_HOME has been configured at C:\Users\snyt45\.helm.
+Error: error installing: the server could not find the requested resource
+</code></pre><ul>
+<li>
+<p>エラーがでてる。そもそもバージョン確認時にtillerがないと怒られていた。</p>
+</li>
+<li>
+<p>最終的には以下のissue通りにやったら解決した。</p>
+<ul>
+<li><a href="https://github.com/helm/helm/issues/6473#issuecomment-625964161">https://github.com/helm/helm/issues/6473#issuecomment-625964161</a></li>
+</ul>
+</li>
+<li>
+<p>再度バージョン確認。正しくServerもインストールされた</p>
+</li>
+</ul>
+<pre><code>$ helm version
+Client: &amp;version.Version{SemVer:&quot;v2.14.0&quot;, GitCommit:&quot;05811b84a3f93603dd6c2fcfe57944dfa7ab7fd0&quot;, GitTreeState:&quot;clean&quot;}
+Server: &amp;version.Version{SemVer:&quot;v2.14.0&quot;, GitCommit:&quot;05811b84a3f93603dd6c2fcfe57944dfa7ab7fd0&quot;, GitTreeState:&quot;clean&quot;}
+</code></pre><ul>
+<li>Tillerというサーバアプリケーションがkube-systemネームスペースにデプロイされている</li>
+<li>Tillerはhelmコマンドからの指示を受け、インストール等の処理を行う役割</li>
+</ul>
+<pre><code>$ kubectl -n kube-system get service,deployment,pod --selector app=helm
+NAME                    TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
+service/tiller-deploy   ClusterIP   10.55.252.98   &lt;none&gt;        44134/TCP   2m42s
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/tiller-deploy   1/1     1            1           2m42s
+
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/tiller-deploy-5d79cb9bfd-5zzg8   1/1     Running   0          2m42s
+</code></pre><h2 id="今日の学び">今日の学び</h2>
+<ul>
+<li>今日はHelmのセットアップができた。すでにテキストはバージョンが低くv3が出ているようだ。とりあえずはv2でテキスト通りに進められる準備は整った。</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20201118/docker_kubernetes_34days/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Docker/Kubernetes 実践コンテナ開発入門@34日目</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
