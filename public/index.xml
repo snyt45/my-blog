@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 19 Nov 2020 23:18:16 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2020 23:42:39 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker/Kubernetes 実践コンテナ開発入門@36日目</title>
+      <link>https://snyt45.com/posts/20201120/docker_kubernetes_36days/</link>
+      <pubDate>Fri, 20 Nov 2020 23:42:39 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201120/docker_kubernetes_36days/</guid>
+      <description>Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回はパッケージ管理ツールのHelmをインストールしました。 今回はChartsのインストール等を</description>
+    </item>
+    
     <item>
       <title>Docker/Kubernetes 実践コンテナ開発入門@35日目</title>
       <link>https://snyt45.com/posts/20201119/docker_kubernetes_35days/</link>
