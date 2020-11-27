@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Nov 2020 22:43:27 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Nov 2020 22:43:22 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>たった1日で基本が身に付く！ Go言語 超入門@5日目</title>
+      <link>https://snyt45.com/posts/20201127/1day_go_5days/</link>
+      <pubDate>Fri, 27 Nov 2020 22:43:22 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20201127/1day_go_5days/</guid>
+      <description>たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社 昨日ポインタをやり切らなかったので今日でやり切ります。 明日から旅行なので楽し</description>
+    </item>
+    
     <item>
       <title>たった1日で基本が身に付く！ Go言語 超入門@4日目</title>
       <link>https://snyt45.com/posts/20201126/1day_go_4days/</link>

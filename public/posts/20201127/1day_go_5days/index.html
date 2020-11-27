@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+    
+    
+
+<title>たった1日で基本が身に付く！ Go言語 超入門@5日目 • Small Changes</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="たった1日で基本が身に付く！ Go言語 超入門@5日目"/>
+<meta name="twitter:description" content="たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社 昨日ポインタをやり切らなかったので今日でやり切ります。 明日から旅行なので楽し"/>
+
+<meta property="og:title" content="たった1日で基本が身に付く！ Go言語 超入門@5日目" />
+<meta property="og:description" content="たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社 昨日ポインタをやり切らなかったので今日でやり切ります。 明日から旅行なので楽し" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/20201127/1day_go_5days/" />
+<meta property="article:published_time" content="2020-11-27T22:43:22+09:00" />
+<meta property="article:modified_time" content="2020-11-27T22:43:22+09:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">Small Changes</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://snyt45.com/img/prof-icon-01.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Small Changes</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/snyt45" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/snyt45" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 snyt45
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>たった1日で基本が身に付く！ Go言語 超入門@5日目</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2020/11/27
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><a href="https://gihyo.jp/book/2020/978-4-297-11617-0">たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社</a></p>
+<p>昨日ポインタをやり切らなかったので今日でやり切ります。</p>
+<p>明日から旅行なので楽しんできます！</p>
+<h2 id="chapter-6データを直接指し示すポインタ">CHAPTER 6　データを直接指し示すポインタ</h2>
+<h3 id="レシーバを構造体のポインタにする">レシーバを構造体のポインタにする</h3>
+<ul>
+<li><strong>今日の話を理解するうえでかなり重要</strong></li>
+<li>構造体のインスタンスメソッドを定義する際は以下のように書いた</li>
+</ul>
+<pre><code>// 構造体のインスタンスのメソッド
+func (構造体のインスタンス名(レシーバ) 構造体のデータ型) describe(引数 引数のデータ型) 戻り値のデータ型 {
+  // 処理
+}
+</code></pre><ul>
+<li>通常のメソッドとの違いはメソッド名の前に<code>(構造体のインスタンス名(レシーバ) 構造体のデータ型)</code>を定義する点が違った。</li>
+<li>6章のセクション3では以下のような表現が出てくる</li>
+</ul>
+<pre><code>// *someapp 型に対してメソッドを定義する
+func (app *someapp) open() {
+  // 処理
+  app.use++
+}
+</code></pre><ul>
+<li>
+<p><code>*someapp</code>は<code>someappというポインタ型</code>である</p>
+</li>
+<li>
+<p>ここでは、<code>someapp</code>という<code>ポインタ型</code>に対してopenというメソッドを定義している</p>
+</li>
+<li>
+<p>そして、関数の中では<code>*(app).use</code>とすべきところを、<code>app.use</code>と書くことが可能。(<code>&amp;app</code>がレシーバの前提)</p>
+</li>
+<li>
+<p>そしてそして、さらに重要なのが呼び出し方！</p>
+</li>
+</ul>
+<pre><code>func main() {
+  app1 := app{&quot;りんご&quot;, 1, true}
+  (&amp;app1).open() // 本来はこう書かないといけないが、
+  app1.open()    // このように&amp;を省略できる
+}
+</code></pre><ul>
+<li>コンパイラがメソッドの定義をみて、暗黙的に変換してくれるようだ。</li>
+</ul>
+<h3 id="セクション3の例題の概要">セクション3の例題の概要</h3>
+<ul>
+<li>構造体someappはusername、use、isopenというフィールドを持つ</li>
+<li>openメソッド
+<ul>
+<li>isopenがtreuの場合は、アプリを開いている場合の処理を行う</li>
+<li>falseの場合は、アプリを開く処理を行う
+<ul>
+<li>app.useの値が2を超えていたら、それ以上の処理は行わない</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>closeメソッド
+<ul>
+<li>isopenがtrueの場合は、アプリを閉じる処理を行う</li>
+</ul>
+</li>
+<li>最初にsomeappインスタンスを作成するnewapp関数
+<ul>
+<li>useの値は1、isopenはtrue
+<ul>
+<li>すでに開いている状態 かつ 1度試用済みの状態から始まる</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="レシーバに渡したインスタンスと渡す前のレシーバは別物">レシーバに渡したインスタンスと渡す前のレシーバは別物</h3>
+<ul>
+<li>変数から変数に値を渡すと別の場所に保存されるのと同じことがレシーバでも起きる。</li>
+<li>レシーバに渡す前のアドレスとレシーバに渡った後では別物になっていることがわかる。</li>
+<li>つまり同じインスタンスに対して変更し続けたい場合、<code>ポインタ型</code>に対してメソッドを定義する。そうすれば<strong>メソッド内でも同じインスタンスに対して変更が加えられる</strong></li>
+</ul>
+<pre><code>// 構造体test
+type test struct {
+	test string
+}
+
+// 構造体testインスタンスのアドレスを出力するメソッド
+func (t test) address() {
+	fmt.Printf(&quot;関数中でのアドレス：%p\n&quot;, &amp;t)
+}
+
+func main() {
+	test1 := test{&quot;test&quot;}
+	fmt.Printf(&quot;現在のアドレス：%p\n&quot;, &amp;test1) // 現在のアドレス：0xc0001081e0
+	test1.address()                           // 関数中でのアドレス：0xc0001081f0
+	fmt.Printf(&quot;現在のアドレス：%p\n&quot;, &amp;test1) // 現在のアドレス：0xc0001081e0
+</code></pre><h3 id="メソッドチェーンとの使い分け">メソッドチェーンとの使い分け</h3>
+<ul>
+<li>メソッドチェーン
+<ul>
+<li>メソッドの戻り値に自分自身のコピーを返す、値が欲しいだけの場合などのコピーでも問題ない場合に使う。</li>
+</ul>
+</li>
+<li>ポインタ
+<ul>
+<li>結果によって別の処理をしたり、他のインスタンスも並行処理する場合に向いている</li>
+</ul>
+</li>
+</ul>
+<h3 id="連結リスト">連結リスト</h3>
+<ul>
+<li>ちょっと理解が難しいのでポイントだけメモ</li>
+<li>構造体のフィールドにもポインタ表現が使える</li>
+</ul>
+<pre><code>type element struct {
+  value string
+  next  *element // &amp;elm(アドレス)で受け取る
+}
+</code></pre><ul>
+<li>あと連結リストのロジックはいまいちピンときていないが重要なのはポインタの使い方</li>
+</ul>
+<pre><code>type test struct {
+  test string
+}
+
+func (t *test) echo() { // *testは*tしてアドレス参照したらtest型になるから
+  // 関数内ではアドレス参照を省略してtと書ける
+}
+
+func main() {
+  test1 := test{&quot;テスト！&quot;}
+  test.echo() // echo関数は*testをレシーバとして受け取るが、コンパイラが暗黙的に変換するので&amp;test.echo()ではなくtest.echo()と書ける
+}
+</code></pre><h2 id="今日の学び">今日の学び</h2>
+<ul>
+<li>改めてポインタ表現時の書き方を復習できた。</li>
+<li>説明時にポインタ表現と書かれており、曖昧？な説明なのでもう少し用語を明確に分けたほうが覚えやすい。。</li>
+<li>コンパイラがやることを頭で変換しながら読み書きするのは凄く脳内のメモリを使ってよく混乱する…</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20201126/1day_go_4days/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">たった1日で基本が身に付く！ Go言語 超入門@4日目</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
