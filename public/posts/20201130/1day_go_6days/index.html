@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+    
+    
+
+<title>たった1日で基本が身に付く！ Go言語 超入門@6日目 • Small Changes</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="たった1日で基本が身に付く！ Go言語 超入門@6日目"/>
+<meta name="twitter:description" content="たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社 旅行めちゃくちゃよかったです！ また行くために仕事も勉強も頑張ります。 CHAPTER 7 Go"/>
+
+<meta property="og:title" content="たった1日で基本が身に付く！ Go言語 超入門@6日目" />
+<meta property="og:description" content="たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社 旅行めちゃくちゃよかったです！ また行くために仕事も勉強も頑張ります。 CHAPTER 7 Go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/20201130/1day_go_6days/" />
+<meta property="article:published_time" content="2020-11-30T22:56:48+09:00" />
+<meta property="article:modified_time" content="2020-11-30T22:56:48+09:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">Small Changes</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://snyt45.com/img/prof-icon-01.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Small Changes</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/snyt45" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/snyt45" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 snyt45
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>たった1日で基本が身に付く！ Go言語 超入門@6日目</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2020/11/30
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><a href="https://gihyo.jp/book/2020/978-4-297-11617-0">たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社</a></p>
+<p>旅行めちゃくちゃよかったです！
+また行くために仕事も勉強も頑張ります。</p>
+<h2 id="chapter-7goプログラミングの注意事項">CHAPTER 7　Goプログラミングの注意事項</h2>
+<h3 id="go言語のnilの使う場合">Go言語のnilの使う場合</h3>
+<ul>
+<li>ほとんどの場合は以下の3通りと考えて問題ない
+<ul>
+<li>①値が代入されていない変数のポインタ表現</li>
+<li>②空のスライス</li>
+<li>error型</li>
+</ul>
+</li>
+</ul>
+<h3 id="フィールドの値を入れないとどうなるか">フィールドの値を入れないとどうなるか</h3>
+<pre><code>type person struct {
+  name string
+  age int
+  smokes bool
+  friend *person
+}
+
+myperson := person{}
+fmt.Println(myperson.name)   // &quot;&quot;
+fmt.Println(myperson.age)    // 0
+fmt.Println(myperson.bool)   // false
+fmt.Println(myperson.friend) // &lt;nil&gt;
+</code></pre><ul>
+<li>
+<p>データ型が分かっていても値が定義されていない場合は、自動的に「初期値」が入る</p>
+</li>
+<li>
+<p>文字列(string)型</p>
+<ul>
+<li>空の文字列</li>
+</ul>
+</li>
+<li>
+<p>数値型</p>
+<ul>
+<li>整数、少数など、データ型に応じた0値</li>
+</ul>
+</li>
+<li>
+<p>bool型</p>
+<ul>
+<li>false</li>
+</ul>
+</li>
+</ul>
+<h3 id="変数を宣言したままの場合">変数を宣言したままの場合</h3>
+<pre><code>var testint int
+var teststring string
+
+fmt.Println(testint)    // 0
+fmt.Println(teststring) // &quot;&quot;
+</code></pre><ul>
+<li>構造体を変数の型にした場合はどうなる?</li>
+</ul>
+<pre><code>type mynumber struct {
+  value int
+}
+
+var somenumber mynumber
+fmt.Println(somenumber) // {0}
+</code></pre><ul>
+<li>フィールドvalueに初期値0が入った構造体が自動で作成される。</li>
+</ul>
+<h3 id="配列とスライスで要素を決めない場合">配列とスライスで要素を決めない場合</h3>
+<pre><code>var somearr [5]int
+
+fmt.Println(somearr) // [0 0 0 0 0]
+</code></pre><ul>
+<li>5つの要素にすべて初期値0が与えられた配列が自動で作成される。</li>
+</ul>
+<pre><code>var somesl []int
+
+fmt.Println(somesl) // []
+</code></pre><ul>
+<li>自動で作成されているが値がnilかはわからない</li>
+</ul>
+<pre><code>var somesl []int
+
+if somesl == nil {
+  fmt.Println(&quot;空のスライスはnil&quot;) // 空のスライスはnil
+}
+</code></pre><ul>
+<li>空のスライスはnil</li>
+</ul>
+<h3 id="整数を文字列に変換するには">整数を文字列に変換するには</h3>
+<ul>
+<li>整数などの値から文字列を作り上げるには、fmt.Sprintf関数を使う</li>
+</ul>
+<pre><code>a := 9 * 9
+spf := fmt.Sprintf(&quot;9 * 9は%d&quot;, a)
+smt.Println(spf)
+</code></pre><ul>
+<li>文字列と整数は結合できない</li>
+<li>解決方法は、整数を文字列に変換すること</li>
+</ul>
+<pre><code>// strconvパッケージのインポート
+import (
+  &quot;fmt&quot;
+  &quot;strconv&quot;
+)
+
+a := 9 * 9
+astr := &quot;9の2乗も&quot; + strconv.Itoa(a)
+fmt.Println(astr)
+</code></pre><h3 id="少数を文字列に変換するには">少数を文字列に変換するには</h3>
+<pre><code>// 第1引数：出力した数値が代入された変数
+// 第2引数：出力書式。シングルクォーテーションで囲むこと
+// 第3引数：小数点以下の桁数
+// 第4引数：float32かfloat64か
+bstr := strconv.FormatFloat(b, 'f', 2, 64)
+</code></pre><h3 id="整数と少数を相互に変換">整数と少数を相互に変換</h3>
+<pre><code>// ①
+a := 5 * 2.5
+fmt.Println(a) // 12.5
+
+// ②
+b := 6
+c := b + 0.2 // エラー
+fmt.Println(c)
+</code></pre><ul>
+<li>
+<p>①ではエラーにならない</p>
+<ul>
+<li>aには少数が入る。<code>:=</code>では型を自動で判別するため少数と認識されるのでエラーにならない</li>
+</ul>
+</li>
+<li>
+<p>②ではエラーになる</p>
+<ul>
+<li>bは整数として認識される。</li>
+<li>次にb(整数)と0.2(少数)を混ぜて計算できないのでエラーになる。</li>
+</ul>
+</li>
+<li>
+<p><strong>大事な事は整数と少数を混ぜないこと</strong></p>
+</li>
+</ul>
+<pre><code>b := 6
+c := float64(b) + 0.2 // エラーにならない
+fmt.Println(c)
+</code></pre><h3 id="変数の値のデータ型を確認する">変数の値のデータ型を確認する</h3>
+<ul>
+<li><code>%T</code>にして出力する</li>
+</ul>
+<pre><code>fmt.Printf(&quot;aのデータ型は%T¥n&quot;, a)
+fmt.Printf(&quot;bのデータ型は%T¥n&quot;, b)
+fmt.Printf(&quot;cのデータ型は%T¥n&quot;, c)
+</code></pre><h3 id="結果としてエラーインスタンスをともに戻す関数">結果としてエラーインスタンスをともに戻す関数</h3>
+<ul>
+<li>Atoi(ASCII to Integer)関数の使い方</li>
+</ul>
+<pre><code>nm, err := strconv.Atoi(&quot;123&quot;)
+</code></pre><ul>
+<li>戻り値を2つ返す</li>
+<li>nm
+<ul>
+<li>変換した結果の整数</li>
+</ul>
+</li>
+<li>err
+<ul>
+<li>error型というデータ型のインスタンス</li>
+<li>正常に実行されればnilが与えられる</li>
+<li>一方エラーであれば、nmには0が代入される</li>
+</ul>
+</li>
+</ul>
+<h3 id="atoiが返すerror型インスタンス">Atoiが返すerror型インスタンス</h3>
+<ul>
+<li>Atoi関数が結果とともにerrorを返すのは、errorがnil出なかったら適切な処理をするため</li>
+</ul>
+<pre><code>nm, err := strconv.Atoi(&quot;Waht&quot;)
+fmt.Println(err.Error()) // strconv.Atoi: parsing &quot;What&quot;: invalid syntax
+</code></pre><ul>
+<li>このようにGo言語に備わったパッケージの関数の中には、処理結果とerrorを返すというものが多くある</li>
+</ul>
+<h3 id="errorの正体はインターフェイス">errorの正体は「インターフェイス」</h3>
+<ul>
+<li>errorはGo言語に標準で実装されているデータ型</li>
+<li>その正体はerrorインターフェイス</li>
+</ul>
+<pre><code>type error interface {
+  Error() string
+}
+</code></pre><h3 id="整数の細かいデータ型">整数の細かいデータ型</h3>
+<ul>
+<li>int8、int16、int32
+<ul>
+<li>メモリを無駄に使いたくないとき、あえて使うことがある</li>
+</ul>
+</li>
+<li>uint8、uint16、uint32、uint64
+<ul>
+<li>uはunsigned(符号なし)の意味で、負でないことが判明し、なるべるメモリを割り当てたいときに使用する</li>
+<li>uintと書くと、64ビットシステムではuint64が割り当てられる。</li>
+</ul>
+</li>
+<li>uintptr
+<ul>
+<li>ポインタのビット表現を保持する</li>
+</ul>
+</li>
+</ul>
+<h3 id="複素数">複素数</h3>
+<ul>
+<li>64ビットシステムでは、complex128</li>
+<li>32ビットシステムでは、complex64</li>
+</ul>
+<h3 id="文字列の解析">文字列の解析</h3>
+<ul>
+<li>Go言語では、文字列を数値に変換して解析できる。</li>
+</ul>
+<pre><code>package main
+import (
+  &quot;fmt&quot;
+)
+func main() {
+  str := &quot;internationalzation&quot;
+  strja := &quot;達磨さんが転んだ&quot;
+  bt := []byte(str) // 英数字をbyte変換(byteはuint8の別名)
+  fmt.Println(bt)
+  rn := []rune(strja) // 日本語をrune変換(runeはint32の別名)
+  fmt.Println(rn)
+}
+</code></pre><ul>
+<li>実行結果</li>
+</ul>
+<pre><code>[105 110 116 101 114 110 97 116 105 111 110 97 108 122 97 116 105 111 110]
+[36948 30952 12373 12435 12364 36578 12435 12384]
+</code></pre><ul>
+<li>数値から文字列に戻す作業</li>
+</ul>
+<pre><code>strback := &quot;&quot;
+for i := 0; i &lt; len(bt); i++ {
+  strback += string(bt[i])
+}
+strbackja := &quot;&quot;
+for i := 0; i &lt; len(rn); i++ {
+  strbackja += string(rn[i])
+}
+fmt.Println(strback)
+fmt.Println(strbackja)
+}
+</code></pre><ul>
+<li>実行結果</li>
+</ul>
+<pre><code>internationalzation
+達磨さんが転んだ
+</code></pre><h3 id="mapとrange">mapとrange</h3>
+<ul>
+<li>mapは「キー」と値の1対1対応の集合</li>
+</ul>
+<pre><code>legs := map[string]int{
+  &quot;bird&quot;:        2,
+  &quot;cat&quot;:         4,
+  &quot;grasshopper&quot;: 6,
+  &quot;octopus&quot;:     8,
+  &quot;squid&quot;:       10,
+}
+</code></pre><ul>
+<li>
+<p><code>map[キー]値</code>のように宣言</p>
+</li>
+<li>
+<p>キーと値の間はコロン「:」で区切る</p>
+</li>
+<li>
+<p>配列同様に{}で囲む</p>
+</li>
+<li>
+<p>mapの要素を順に取り出すにはrangeというキーワードで繰り返し処理を行う。</p>
+</li>
+</ul>
+<pre><code>for k, v := range legs {
+  fmt.Printf(&quot;key: %s, value: %d\n&quot;, k, v)
+}
+</code></pre><h2 id="今日の学び">今日の学び</h2>
+<ul>
+<li>実践で多く出てきそうな内容だった。</li>
+<li>駆け足でやったので早く実戦形式で使う時やハマったときに参照して覚えていきたい。</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20201127/1day_go_5days/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">たった1日で基本が身に付く！ Go言語 超入門@5日目</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
