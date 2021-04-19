@@ -1,208 +1,129 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://snyt45.com/posts/20210419/setting_a_goal/</loc>
+    <lastmod>2021-04-19T23:03:42+09:00</lastmod>
+  </url><url>
     <loc>https://snyt45.com/posts/</loc>
-    <lastmod>2020-12-06T02:09:22+09:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-04-19T23:03:42+09:00</lastmod>
+  </url><url>
     <loc>https://snyt45.com/</loc>
-    <lastmod>2020-12-06T02:09:22+09:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-04-19T23:03:42+09:00</lastmod>
+  </url><url>
     <loc>https://snyt45.com/posts/20201206/1day_go_10days/</loc>
     <lastmod>2020-12-06T02:09:22+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201203/1day_go_9days/</loc>
     <lastmod>2020-12-03T21:49:18+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201202/1day_go_8days/</loc>
     <lastmod>2020-12-02T21:33:03+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201201/1day_go_7days/</loc>
     <lastmod>2020-12-01T22:27:10+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201130/1day_go_6days/</loc>
     <lastmod>2020-11-30T22:56:48+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201127/1day_go_5days/</loc>
     <lastmod>2020-11-27T22:43:22+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201126/1day_go_4days/</loc>
     <lastmod>2020-11-26T22:43:27+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201125/1day_go_3days/</loc>
     <lastmod>2020-11-25T22:16:57+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201124/1day_go_2days/</loc>
     <lastmod>2020-11-24T22:24:57+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201122/1day_go/</loc>
     <lastmod>2020-11-22T13:09:06+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201121/docker_kubernetes_37days/</loc>
     <lastmod>2020-11-21T22:45:57+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201120/docker_kubernetes_36days/</loc>
     <lastmod>2020-11-20T23:42:39+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201119/docker_kubernetes_35days/</loc>
     <lastmod>2020-11-19T23:18:16+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201118/docker_kubernetes_34days/</loc>
     <lastmod>2020-11-18T23:44:51+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201117/docker_kubernetes_33days/</loc>
     <lastmod>2020-11-17T22:15:23+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201116/docker_kubernetes_32days/</loc>
     <lastmod>2020-11-16T21:33:44+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201116/docker_kubernetes_31days/</loc>
     <lastmod>2020-11-16T00:23:45+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201113/docker_kubernetes_30days/</loc>
     <lastmod>2020-11-13T22:20:51+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201112/docker_kubernetes_29days/</loc>
     <lastmod>2020-11-12T22:10:51+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201111/docker_kubernetes_28days/</loc>
     <lastmod>2020-11-11T22:54:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201110/docker_kubernetes_27days/</loc>
     <lastmod>2020-11-10T22:28:07+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201109/docker_kubernetes_26days/</loc>
     <lastmod>2020-11-09T22:32:14+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201108/docker_kubernetes_25days/</loc>
     <lastmod>2020-11-08T23:15:46+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201107/docker_kubernetes_24days/</loc>
     <lastmod>2020-11-07T23:19:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201107/edit_twitter_profile/</loc>
     <lastmod>2020-11-07T14:01:11+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201107/docker_kubernetes_23days/</loc>
     <lastmod>2020-11-07T01:06:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201105/docker_kubernetes_22days/</loc>
     <lastmod>2020-11-05T22:35:32+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201104/docker_kubernetes_21days/</loc>
     <lastmod>2020-11-04T22:57:51+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201103/docker_kubernetes_20days/</loc>
     <lastmod>2020-11-03T19:17:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201102/docker_kubernetes_19days/</loc>
     <lastmod>2020-11-02T00:30:50+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201031/docker_kubernetes_18days/</loc>
     <lastmod>2020-10-31T23:47:12+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201031/engineer_worries/</loc>
     <lastmod>2020-10-31T18:38:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201031/edit_twitter_profile/</loc>
     <lastmod>2020-10-31T06:30:05+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20201031/hugo_title_edit/</loc>
     <lastmod>2020-10-31T02:59:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20200706/not_only_engineers_but_important_things/</loc>
     <lastmod>2020-07-06T20:39:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20200705/computer_science_as_a_hobby/</loc>
     <lastmod>2020-07-05T13:47:35+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/posts/20200627/hugo_post_with_add_images/</loc>
     <lastmod>2020-06-27T23:36:27+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://snyt45.com/tags/</loc>
   </url>
-  
 </urlset>
