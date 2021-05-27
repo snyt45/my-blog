@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 19 Apr 2021 23:03:42 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 May 2021 18:10:14 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vuetifyの導入&amp;動作確認</title>
+      <link>https://snyt45.com/posts/20210527/vuetify-install/</link>
+      <pubDate>Thu, 27 May 2021 18:10:14 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210527/vuetify-install/</guid>
+      <description>Rails + Vue.jsのプロジェクトを作ってVue.jsのキャッチアップ中です。 このプロジェクトにVuetifyを導入していきます。 プロジェクト構</description>
+    </item>
+    
     <item>
       <title>2021年5月 目標設定</title>
       <link>https://snyt45.com/posts/20210419/setting_a_goal/</link>
