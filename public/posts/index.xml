@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 27 May 2021 18:10:14 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 May 2021 14:48:24 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5月の振返り</title>
+      <link>https://snyt45.com/posts/20210528/furikaeri/</link>
+      <pubDate>Fri, 28 May 2021 14:48:24 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210528/furikaeri/</guid>
+      <description>今後はゆるく毎月ごとに振返り記事を書いていこうかなと思っています。 というのも今月はいろいろあり再度テックブログの更新も頑張ろうかと思った次第</description>
+    </item>
+    
     <item>
       <title>Vuetifyの導入&amp;動作確認</title>
       <link>https://snyt45.com/posts/20210527/vuetify-install/</link>
