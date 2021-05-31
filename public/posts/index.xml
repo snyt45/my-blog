@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 May 2021 10:23:00 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 10:38:45 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCODE上でVeturの警告が出ていたので解決した</title>
+      <link>https://snyt45.com/posts/20210531/vscode-vetur/</link>
+      <pubDate>Mon, 31 May 2021 10:38:45 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210531/vscode-vetur/</guid>
+      <description>この記事と同じプロジェクトのディレクトリ構成の時に次のVeturの警告が出っぱなしだったので解決したという話。 エラー Vetur can&#39;t find \`package.json\` in /workspaces/my-portal. Vetur can&#39;t find \`tsconfig.json\` or \`jsconfig.json\`</description>
+    </item>
+    
     <item>
       <title>VSCODE上でESLintの問題が検知されない場合にESLintを有効にする方法</title>
       <link>https://snyt45.com/posts/20210531/vscode-eslint/</link>
