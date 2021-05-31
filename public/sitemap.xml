@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snyt45.com/posts/20210528/furikaeri/</loc>
-    <lastmod>2021-05-28T14:48:24+09:00</lastmod>
-  </url><url>
     <loc>https://snyt45.com/posts/</loc>
-    <lastmod>2021-05-28T14:48:24+09:00</lastmod>
+    <lastmod>2021-05-31T10:23:00+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/</loc>
+    <lastmod>2021-05-31T10:23:00+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210531/vscode-eslint/</loc>
+    <lastmod>2021-05-31T10:23:00+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210530/sass-error/</loc>
+    <lastmod>2021-05-30T14:33:50+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210530/vscode-prettier/</loc>
+    <lastmod>2021-05-30T14:14:48+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210528/furikaeri/</loc>
     <lastmod>2021-05-28T14:48:24+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/posts/20210527/vuetify-install/</loc>

@@ -6,7 +6,34 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 May 2021 14:48:24 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 10:23:00 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCODE上でESLintの問題が検知されない場合にESLintを有効にする方法</title>
+      <link>https://snyt45.com/posts/20210531/vscode-eslint/</link>
+      <pubDate>Mon, 31 May 2021 10:23:00 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210531/vscode-eslint/</guid>
+      <description>プロジェクトのディレクトリ構成 . ├── README.md ├── api // Rails Api ├── doc ├── docker-compose.yml ├── front // Vue.js | └── package.json └── vetur.config.js api,frontでディレクトリを分けて</description>
+    </item>
+    
+    <item>
+      <title>DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.</title>
+      <link>https://snyt45.com/posts/20210530/sass-error/</link>
+      <pubDate>Sun, 30 May 2021 14:33:50 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210530/sass-error/</guid>
+      <description>Rails + Vue.js + TypeScriptの個人プロジェクトにVuetifyを導入しました。 開発環境はDockerを使っています。 Vuetifyを導入した</description>
+    </item>
+    
+    <item>
+      <title>VSCODEで保存時にprettierで自動修正を行う方法</title>
+      <link>https://snyt45.com/posts/20210530/vscode-prettier/</link>
+      <pubDate>Sun, 30 May 2021 14:14:48 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210530/vscode-prettier/</guid>
+      <description>VSCODEの拡張機能Prettier - Code formatterをインストールします。 今回はワークスペース毎に設定を反映させます。 VSCODEの</description>
+    </item>
+    
     <item>
       <title>5月の振返り</title>
       <link>https://snyt45.com/posts/20210528/furikaeri/</link>
