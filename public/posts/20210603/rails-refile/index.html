@@ -482,6 +482,19 @@ end
 <p>再度bookのshowページにアクセスすると表示されました！</p>
 <p><img src="Snipaste_2021-06-05_18-10-57.png" alt="show画面"></p>
 <p>一通り、画像のアップロードと表示をrefile gemを使ってやってみました。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>ざっくりやっていることが理解できた。</p>
+<ul>
+<li>gem入れる</li>
+<li><code>{アタッチメント名}_id</code>カラムをモデルに追加する
+<ul>
+<li>ほかにも<code>{アタッチメント名}_filename</code>,<code>{アタッチメント名}_size</code>,<code>{アタッチメント名}_content_type</code>などのメタデータのカラムを追加することもできる。</li>
+</ul>
+</li>
+<li>モデルに<code>attachment :{アタッチメント名}</code>する</li>
+<li>アップロードには<code>attachment_field</code>ヘルパーを使う</li>
+<li>表示には<code>attachment_image_tag</code>を使う</li>
+</ul>
 
   </div>
   
