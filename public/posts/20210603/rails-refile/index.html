@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.83.1" />
+
+    
+    
+    
+
+<title>Railsのrefile gemを触ってみる • Small Changes</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Railsのrefile gemを触ってみる"/>
+<meta name="twitter:description" content="プロジェクトで使っている箇所があったので試しに触ってみようという記事です。 Rails5 &#43; MySQL &#43; DockerでRails部分が動けばいいので下記を参考に進"/>
+
+<meta property="og:title" content="Railsのrefile gemを触ってみる" />
+<meta property="og:description" content="プロジェクトで使っている箇所があったので試しに触ってみようという記事です。 Rails5 &#43; MySQL &#43; DockerでRails部分が動けばいいので下記を参考に進" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://snyt45.com/posts/20210603/rails-refile/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-03T22:11:05&#43;09:00" />
+<meta property="article:modified_time" content="2021-06-03T22:11:05&#43;09:00" /><meta property="og:site_name" content="Title" />
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://snyt45.com/">Small Changes</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://snyt45.com/img/prof-icon-01.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Small Changes</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/snyt45" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="https://github.com/snyt45" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 - 2021 snyt45
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Railsのrefile gemを触ってみる</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2021/06/03
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min read
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>プロジェクトで使っている箇所があったので試しに触ってみようという記事です。</p>
+<p>Rails5 + MySQL + DockerでRails部分が動けばいいので下記を参考に進めました。</p>
+<p><a href="https://qiita.com/azul915/items/5b7063cbc80192343fc0">丁寧すぎるDocker-composeによるrails5 + MySQL on Dockerの環境構築(Docker for Mac) - Qiita</a></p>
+<h2 id="プロジェクトの作成">プロジェクトの作成</h2>
+<p>まずはプロジェクトの作成を行います。</p>
+<pre><code>mkdir -p ~/tmp/sample-rails
+cd ~/tmp/sample-rails
+</code></pre><h2 id="dockerfileの作成">Dockerfileの作成</h2>
+<pre><code>vi Dockerfile
+</code></pre><p>Dockerfileの中身。</p>
+<p>imagemagickはrefile用。</p>
+<pre><code>FROM ruby:2.6.5
+
+RUN apt-get update -qq &amp;&amp; \
+    apt-get install -y build-essential \
+                       libpq-dev \
+                       nodejs \
+                       imagemagick
+
+RUN mkdir /app
+ENV APP_ROOT /app
+WORKDIR $APP_ROOT
+COPY ./Gemfile $APP_ROOT/Gemfile
+COPY ./Gemfile.lock $APP_ROOT/Gemfile.lock
+RUN bundle install
+COPY . $APP_ROOT
+</code></pre><h2 id="gemfileを作成編集">Gemfileを作成、編集</h2>
+<pre><code>vi Gemfile
+</code></pre><p>Gemfileの中身。</p>
+<pre><code>source 'https://rubygems.org'
+gem 'rails', '5.2.6'
+</code></pre><h2 id="空のgemfilelockを作成">空のGemfile.lockを作成</h2>
+<pre><code>touch Gemfile.lock
+</code></pre><h2 id="docker-composeymlを作成編集">docker-compose.ymlを作成、編集</h2>
+<pre><code>vi docker-compose.yml
+</code></pre><p>docker-compose.ymlの中身。<br>
+dbのデータとbundleのデータはvolumesで永続化しています。</p>
+<pre><code>version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes: 
+      - db_data:/var/lib/mysql # &lt;= dbデータを永続化
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - &quot;3306:3306&quot;
+  web:
+    build: .
+    command: rails s -p 3000 -b '0.0.0.0'
+    stdin_open: true # &lt;= Dockerでpryを止めるのに必要
+    tty: true # &lt;= Dockerでpryを止めるのに必要
+    volumes:
+      - .:/app
+      - bundle_data:/usr/local/bundle # &lt;= gemデータを永続化
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+    ports:
+      - &quot;3000:3000&quot;
+    links:
+      - db
+
+volumes:
+  db_data:
+  bundle_data:
+</code></pre><h2 id="rails-newを実行する">rails newを実行する</h2>
+<pre><code>docker-compose run -u 1000:1000 web rails new . --force --database=mysql --skip-bundle
+</code></pre><p>webコンテナ上でrails new ~ が走る。<br>
+docker-compose.ymlでvolumesでコンテナのappフォルダをホストのカレントディレクトリに共有するのでrails newで作られたファイル等がホスト側にできる。</p>
+<pre><code>.
+├── Dockerfile
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
+├── app
+├── bin
+├── config
+├── config.ru
+├── db
+├── docker-compose.yml
+├── lib
+├── log
+├── package.json
+├── public
+├── storage
+├── test
+├── tmp
+└── vendor
+</code></pre><h2 id="docker-composeymlとrails-newコマンド解説">docker-compose.ymlとrails newコマンド解説</h2>
+<p>私の環境はWindows10 + WSL2 + DockerでWSL上でDockerコンテナを動かしています。</p>
+<p>WSL上でDockerコンテナを実行しDockerコンテナで作成されたファイルのパーミッションはWSLからみるとrootになっており、編集ができない。</p>
+<p>そのため、下記を参考にした。<br>
+<a href="https://qiita.com/yohm/items/047b2e68d008ebb0f001#%E3%81%86%E3%81%BE%E3%81%8F%E3%81%84%E3%81%8F%E6%96%B9%E6%B3%952--etcpasswd%E3%81%A8etcgroup%E3%82%92%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AB%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%88%E3%81%99%E3%82%8B">dockerでvolumeをマウントしたときのファイルのowner問題 - Qiita</a></p>
+<p>記事だとdocker run時にオプションでいろいろ渡している。<br>
+今回はdocker-composeコマンドを使う。<br>
+docker-compose runコマンドには-uオプションはあるが-vオプションはない。<br>
+<a href="https://docs.docker.jp/compose/reference/run.html">run — Docker-docs-ja 19.03 ドキュメント</a></p>
+<p>そのため、-vオプションの内容はdocker-compose.ymlに記載している。<br>
+/etc/groupと/etc/passwdを読み取り権限でコンテナに共有している。</p>
+<pre><code>    volumes:
+      - .:/app
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+</code></pre><p>そして、docker-composeコマンドは-u 1000:1000でWSLと同じ実行権限を指定している。<br>
+このおかげでコンテナ上での実行ユーザーは1000:1000になり、WSLのユーザーと同じになるため、パーミッションエラーは出ずに編集することができた！</p>
+<p>これは私の中では結構大きな発見。</p>
+<p>また、この実行ユーザーを指定するのは実際に自分が触るファイルが生成されるときだけでとりあえず大丈夫そうだ。</p>
+<p>あとから権限を変更する場合は下記コマンドを実行すれば問題ない。</p>
+<pre><code>sudo chown -R $(whoami) .
+</code></pre><h2 id="databaseymlの編集">database.ymlの編集</h2>
+<pre><code>vi config/database.yml
+</code></pre><pre><code>default: &amp;default
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: password
+  host: db
+</code></pre><h2 id="コンテナ起動">コンテナ起動</h2>
+<pre><code>docker-compose build
+docker-compose up
+</code></pre><p>build時にエラー</p>
+<blockquote>
+<p>#11 2.607 Your Ruby version is 2.6.5, but your Gemfile specified 2.5.3</p>
+</blockquote>
+<p>GemfileのRubyのバージョンを2.6.5にする。</p>
+<h2 id="db作成">DB作成</h2>
+<pre><code>docker-compose run web rails db:create
+</code></pre><h2 id="refile-gemの導入">refile gemの導入</h2>
+<p><a href="https://note.com/maron_ta/n/n14e40e64138e">refileの使い方徹底解説｜まろん｜note</a>
+<a href="https://note.com/maron_ta/n/nf0f1a079fe85">refileの使い方徹底解説②｜まろん｜note</a></p>
+<p><code>Gemfile</code>に追加</p>
+<pre><code>gem &quot;refile&quot;, require: &quot;refile/rails&quot;, github: 'manfe/refile'
+gem &quot;refile-mini_magick&quot;
+
+# developmentの中に記載。動作確認用
+gem 'pry-rails'
+gem 'pry-byebug'
+</code></pre><p>bundle installする。</p>
+<pre><code>docker-compose run web bundle install
+</code></pre><p>scaffoldを使って一気に作成。</p>
+<pre><code>docker-compose run -u 1000:1000 web rails g scaffold book
+
+Creating sample-rails_web_run ... done
+Rails Error: Unable to access log file. Please ensure that /app/log/development.log exists and is writable (ie, make it writable for user and group: chmod 0664 /app/log/development.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
+      invoke  active_record
+      create    db/migrate/20210605023809_create_books.rb
+      create    app/models/book.rb
+      invoke    test_unit
+      create      test/models/book_test.rb
+      create      test/fixtures/books.yml
+      invoke  resource_route
+       route    resources :books
+      invoke  scaffold_controller
+      create    app/controllers/books_controller.rb
+      invoke    erb
+      create      app/views/books
+      create      app/views/books/index.html.erb
+      create      app/views/books/edit.html.erb
+      create      app/views/books/show.html.erb
+      create      app/views/books/new.html.erb
+      create      app/views/books/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/books_controller_test.rb
+      create      test/system/books_test.rb
+      invoke    helper
+      create      app/helpers/books_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/books/index.json.jbuilder
+      create      app/views/books/show.json.jbuilder
+      create      app/views/books/_book.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/books.coffee
+      invoke    scss
+      create      app/assets/stylesheets/books.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss
+</code></pre><p>最低限、image_idカラムがあればよいがメタデータも保存できるようなので、image_filename、image_size、image_content_typeも追加している。</p>
+<pre><code>class CreateBooks &lt; ActiveRecord::Migration[5.2]
+  def change
+    create_table :books do |t|
+      t.string :title
+      t.string :image_id
+      t.string :image_filename
+      t.string :image_size
+      t.string :image_content_type
+
+      t.timestamps
+    end
+  end
+end
+</code></pre><p>マイグレーションする。</p>
+<pre><code>docker-compose run web rails db:migrate
+</code></pre><p>Bookモデルにattachmentメソッドも追加する。<br>
+今回はimage_idというカラムを追加したので、_idを取ったimageにする。</p>
+<pre><code>class Book &lt; ApplicationRecord
+  attachment :image
+end
+</code></pre><p>タイトルと画像を保存できるようにします。<br>
+画像をアップロードするためのヘルパー<code>attachment_field</code>をrefileが用意しているのでそれを使います。</p>
+<p><code>app/views/books/new.html.erb</code></p>
+<pre><code>&lt;h1&gt;New Book&lt;/h1&gt;
+
+&lt;%= form_with(model: @book, local: true) do |f| %&gt;
+ &lt;%= f.text_field :title %&gt;
+ &lt;%= f.attachment_field :image %&gt;
+ &lt;div class=&quot;actions&quot;&gt;
+   &lt;%= f.submit %&gt;
+ &lt;/div&gt;
+&lt;% end %&gt;
+
+&lt;%= link_to 'Back', books_path %&gt;
+</code></pre><p>こんな感じの画面になります。</p>
+<p><img src="Snipaste_2021-06-05_17-44-34.png" alt="作成画面"></p>
+<p>実際に画像をアップロードできるようにコントローラーのbook_params部分を修正します。</p>
+<p><code>app/controllers/books_controller.rb</code></p>
+<pre><code>def book_params
+  params.require(:book).permit(:title, :image)
+end
+</code></pre><p>タイトルと画像を選択して、Create Bookします。</p>
+<p><img src="Snipaste_2021-06-05_17-51-19.png" alt="作成画面2"></p>
+<p>下記を見るとわかりますが、newしたタイミングではimage_idはnilです。<br>
+それ以外のメタデータのimage_filename、image_size、image_content_typeは自動的に値が入っています。</p>
+<p>saveしたタイミングでimage_idが自動的に入るようです。</p>
+<p>デフォルトだとファイルはtmp/uploads/storeに保存されていました。<br>
+ファイル名とimage_idが同じことが確認できます。</p>
+<p><img src="Snipaste_2021-06-05_17-58-43.png" alt="ファイル保存場所"></p>
+<pre><code>From: /app/app/controllers/books_controller.rb:25 BooksController#create:
+
+    23: def create
+    24:   binding.pry
+ =&gt; 25:   @book = Book.new(book_params)
+    26:
+    27:   respond_to do |format|
+    28:     if @book.save
+    29:       format.html { redirect_to @book, notice: &quot;Book was successfully created.&quot; }
+    30:       format.json { render :show, status: :created, location: @book }
+    31:     else
+    32:       format.html { render :new, status: :unprocessable_entity }
+    33:       format.json { render json: @book.errors, status: :unprocessable_entity }
+    34:     end
+    35:   end
+    36: end
+
+[1] pry(#&lt;BooksController&gt;)&gt; @book = Book.new(book_params)
+=&gt; #&lt;Book:0x00007f380028ccd0
+ id: nil,
+ title: &quot;Webを支える技術&quot;,
+ image_id: nil,
+ image_filename: &quot;images.jpg&quot;,
+ image_size: &quot;8704&quot;,
+ image_content_type: &quot;image/jpeg&quot;,
+ created_at: nil,
+ updated_at: nil&gt;
+[2] pry(#&lt;BooksController&gt;)&gt; @book.save
+   (0.2ms)  BEGIN
+  ↳ (pry):13
+  Book Create (0.3ms)  INSERT INTO `books` (`title`, `image_id`, `image_filename`, `image_size`, `image_content_type`, `created_at`, `updated_at`) VALUES ('Webを支える技術', 'c7a3726e49e1f1443f7e6e180ca45ded1074b02c632d753026f149145751', 'images.jpg', '8704', 'image/jpeg', '2021-06-05 08:54:13', '2021-06-05 08:54:13')
+  ↳ (pry):13
+   (3.0ms)  COMMIT
+  ↳ (pry):13
+=&gt; true
+[3] pry(#&lt;BooksController&gt;)&gt; @book
+=&gt; #&lt;Book:0x00007f380028ccd0
+ id: 2,
+ title: &quot;Webを支える技術&quot;,
+ image_id: &quot;c7a3726e49e1f1443f7e6e180ca45ded1074b02c632d753026f149145751&quot;,
+ image_filename: &quot;images.jpg&quot;,
+ image_size: &quot;8704&quot;,
+ image_content_type: &quot;image/jpeg&quot;,
+ created_at: Sat, 05 Jun 2021 08:54:13 UTC +00:00,
+ updated_at: Sat, 05 Jun 2021 08:54:13 UTC +00:00&gt;
+</code></pre><p>今度はViewに保存した画像を表示します。</p>
+<p><code>app/views/books/show.html.erb</code></p>
+<pre><code>&lt;p id=&quot;notice&quot;&gt;&lt;%= notice %&gt;&lt;/p&gt;
+
+&lt;%= attachment_image_tag(@book, :image, :fill, 300, 300) %&gt;
+
+&lt;%= link_to 'Edit', edit_book_path(@book) %&gt; |
+&lt;%= link_to 'Back', books_path %&gt;
+</code></pre><p>bookのshowページにアクセスすると下記エラーが出ました。</p>
+<p><img src="Snipaste_2021-06-05_18-06-53.png" alt="エラー画面"></p>
+<blockquote>
+<p>Refileの設定に以下を追加し、アプリケーションを再起動してください。</p>
+</blockquote>
+<p>とありますので設定を行い、再起動します。</p>
+<p><code>config/initializers/application_controller_renderer.rb</code>に設定を行います。</p>
+<p>再度bookのshowページにアクセスすると表示されました！</p>
+<p><img src="Snipaste_2021-06-05_18-10-57.png" alt="show画面"></p>
+<p>一通り、画像のアップロードと表示をrefile gemを使ってやってみました。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/20210602/postman-session-sync/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Postmanでログイン認証</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

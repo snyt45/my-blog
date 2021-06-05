@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 02 Jun 2021 22:05:32 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 22:11:05 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Railsのrefile gemを触ってみる</title>
+      <link>https://snyt45.com/posts/20210603/rails-refile/</link>
+      <pubDate>Thu, 03 Jun 2021 22:11:05 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210603/rails-refile/</guid>
+      <description>プロジェクトで使っている箇所があったので試しに触ってみようという記事です。 Rails5 + MySQL + DockerでRails部分が動けばいいので下記を参考に進</description>
+    </item>
+    
     <item>
       <title>Postmanでログイン認証</title>
       <link>https://snyt45.com/posts/20210602/postman-session-sync/</link>
