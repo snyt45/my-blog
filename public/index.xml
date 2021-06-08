@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>RailsのGemをいろいろ調べる</title>
+      <link>https://snyt45.com/posts/20210601/rails-gem-survey/</link>
+      <pubDate>Tue, 01 Jun 2021 23:00:36 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210601/rails-gem-survey/</guid>
+      <description>新しいプロジェクトにジョインしたのですが、知らないGemがたくさんあったので簡単にどんなGemがあるか知っておこうという話です。 とりあえず網</description>
+    </item>
+    
+    <item>
       <title>docker-compose up -dではなくdocker-compose upを使おう</title>
       <link>https://snyt45.com/posts/20210601/docker-spring-error/</link>
       <pubDate>Tue, 01 Jun 2021 22:32:56 +0900</pubDate>

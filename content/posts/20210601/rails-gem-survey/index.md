@@ -1,10 +1,14 @@
 ---
 title: "RailsのGemをいろいろ調べる"
 date: 2021-06-01T23:00:36+09:00
-draft: true
+draft: false
 ---
 
 新しいプロジェクトにジョインしたのですが、知らないGemがたくさんあったので簡単にどんなGemがあるか知っておこうという話です。
+
+とりあえず網羅することを優先したのでどんなことをするgemか概要だけを調べました。
+
+よくわからないのもたくさんありました。
 
 ```
 # データの状態を簡単に管理する
@@ -49,25 +53,60 @@ gem 'caxlsx'
 # caxlsxのテンプレートを提供
 gem 'caxlsx_rails'
 
-
+# テストカバレッジ
 gem 'codecov'
+
+# CoffeeScriptを使用できるようになる
 gem 'coffee-rails'
+
+# 合計値をキャッシュする
 gem 'counter_culture'
+
+# Datadogを使う
 gem 'ddtrace'
+
+# OAuth2による認証機能をアプリに追加する
 gem 'doorkeeper'
+
+# doorkeeper gemの翻訳
 gem 'doorkeeper-i18n'
+
+# ログイン認証
 gem 'devise'
+
+# devise gemの翻訳
 gem 'devise-i18n'
+
+# 2段階認証
 gem 'devise-two-factor'
+
+# 招待機能
 gem 'devise_invitable'
+
+# SAML認証
 gem 'devise_saml_authenticatable'
+
+# enumをさらに便利に
 gem 'enumerize'
+
+# 名前、住所、電話番号などの偽データ生成
 gem 'faker'
+
+# Herokuの環境変数管理
 gem 'figaro'
+
+# boolean型カラムを一つのカラムで管理
 gem 'flag_shih_tzu'
+
+# Rubyでクラウドサービスを使いやすくするためのGem
 gem 'fog-aws'
+
+# URLにidを使わず独自のものを使う
 gem 'friendly_id'
+
+# カレンダー機能
 gem 'fullcalendar-rails'
+
 gem 'gimei'
 gem 'globalize'
 gem 'graphiql-rails'
