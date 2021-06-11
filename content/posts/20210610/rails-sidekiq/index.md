@@ -407,7 +407,11 @@ root@d0444689a353:/data# redis-cli
 ## 参考にした記事など
 
 [docker\-composeでmysql\+redis\+sidekiqなrails環境を作る \- Qiita](https://qiita.com/t-taira/items/dc1714daaa48a051f46a)
+
 [sinatraとsidekiqを組み合わせて、簡単なWeb APIを作ってみた \- tkak's tech blog](https://tkak.hatenablog.com/entry/2016/01/03/100603)
+
 [Sidekiqの導入からECSデプロイまで](https://zenn.dev/kos31de/articles/3f3dd49fa22d99)
+
 [Quickstart: Compose and Rails \| Docker Documentation](https://docs.docker.com/samples/rails/)
+
 [sidekiqの使い方 \- Qiita](https://qiita.com/nysalor/items/94ecd53c2141d1c27d1f)
