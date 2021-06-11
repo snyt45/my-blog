@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snyt45.com/posts/</loc>
-    <lastmod>2021-06-03T22:11:05+09:00</lastmod>
+    <loc>https://snyt45.com/posts/20210610/rails-sidekiq/</loc>
+    <lastmod>2021-06-10T22:07:25+09:00</lastmod>
   </url><url>
-    <loc>https://snyt45.com/posts/20210603/rails-refile/</loc>
-    <lastmod>2021-06-03T22:11:05+09:00</lastmod>
+    <loc>https://snyt45.com/posts/</loc>
+    <lastmod>2021-06-10T22:07:25+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/</loc>
+    <lastmod>2021-06-10T22:07:25+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210603/rails-refile/</loc>
     <lastmod>2021-06-03T22:11:05+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/posts/20210602/postman-session-sync/</loc>
