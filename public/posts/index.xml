@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 10 Jun 2021 22:07:25 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jun 2021 09:52:21 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Obsidianを快適に使うために1か月で行った設定など</title>
+      <link>https://snyt45.com/posts/20210612/obsidian-1month-settings/</link>
+      <pubDate>Sat, 12 Jun 2021 09:52:21 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210612/obsidian-1month-settings/</guid>
+      <description>Obsidianはノートアプリです。 次のような特長があります。 ほかにもできることは多いノートアプリなのでもし気になった人は公式サイトを見てみ</description>
+    </item>
+    
     <item>
       <title>docker-composeでRails&#43;PostgreSQL&#43;Redis&#43;Sidekiq環境を作る</title>
       <link>https://snyt45.com/posts/20210610/rails-sidekiq/</link>
