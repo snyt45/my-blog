@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Jul 2021 10:49:17 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 18:13:43 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>新しいプロジェクトでとりあえずER図を出力したいときにSchemaspyが便利だった話</title>
+      <link>https://snyt45.com/posts/20210703/schemaspy/</link>
+      <pubDate>Sat, 03 Jul 2021 18:13:43 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210703/schemaspy/</guid>
+      <description>新しいプロジェクトはDocker + Rails + PostgreSQLで開発しており、 「rails er図」で調べると大体rails-ERDが候補で上がっ</description>
+    </item>
+    
     <item>
       <title>2021年6月の振返り</title>
       <link>https://snyt45.com/posts/20210703/furikaeri/</link>
