@@ -31,3 +31,8 @@ HUGO_ENABLEGITINFO = "true"
 
 [[plugins]]
   package = "netlify-plugin-visual-diff"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
