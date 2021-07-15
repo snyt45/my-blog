@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Jul 2021 18:13:43 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 19:30:39 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3回も挫折した私がTaskChute Cloud(タスクシュートクラウド)に再入門した話</title>
+      <link>https://snyt45.com/posts/20210715/taskchute-cloud/</link>
+      <pubDate>Thu, 15 Jul 2021 19:30:39 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210715/taskchute-cloud/</guid>
+      <description>実は3回も挫折していた 実は以前はGTDといったタスク管理に熱心でいろんな記事を読んでは試してた時期がありました。 TaskChute Cloud(タスクシュート</description>
+    </item>
+    
     <item>
       <title>新しいプロジェクトでとりあえずER図を出力したいときにSchemaspyが便利だった話</title>
       <link>https://snyt45.com/posts/20210703/schemaspy/</link>
