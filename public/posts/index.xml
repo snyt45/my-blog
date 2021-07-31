@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 31 Jul 2021 14:19:13 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Jul 2021 17:08:54 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rails db:migrateでスキーマの順番が変わる問題でやったこと</title>
+      <link>https://snyt45.com/posts/20210731/rails_schema_order/</link>
+      <pubDate>Sat, 31 Jul 2021 17:08:54 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210731/rails_schema_order/</guid>
+      <description>rails db:migrateを行うと、schema.rbのカラム順が変わる問題が発生したときにやったことのメモです。 DBはPostgreSQLを使</description>
+    </item>
+    
     <item>
       <title>2021年7月の振返り</title>
       <link>https://snyt45.com/posts/20210731/furikaeri/</link>

@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snyt45.com/posts/20210731/furikaeri/</loc>
-    <lastmod>2021-07-31T14:19:13+09:00</lastmod>
-  </url><url>
     <loc>https://snyt45.com/posts/</loc>
-    <lastmod>2021-07-31T14:19:13+09:00</lastmod>
+    <lastmod>2021-07-31T17:08:54+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210731/rails_schema_order/</loc>
+    <lastmod>2021-07-31T17:08:54+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/</loc>
+    <lastmod>2021-07-31T17:08:54+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20210731/furikaeri/</loc>
     <lastmod>2021-07-31T14:19:13+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/posts/20210715/taskchute-cloud/</loc>
