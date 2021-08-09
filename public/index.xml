@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 06 Aug 2021 23:08:40 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 22:04:26 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Terminalで起動時のタブの色とタブ名を設定で変える方法</title>
+      <link>https://snyt45.com/posts/20210809/windows-terminal-change-color/</link>
+      <pubDate>Mon, 09 Aug 2021 22:04:26 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210809/windows-terminal-change-color/</guid>
+      <description>変更後のWindows Terminal 最終的にはこのような状態を目指します。 最終的なWindows Terminalの設定 settigns.json &amp;quot;profiles&amp;quot;: { &amp;quot;defaults&amp;quot;: {}, &amp;quot;list&amp;quot;: [ { &amp;quot;background&amp;quot;: &amp;quot;#300030&amp;quot;, &amp;quot;guid&amp;quot;: &amp;quot;{a32514ec-a5a8-556e-a6a1-a1d48b6f0d84}&amp;quot;, &amp;quot;hidden&amp;quot;: false, &amp;quot;name&amp;quot;: &amp;quot;Ubuntu-20.04_dev&amp;quot;, &amp;quot;source&amp;quot;:</description>
+    </item>
+    
     <item>
       <title>【Windows10&#43;WSL2&#43;Docker】ローカル環境を汚さずに使い捨ての開発環境を手に入れる</title>
       <link>https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/</link>
