@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 Aug 2021 22:04:26 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Aug 2021 17:05:40 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スタートアップ企業でタスク管理ツールClickUpを入れてみたら凄かった</title>
+      <link>https://snyt45.com/posts/20210811/startup-clickup/</link>
+      <pubDate>Wed, 11 Aug 2021 17:05:40 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210811/startup-clickup/</guid>
+      <description>diddyworksのエンジニアをやっています。 最近、diddyworksのエンジニアチームで新しく「コツコツ運動」というものをやっています</description>
+    </item>
+    
     <item>
       <title>Windows Terminalで起動時のタブの色とタブ名を設定で変える方法</title>
       <link>https://snyt45.com/posts/20210809/windows-terminal-change-color/</link>
