@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 11 Aug 2021 17:05:40 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 17:44:55 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WSL2にインポートしたLinuxディストリビューションに追加したユーザーでsudoコマンドが使えない</title>
+      <link>https://snyt45.com/posts/20210813/wsl2-import-linux-distro-sudo/</link>
+      <pubDate>Fri, 13 Aug 2021 17:44:55 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210813/wsl2-import-linux-distro-sudo/</guid>
+      <description>前回、WSL2にLinuxディストリビューションをインポートして使い捨ての開発環境を手に入れようという記事を書きました。 そのあと、Lunar</description>
+    </item>
+    
     <item>
       <title>スタートアップ企業でタスク管理ツールClickUpを入れてみたら凄かった</title>
       <link>https://snyt45.com/posts/20210811/startup-clickup/</link>
