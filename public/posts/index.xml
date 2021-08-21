@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 13 Aug 2021 17:44:55 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 19:46:06 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>パーフェクトRuby on Railsで何度もrails newできる環境をDockerで作る</title>
+      <link>https://snyt45.com/posts/20210821/perfect-rails-docker/</link>
+      <pubDate>Sat, 21 Aug 2021 19:46:06 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210821/perfect-rails-docker/</guid>
+      <description>モチベーション パーフェクトRuby on Railsを1～3章まで進めてみたのですが、とにかくrails newの頻度が多いです。 ローカルを汚したく</description>
+    </item>
+    
     <item>
       <title>WSL2にインポートしたLinuxディストリビューションに追加したユーザーでsudoコマンドが使えない</title>
       <link>https://snyt45.com/posts/20210813/wsl2-import-linux-distro-sudo/</link>

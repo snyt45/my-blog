@@ -363,15 +363,16 @@ apt-get install vim
 </code></pre><ol start="3">
 <li>ユーザーを作成します。</li>
 </ol>
-<pre><code>adduser [ユーザー名]
+<pre><code>adduser ユーザー名
 </code></pre><ol start="4">
 <li>3で作成したユーザーをログイン時のデフォルトユーザーに指定します。</li>
 </ol>
+<p><strong>設定を反映するには、一度wslを再起動(wsl -t [ディストリビューション名])する必要があります。</strong></p>
 <pre><code>vi /etc/wsl.conf
 
 # 下記を追加
 [user]
-default=[ユーザー名]
+default=ユーザー名
 </code></pre><ol start="5">
 <li>Windows Terminalで追加したUbuntuを開いた際に開始ディレクトリを設定します。</li>
 </ol>
@@ -381,7 +382,7 @@ default=[ユーザー名]
       &quot;hidden&quot;: false,
       &quot;name&quot;: &quot;Ubuntu-20.04_dev&quot;,
       &quot;source&quot;: &quot;Windows.Terminal.Wsl&quot;,
-      &quot;startingDirectory&quot;: &quot;//wsl$/Ubuntu-20.04_dev/home/[ユーザー名]&quot;  // 追加
+      &quot;startingDirectory&quot;: &quot;//wsl$/Ubuntu-20.04_dev/home/ユーザー名&quot;  // 追加
   }
 </code></pre><ol start="6">
 <li>Windows Terminalを再起動してUbuntuを開く</li>
