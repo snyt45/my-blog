@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Aug 2021 19:46:06 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Sep 2021 13:55:28 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021年8月の振返り</title>
+      <link>https://snyt45.com/posts/20210905/furikaeri/</link>
+      <pubDate>Sun, 05 Sep 2021 13:55:28 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210905/furikaeri/</guid>
+      <description>今月からの振返りは気になったトピックだけ振返っていこうと思います！ トピックごとの振返り 仕事 自社 UXワークショップ 着々と新サービスに向けて、事</description>
+    </item>
+    
     <item>
       <title>パーフェクトRuby on Railsで何度もrails newできる環境をDockerで作る</title>
       <link>https://snyt45.com/posts/20210821/perfect-rails-docker/</link>
