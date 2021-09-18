@@ -109,7 +109,7 @@ WindowsにはWindows Terminalがありますので、インストールしてお
 
 これが今までの私の環境でした。  
 
-詳しい話は[Windows10\+WSL2で開発するメリット](http://localhost:1313/posts/20210801/windows_wsl2_development/)の記事に書きました。  
+詳しい話は[Windows10\+WSL2で開発するメリット](https://snyt45.com/posts/20210801/windows_wsl2_development/)の記事に書きました。  
 
 ### WSL2とLinuxディストリビューションの問題点
 これだけでも開発環境はLinuxディストリビューションに構築すれば使い捨てできる完了の出来上がりなのですが、1つ問題がありました。  
