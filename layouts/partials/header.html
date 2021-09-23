@@ -17,4 +17,8 @@
     {{ if not .Site.IsServer }}
       {{ partial "google/analytics" . }}
     {{ end }}
+    <!-- asciinema -->
+    {{ if .Params.asciinema }}
+        <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/asciinema-player.css" />
+    {{ end }}
 </head>
