@@ -48,5 +48,9 @@ https://snyt45.com/posts/20200627/hugo_post_with_add_images/
 ### ツイートの埋め込み
 参考：https://foresuke.com/post/hugo_embed/
 
+### asciinemaの埋め込み
+参考：https://jenciso.github.io/blog/embedding-asciinema-cast-in-your-hugo-site/
+※asciinema.htmlのsrc箇所は最初の`/casts/`を削除する必要あり。
+
 ### 改行
 文末尾に半角スペース2つ
