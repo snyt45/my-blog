@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 23 Sep 2021 20:04:58 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 10:36:05 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windowsでターミナル操作とキーストロークを録画するならLICEcap&#43;Key-n-Strokeの組み合わせがいい感じ</title>
+      <link>https://snyt45.com/posts/20210926/terminal-rec-app/</link>
+      <pubDate>Sun, 26 Sep 2021 10:36:05 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210926/terminal-rec-app/</guid>
+      <description>Vimに再入門しているのですが、記事を書くときに実演したものを紹介できたら良いなーと思いいい感じのものがないかなーと調べてやった良い組み合わ</description>
+    </item>
+    
     <item>
       <title>Vim8のファイラー周りを充実させる</title>
       <link>https://snyt45.com/posts/20210923/vim8-failer/</link>
