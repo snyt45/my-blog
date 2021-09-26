@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Sep 2021 10:36:05 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 13:13:03 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「Vimが好きになる本」を読んでみた(前編)</title>
+      <link>https://snyt45.com/posts/20210926/vimgasukininaru/</link>
+      <pubDate>Sun, 26 Sep 2021 13:13:03 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20210926/vimgasukininaru/</guid>
+      <description>Vimが好きになる本 - gorilla0513 - BOOTH 出先で1時間ほど時間があったので積読していたゴリラさんが書かれた「Vimが好きになる本」を11章(全15章)まで</description>
+    </item>
+    
     <item>
       <title>Windowsでターミナル操作とキーストロークを録画するならLICEcap&#43;Key-n-Strokeの組み合わせがいい感じ</title>
       <link>https://snyt45.com/posts/20210926/terminal-rec-app/</link>
