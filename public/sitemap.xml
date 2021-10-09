@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snyt45.com/posts/20211002/furikaeri/</loc>
-    <lastmod>2021-10-02T11:19:25+09:00</lastmod>
-  </url><url>
     <loc>https://snyt45.com/posts/</loc>
-    <lastmod>2021-10-02T11:19:25+09:00</lastmod>
+    <lastmod>2021-10-09T14:33:25+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/</loc>
+    <lastmod>2021-10-09T14:33:25+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20211009/vim-which-key/</loc>
+    <lastmod>2021-10-09T14:33:25+09:00</lastmod>
+  </url><url>
+    <loc>https://snyt45.com/posts/20211002/furikaeri/</loc>
     <lastmod>2021-10-02T11:19:25+09:00</lastmod>
   </url><url>
     <loc>https://snyt45.com/posts/20210930/3rd-year-engineer-catch-up/</loc>
