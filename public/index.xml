@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 Oct 2021 15:54:18 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Oct 2021 23:09:15 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git blameができる拡張機能が欲しかったのでblamer.nvimを入れてみた</title>
+      <link>https://snyt45.com/posts/20211024/blamer-nvim/</link>
+      <pubDate>Sun, 24 Oct 2021 23:09:15 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20211024/blamer-nvim/</guid>
+      <description>ファイルごとにgit blameができる拡張機能を探していたところ、下記記事をドンピシャで見つけたので入れてみました。 ポップアップウィンドウで</description>
+    </item>
+    
     <item>
       <title>vim-floatermが動かない!? 対処法と個人的な設定</title>
       <link>https://snyt45.com/posts/20211010/vim-floaterm/</link>
