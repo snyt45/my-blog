@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 Oct 2021 21:07:14 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2021 23:48:10 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows10で矢印キーを撲滅する</title>
+      <link>https://snyt45.com/posts/20211030/windows10-arrow-key/</link>
+      <pubDate>Sat, 30 Oct 2021 23:48:10 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20211030/windows10-arrow-key/</guid>
+      <description>会社のエンジニアの方に下記記事を教えてもらい、個人的に「これは革命だな」と思ったので早速矢印キーを撲滅する設定をしてみました。 [Windows 10] 矢印キーに</description>
+    </item>
+    
     <item>
       <title>ファイルの左端にgitの差分情報を表示するvim-gitgutterを入れてみた</title>
       <link>https://snyt45.com/posts/20211027/vim-gitgutter/</link>
