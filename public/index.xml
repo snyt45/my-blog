@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Oct 2021 01:15:03 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 13:24:58 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021年10月の振返り</title>
+      <link>https://snyt45.com/posts/20211031/furikaeri/</link>
+      <pubDate>Sun, 31 Oct 2021 13:24:58 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20211031/furikaeri/</guid>
+      <description>振返り 自社開発 カスタマージャーニーマップから全体像が分かるように図に起こしてみた UXワークショップで作成されていたカスタマージャーニーマップ</description>
+    </item>
+    
     <item>
       <title>ObsidianでKindleのハイライト情報などを同期して神ノートを作る</title>
       <link>https://snyt45.com/posts/20211031/obsidian-kindle-highlights/</link>
