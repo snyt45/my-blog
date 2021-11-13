@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 31 Oct 2021 21:36:52 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Nov 2021 17:47:57 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>話題になっていたENSを10年分購入しました</title>
+      <link>https://snyt45.com/posts/20211113/ens/</link>
+      <pubDate>Sat, 13 Nov 2021 17:47:57 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20211113/ens/</guid>
+      <description>最近、副反応で寝込んでました。 そのときに中田敦彦のYouTube大学でNFTとメタバース回がちょうど出たので見てました。 NFT、メタバースと</description>
+    </item>
+    
     <item>
       <title>fzf &#43; ripgrepをVim連携させた</title>
       <link>https://snyt45.com/posts/20211031/vim-fzf-ripgrep/</link>
