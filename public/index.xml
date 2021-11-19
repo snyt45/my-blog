@@ -6,7 +6,16 @@
     <description>Recent content on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Nov 2021 14:30:03 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Nov 2021 22:00:19 +0900</lastBuildDate><atom:link href="https://snyt45.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows TerminalのVimのカーソル形状をカスタマイズする</title>
+      <link>https://snyt45.com/posts/20211119/vim-cursor-customize/</link>
+      <pubDate>Fri, 19 Nov 2021 22:00:19 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20211119/vim-cursor-customize/</guid>
+      <description>Windows Terminalからポインターの設定ができますが、 Windows Terminalから設定を行った場合は一律で指定されたポインターの形状になってしまいま</description>
+    </item>
+    
     <item>
       <title>NFTや仮想通貨・ブロックチェーン技術について勉強しようと思ったという話</title>
       <link>https://snyt45.com/posts/20211114/crypto_currencty/</link>
