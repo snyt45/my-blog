@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="エンジニアとしてスタートアップのWebサービス開発に携わっています。 仕事でWindows10&#43;WSL2&#43;Dockerを使って開発をするように" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-08-06T23:08:40&#43;09:00" />
-<meta property="article:modified_time" content="2021-08-06T23:08:40&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-08-06T23:08:40+09:00" />
+<meta property="article:modified_time" content="2021-08-06T23:08:40+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -301,9 +301,9 @@ WindowsにはWindows Terminalがありますので、インストールしてお
 <p>DockerでUbuntuコンテナを実行</p>
 </li>
 </ol>
-<pre><code>docker run -t ubuntu:20.04 bash ls /
+<pre tabindex="0"><code>docker run -t ubuntu:20.04 bash ls /
 </code></pre><p>ubuntuのイメージがなければイメージの取得が始まる。</p>
-<pre><code>Unable to find image 'ubuntu:20.04' locally
+<pre tabindex="0"><code>Unable to find image 'ubuntu:20.04' locally
 20.04: Pulling from library/ubuntu
 16ec32c2132b: Pull complete
 Digest: sha256:82becede498899ec668628e7cb0ad87b6e1c371cb8a1e597d83a47fac21d6af3
@@ -313,18 +313,18 @@ Status: Downloaded newer image for ubuntu:20.04
 <li>grepとawkを使用してUbuntuのコンテナIDを取得します。</li>
 </ol>
 <p>bash用のコマンド</p>
-<pre><code>dockerContainerID=$(docker container ls -a | grep -i ubuntu:20.04 | awk '{print $1}')
+<pre tabindex="0"><code>dockerContainerID=$(docker container ls -a | grep -i ubuntu:20.04 | awk '{print $1}')
 </code></pre><p>fish用のコマンド</p>
-<pre><code>set dockerContainerID (docker container ls -a | grep -i ubuntu:20.04 | awk '{print $1}')
+<pre tabindex="0"><code>set dockerContainerID (docker container ls -a | grep -i ubuntu:20.04 | awk '{print $1}')
 </code></pre><ol start="4">
 <li>Cドライブ上にtarファイルをエクスポートします。</li>
 </ol>
-<pre><code>docker export $dockerContainerID &gt; /mnt/c/temp/ubuntu.tar
+<pre tabindex="0"><code>docker export $dockerContainerID &gt; /mnt/c/temp/ubuntu.tar
 </code></pre><h4 id="2-取得したtarファイルをwslにインポートする">2. 取得したtarファイルをWSLにインポートする</h4>
 <ol>
 <li>先ほどエクスポートしたtarファイルをWSLにインポートします。</li>
 </ol>
-<pre><code>cd C:\temp
+<pre tabindex="0"><code>cd C:\temp
 wsl --import Ubuntu-20.04_dev C:\Users\snyt45\AppData\Local\Packages\Ubuntu-20.04_dev C:\temp\ubuntu.tar
 </code></pre><p><code>--import</code>の補足：</p>
 <ul>
@@ -353,25 +353,25 @@ wsl --import Ubuntu-20.04_dev C:\Users\snyt45\AppData\Local\Packages\Ubuntu-20.0
 <ol>
 <li>Ubuntuを起動します。</li>
 </ol>
-<pre><code>wsl -d Ubuntu-20.04_dev
+<pre tabindex="0"><code>wsl -d Ubuntu-20.04_dev
 </code></pre><p>Ubuntuを起動すると、<code>\\wsl$</code>に追加したLinuxディストリビューションのフォルダが出てくるようになります。</p>
 <p><img src="Snipaste_2021-08-08_00-07-07.png" alt="\\wsl$"></p>
 <ol start="2">
 <li>Ubuntuを諸々アップデートします。</li>
 </ol>
 <p>この後、vimが必要になるためインストールしています。</p>
-<pre><code>apt update
+<pre tabindex="0"><code>apt update
 apt upgrade
 apt-get install vim
 </code></pre><ol start="3">
 <li>ユーザーを作成します。</li>
 </ol>
-<pre><code>adduser ユーザー名
+<pre tabindex="0"><code>adduser ユーザー名
 </code></pre><ol start="4">
 <li>3で作成したユーザーをログイン時のデフォルトユーザーに指定します。</li>
 </ol>
 <p><strong>設定を反映するには、一度wslを再起動(wsl -t [ディストリビューション名])する必要があります。</strong></p>
-<pre><code>vi /etc/wsl.conf
+<pre tabindex="0"><code>vi /etc/wsl.conf
 
 # 下記を追加
 [user]
@@ -380,7 +380,7 @@ default=ユーザー名
 <li>Windows Terminalで追加したUbuntuを開いた際に開始ディレクトリを設定します。</li>
 </ol>
 <p>settings.jsonを開き、下記のような場所を見つけてそこに<code>startingDirectory</code>を追記しましょう。</p>
-<pre><code>  {
+<pre tabindex="0"><code>  {
       &quot;guid&quot;: &quot;{a32514ec-a5a8-556e-a6a1-a1d48b6f0d84}&quot;,
       &quot;hidden&quot;: false,
       &quot;name&quot;: &quot;Ubuntu-20.04_dev&quot;,
@@ -404,7 +404,7 @@ default=ユーザー名
 <h3 id="インポートしたlinuxディストリビューションの登録解除">インポートしたLinuxディストリビューションの登録解除</h3>
 <p>実は<strong>このようにLinuxディストリビューションをインポートした場合は、環境のリセットができません。</strong></p>
 <p>そのため、もう一度初めからやり直したくなったら登録解除を行います。</p>
-<pre><code>wsl --unregister &lt;DistributionName&gt;
+<pre tabindex="0"><code>wsl --unregister &lt;DistributionName&gt;
 </code></pre><blockquote>
 <p>注意: 登録を解除すると、そのディストリビューションに関連付けられているすべてのデータ、設定、ソフトウェアが完全に失われます。 ストアから再インストールすると、ディストリビューションのクリーン コピーがインストールされます。</p>
 <p><a href="https://docs.microsoft.com/ja-jp/windows/wsl/wsl-config#unregister-and-reinstall-a-distribution">ディストリビューションの登録解除と再インストール</a></p>

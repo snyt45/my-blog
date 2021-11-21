@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="Rails &#43; Vue.jsのプロジェクトを作ってVue.jsのキャッチアップ中です。 このプロジェクトにVuetifyを導入していきます。 プロジェクト構" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210527/vuetify-install/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-27T18:10:14&#43;09:00" />
-<meta property="article:modified_time" content="2021-05-27T18:10:14&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-05-27T18:10:14+09:00" />
+<meta property="article:modified_time" content="2021-05-27T18:10:14+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -210,7 +210,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 このプロジェクトにVuetifyを導入していきます。</p>
 <h2 id="プロジェクト構成">プロジェクト構成</h2>
 <p>プロジェクトの構成はこのような感じです。</p>
-<pre><code>■バックエンド
+<pre tabindex="0"><code>■バックエンド
   ruby: 2.7.1
   Rails: 6.0.3.7
 ■フロントエンド
@@ -226,33 +226,33 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><a href="https://vuetifyjs.com/ja/">Vuetify — A Material Design Framework for Vue.js</a></p>
 <p>Vue CLIによるインストールを行う。</p>
 <p>Docker上に構築しているので下記コマンドでインストールします。</p>
-<pre><code>docker-compose run --rm front vue add vuetify
+<pre tabindex="0"><code>docker-compose run --rm front vue add vuetify
 </code></pre><p>コマンドを実行すると選択式でインストールが進んでいきます。</p>
 <p>npm 本家のレジストリへの接続が遅いのでミラーサイトを使用しますか？という意味です。
 今回はミラーサイトを使用せずに本家を使用するため、「No」で進めます。</p>
-<pre><code>?  Your connection to the default npm registry seems to be slow.
+<pre tabindex="0"><code>?  Your connection to the default npm registry seems to be slow.
    Use https://registry.npm.taobao.org for faster installation? No
 </code></pre><p>プリセットの選択を聞かれますが、「 Configure (advanced) 」を選択し詳細を設定する方を選びます。</p>
-<pre><code>? Choose a preset: Configure (advanced)
+<pre tabindex="0"><code>? Choose a preset: Configure (advanced)
 </code></pre><p>App.vueとHelloWorld.vueを既成のVuetifyのテンプレートを使うか聞かれますが、「No」で進めます。</p>
-<pre><code>? Use a pre-made template? (will replace App.vue and HelloWorld.vue) No
+<pre tabindex="0"><code>? Use a pre-made template? (will replace App.vue and HelloWorld.vue) No
 </code></pre><p>カスタムテーマを使うか聞かれますが、「No」で進めます。</p>
-<pre><code>? Use custom theme? No
+<pre tabindex="0"><code>? Use custom theme? No
 </code></pre><p>カスタムCSSを使うか聞かれますが、「No」で進めます。</p>
-<pre><code>? Use custom properties (CSS variables)? No
+<pre tabindex="0"><code>? Use custom properties (CSS variables)? No
 </code></pre><p>アイコンフォントは何を使うか聞かれますが、「Material Design Icons」で進めます。</p>
-<pre><code>? Select icon font Material Design Icons
+<pre tabindex="0"><code>? Select icon font Material Design Icons
 </code></pre><p>Googleフォント、アイコン用のフォントをインターネット経由で読み込むのではなく、Node.jsパッケージとしてインストールしたいので、「Yes」で進めます。</p>
-<pre><code>? Use fonts as a dependency (for Electron or offline)? Yes
+<pre tabindex="0"><code>? Use fonts as a dependency (for Electron or offline)? Yes
 </code></pre><p>必要なコンポーネントだけ使用しますか？という意味？？(ここはいまいちわからなかった。)
 一旦「Yes」で進めます。</p>
-<pre><code>? Use a-la-carte components? Yes
+<pre tabindex="0"><code>? Use a-la-carte components? Yes
 </code></pre><p>Vuetifyで言語を「Japanese」で進めます。</p>
-<pre><code>? Select locale Japanese
+<pre tabindex="0"><code>? Select locale Japanese
 </code></pre><p>これでVuetifyのインストールが始まります。</p>
 <p>特に何もしなくても必要な設定がされますが、
 TypeScriptを導入しているため<code>tsconfig.json</code>に次の文を追加します。</p>
-<pre><code>    &quot;types&quot;: [
+<pre tabindex="0"><code>    &quot;types&quot;: [
       &quot;webpack-env&quot;,
       &quot;jest&quot;,
       &quot;vuetify&quot; // 追加
@@ -261,13 +261,13 @@ TypeScriptを導入しているため<code>tsconfig.json</code>に次の文を�
 <p>次に動作確認を行います。</p>
 <h2 id="vuetifyの動作確認">Vuetifyの動作確認</h2>
 <p><code>front/src/App.vue</code></p>
-<pre><code>&lt;template&gt;
+<pre tabindex="0"><code>&lt;template&gt;
   &lt;v-app&gt;
     &lt;router-view /&gt;
   &lt;/v-app&gt;
 &lt;/template&gt;
 </code></pre><p><code>front/src/views/HelloWorld.vue</code></p>
-<pre><code>&lt;template&gt;
+<pre tabindex="0"><code>&lt;template&gt;
   &lt;div&gt; // → テンプレートルートは1つ必要なのでとりあえずdivで対応してエラー回避
     &lt;v-app-bar&gt;&lt;/v-app-bar&gt;
     &lt;v-main&gt;Hello World&lt;/v-main&gt;

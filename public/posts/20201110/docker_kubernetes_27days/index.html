@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 IngressはServiceよりも高機能なリソースでHTTP/HTTPSのようにパスベースで転" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20201110/docker_kubernetes_27days/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-10T22:28:07&#43;09:00" />
-<meta property="article:modified_time" content="2020-11-10T22:28:07&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-11-10T22:28:07+09:00" />
+<meta property="article:modified_time" content="2020-11-10T22:28:07+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -261,7 +261,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>gcloudのバージョン確認</p>
 </li>
 </ul>
-<pre><code>$ gcloud version
+<pre tabindex="0"><code>$ gcloud version
 Google Cloud SDK 317.0.0
 bq 2.0.62
 core 2020.10.30
@@ -269,7 +269,7 @@ gsutil 4.54
 </code></pre><ul>
 <li>コンポーネントのバージョンアップを行う</li>
 </ul>
-<pre><code>$ gcloud components update
+<pre tabindex="0"><code>$ gcloud components update
 
 To help improve the quality of this product, we collect anonymized
 usage data
@@ -293,7 +293,7 @@ All components are up to date.
 </code></pre><ul>
 <li>gcloudの認証を行う</li>
 </ul>
-<pre><code>$ gcloud auth login
+<pre tabindex="0"><code>$ gcloud auth login
 </code></pre><ul>
 <li>gcloud認証画面</li>
 </ul>
@@ -301,7 +301,7 @@ All components are up to date.
 <ul>
 <li>gcloudで対象のプロジェクトIDを設定</li>
 </ul>
-<pre><code>$ gcloud config set project xxxxxx
+<pre tabindex="0"><code>$ gcloud config set project xxxxxx
 Updated property [core/project].
 </code></pre><ul>
 <li>デフォルトリージョンを指定
@@ -310,7 +310,7 @@ Updated property [core/project].
 </ul>
 </li>
 </ul>
-<pre><code>$ gcloud config set compute/zone asia-northeast1-a
+<pre tabindex="0"><code>$ gcloud config set compute/zone asia-northeast1-a
 Updated property [compute/zone].
 </code></pre><h4 id="613-kubernetesクラスタの作成">6.1.3 Kubernetesクラスタの作成</h4>
 <ul>
@@ -329,7 +329,7 @@ Updated property [compute/zone].
 </ul>
 </li>
 </ul>
-<pre><code>$ gcloud container clusters create gihyo --cluster-version=1.10.4-gke.2 --machine-type=n1-standard-1 --num-nodes=3
+<pre tabindex="0"><code>$ gcloud container clusters create gihyo --cluster-version=1.10.4-gke.2 --machine-type=n1-standard-1 --num-nodes=3
 WARNING: Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer. For a list of recommended authentication methods, see: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
 WARNING: Currently VPC-native is not the default mode during cluster creation. In the future, this will become the default mode and can be disabled using `--no-enable-ip-alias` flag. Use `--[no-]enable-ip-alias` flag to suppress this warning.
 WARNING: Newly created clusters and node-pools will have node auto-upgrade enabled by default. This can be disabled using the `--no-enable-autoupgrade` flag.
@@ -347,7 +347,7 @@ ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Faile
 </ul>
 </li>
 </ul>
-<pre><code>$ gcloud container clusters create gihyo --cluster-version=1.15.7-gke.2 --machine-type=n1-standard-1 --num-nodes=3
+<pre tabindex="0"><code>$ gcloud container clusters create gihyo --cluster-version=1.15.7-gke.2 --machine-type=n1-standard-1 --num-nodes=3
 WARNING: Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer. For a list of recommended authentication methods, see: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
 WARNING: Currently VPC-native is not the default mode during cluster creation. In the future, this will become the default mode and can be disabled using `--no-enable-ip-alias` flag. Use `--[no-]enable-ip-alias` flag to suppress this warning.
 WARNING: Newly created clusters and node-pools will have node auto-upgrade enabled by default. This can be disabled using the `--no-enable-autoupgrade` flag.
@@ -369,7 +369,7 @@ ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Maste
 </li>
 </ul>
 <p><img src="release-notes.png" alt="リリースノート"></p>
-<pre><code>$ gcloud container clusters create gihyo --cluster-version=1.16.13-gke.401 --machine-type=n1-standard-1 --num-nodes=3
+<pre tabindex="0"><code>$ gcloud container clusters create gihyo --cluster-version=1.16.13-gke.401 --machine-type=n1-standard-1 --num-nodes=3
 WARNING: Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer. For a list of recommended authentication methods, see: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
 WARNING: Currently VPC-native is not the default mode during cluster creation. In the future, this will become the default mode and can be disabled using `--no-enable-ip-alias` flag. Use `--[no-]enable-ip-alias` flag to suppress this warning.
 WARNING: Newly created clusters and node-pools will have node auto-upgrade enabled by default. This can be disabled using the `--no-enable-autoupgrade` flag.
@@ -388,7 +388,7 @@ gihyo  asia-northeast1-a  1.16.13-gke.401  35.221.107.8  n1-standard-1  1.16.13-
 <ul>
 <li>gcloud経由でkubectlに認証情報を設定。</li>
 </ul>
-<pre><code>$ gcloud container clusters get-credentials gihyo
+<pre tabindex="0"><code>$ gcloud container clusters get-credentials gihyo
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for gihyo.
 </code></pre><ul>
@@ -398,7 +398,7 @@ kubeconfig entry generated for gihyo.
 </ul>
 </li>
 </ul>
-<pre><code>$ kubectl get nodes
+<pre tabindex="0"><code>$ kubectl get nodes
 NAME                                   STATUS   ROLES    AGE     VERSION
 gke-gihyo-default-pool-17a578e7-bk9s   Ready    &lt;none&gt;   4m31s   v1.16.13-gke.401
 gke-gihyo-default-pool-17a578e7-jvkh   Ready    &lt;none&gt;   4m41s   v1.16.13-gke.401
@@ -406,7 +406,7 @@ gke-gihyo-default-pool-17a578e7-qkpj   Ready    &lt;none&gt;   4m41s   v1.16.13-
 </code></pre><ul>
 <li>作成したクラスタのダッシュボードk8s APIへのプロキシを起動</li>
 </ul>
-<pre><code>$ kubectl proxy
+<pre tabindex="0"><code>$ kubectl proxy
 Starting to serve on 127.0.0.1:8001
 </code></pre><ul>
 <li>http://127.0.0.1:8001/ui にアクセス</li>

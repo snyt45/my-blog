@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="Goならわかるシステムプログラミング – 技術書出版と販売のラムダノート を少しずつ読もうと思ったけど、インターフェース？構造体？となったので最低" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20201122/1day_go/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-22T13:09:06&#43;09:00" />
-<meta property="article:modified_time" content="2020-11-22T13:09:06&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-11-22T13:09:06+09:00" />
+<meta property="article:modified_time" content="2020-11-22T13:09:06+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -307,7 +307,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <ul>
 <li>パッケージ名</li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 </code></pre><ul>
 <li>
 <p>パッケージ</p>
@@ -327,7 +327,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>もう1つmainが使われている</p>
 </li>
 </ul>
-<pre><code>func main()
+<pre tabindex="0"><code>func main()
 </code></pre><ul>
 <li>funcは関数を示す</li>
 <li><strong>Goには関数が必ず1つ必要。実行の中心となる関数には「main」という名前をつける決まり</strong></li>
@@ -335,16 +335,16 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>↓</p>
 <p><strong>「ファイルが1つしかない場合はパッケージ名をmainにする。またその中に1つしか関数がない場合は、関数名をmainにする」</strong></p>
 <h3 id="importの意味">importの意味</h3>
-<pre><code>import &quot;fmt&quot;
+<pre tabindex="0"><code>import &quot;fmt&quot;
 </code></pre><ul>
 <li>fmtパッケージを読み込んでいる</li>
 </ul>
-<pre><code>fmt.Println(&quot;Go言語でLet's go!&quot;)
+<pre tabindex="0"><code>fmt.Println(&quot;Go言語でLet's go!&quot;)
 </code></pre><ul>
 <li>fmtパッケージにあるPrintln関数を用いて()内の内容を出力</li>
 </ul>
 <h3 id="変数">変数</h3>
-<pre><code>var a int
+<pre tabindex="0"><code>var a int
 </code></pre><ul>
 <li>変数aを宣言
 <ul>
@@ -364,10 +364,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>不正アクセスを防げる</li>
 </ul>
 <h3 id="データ型を自動判別する代入記法">データ型を自動判別する代入記法</h3>
-<pre><code>var a int
+<pre tabindex="0"><code>var a int
 a = 5
 </code></pre><p>は</p>
-<pre><code>a := 5
+<pre tabindex="0"><code>a := 5
 </code></pre><p>のように書ける</p>
 <ul>
 <li><code>:=</code>は変数を定義して値を代入するという意味</li>
@@ -399,7 +399,7 @@ a = 5
 </ul>
 </li>
 </ul>
-<pre><code>a := 5.0
+<pre tabindex="0"><code>a := 5.0
 </code></pre><h3 id="文字列の基本">文字列の基本</h3>
 <ul>
 <li>文字列のデータ型はstring型</li>
@@ -418,7 +418,7 @@ a = 5
 </ul>
 </li>
 </ul>
-<pre><code>fmt.Printf(&quot;%.2f&quot;, c)
+<pre tabindex="0"><code>fmt.Printf(&quot;%.2f&quot;, c)
 </code></pre><ul>
 <li>第1引数には表示形式を指定
 <ul>
@@ -441,13 +441,13 @@ a = 5
 </li>
 <li>第2引数には表示したい内容</li>
 </ul>
-<pre><code>c := 5.0
+<pre tabindex="0"><code>c := 5.0
 fmt.Printf(&quot;cは%.2fです&quot;, c)
 =&gt; cは5.00です
 </code></pre><ul>
 <li>Printf関数は第1引数に表示したい内容だけではなく他の文字列も混在できる</li>
 </ul>
-<pre><code>c := 5.0
+<pre tabindex="0"><code>c := 5.0
 fmt.Printf(&quot;cは%.2fです&quot;, c)
 fmt.Println(&quot;cは小数点です&quot;)
 =&gt; cは5.00ですcは小数点です
@@ -465,7 +465,7 @@ cは小数点です
 <li><strong>Go言語では、1つの配列で保持することのできる要素のデータ型は同一でなければならない</strong></li>
 <li>配列の要素は0番目から始まる</li>
 </ul>
-<pre><code>intvals := [5]int{98, 125, 232, 147, 486}
+<pre tabindex="0"><code>intvals := [5]int{98, 125, 232, 147, 486}
 </code></pre><ul>
 <li>[5]
 <ul>
@@ -479,7 +479,7 @@ cは小数点です
 </ul>
 </li>
 </ul>
-<pre><code>fmt.Printf(&quot;1番目の要素は%d\n&quot;, intvals[1])
+<pre tabindex="0"><code>fmt.Printf(&quot;1番目の要素は%d\n&quot;, intvals[1])
 </code></pre><ul>
 <li>%d
 <ul>
@@ -492,7 +492,7 @@ cは小数点です
 <li>配列を使う場合は要素の数を先に決めておくのはデータ型の宣言と同じくメモリなどのリソースを無駄にしないように最初から処理すべきものの大きさを決めておくため。</li>
 <li>とはいえ、必要な数よりも多く確保しておく分には問題ない</li>
 </ul>
-<pre><code># エラーにならない
+<pre tabindex="0"><code># エラーにならない
 intvals := [100]int{1, 2, 3, 4, 5}
 # エラーになる
 intvals := [3]int{1, 2, 3, 4, 5}
@@ -500,11 +500,11 @@ intvals := [3]int{1, 2, 3, 4, 5}
 <li>次のように要素数を決めずに配列を作成することもできる。</li>
 <li>ただし、この書き方は配列そのものではなく、配列の情報を与えるデータ型で <strong>スライス(Slice)</strong> と呼ぶ</li>
 </ul>
-<pre><code>intvals := []int{1, 2, 3, 4, 5}
+<pre tabindex="0"><code>intvals := []int{1, 2, 3, 4, 5}
 </code></pre><ul>
 <li>普通に配列として作った場合とスライスとして作った場合でも結果は変わらない</li>
 </ul>
-<pre><code>intvals_array := [5]int{1, 2, 3, 4, 5}
+<pre tabindex="0"><code>intvals_array := [5]int{1, 2, 3, 4, 5}
 intvals_slice := []int{6, 7, 8, 9, 10}
 
 fmt.Printf(&quot;この配列の要素素は%d\n&quot;, len(intvals_array))
@@ -538,7 +538,7 @@ fmt.Printf(&quot;このスライスが見ている配列の要素素は%d\n&quot
 <p>配列の最後の要素のみをスライスする場合は<code>intarray[4:5]</code>となるが、<code>intarray[4:]</code>のように最後のインデックスを省略可</p>
 </li>
 </ul>
-<pre><code>intarray := [5]int{98, 125, 232, 147, 486}
+<pre tabindex="0"><code>intarray := [5]int{98, 125, 232, 147, 486}
 slice13 := intarray[1:4] // [125 232 147]
 slice0 := intarray[:1] // [98]
 slice4 := intarray[4:] // [486]
@@ -549,7 +549,7 @@ slice4 := intarray[4:] // [486]
 </ul>
 </li>
 </ul>
-<pre><code>intarray := [5]int{98, 125, 232, 147, 486}
+<pre tabindex="0"><code>intarray := [5]int{98, 125, 232, 147, 486}
 slice13 := intarray[1:4] // [125 232 147]
 slice13[2] -= 100
 
@@ -564,7 +564,7 @@ fmt.Printf(&quot;%d&quot;, intarray[3]) // 47
 </ul>
 <h2 id="chapter-3処理の流れを操る制御文">CHAPTER 3　処理の流れを操る制御文</h2>
 <h3 id="for文">for文</h3>
-<pre><code>for i := 0; i &lt; len(prices); i++ {
+<pre tabindex="0"><code>for i := 0; i &lt; len(prices); i++ {
   fmt.Printf(&quot;%d円\n&quot;, prices[i])
 }
 </code></pre><ol>
@@ -574,14 +574,14 @@ fmt.Printf(&quot;%d&quot;, intarray[3]) // 47
 <li>式評価 falseになったら処理を抜ける</li>
 </ol>
 <h3 id="文字列の配列スライス">文字列の配列(スライス)</h3>
-<pre><code>items := []string{&quot;消しゴム&quot;, &quot;ボールペン&quot;, &quot;ノート&quot;, &quot;付箋紙&quot;, &quot;バインダー&quot;}
+<pre tabindex="0"><code>items := []string{&quot;消しゴム&quot;, &quot;ボールペン&quot;, &quot;ノート&quot;, &quot;付箋紙&quot;, &quot;バインダー&quot;}
 </code></pre><ul>
 <li>第2引数以降は複数フォーマットしたいものを指定できるのか。フォーマットする側では%の順番で対応するのか。</li>
 <li><code>%s</code>で文字列の中に文字列を埋め込める</li>
 </ul>
-<pre><code>fmt.Printf(&quot;%s: %d円\n&quot;, items[i], prices[i])
+<pre tabindex="0"><code>fmt.Printf(&quot;%s: %d円\n&quot;, items[i], prices[i])
 </code></pre><h3 id="if文">if文</h3>
-<pre><code>if (式) {
+<pre tabindex="0"><code>if (式) {
   // 処理
 } else if (式) {
   // 処理
@@ -589,7 +589,7 @@ fmt.Printf(&quot;%d&quot;, intarray[3]) // 47
   // 処理
 }
 </code></pre><h3 id="switch文">switch文</h3>
-<pre><code>switch (変数) {
+<pre tabindex="0"><code>switch (変数) {
   case (式):
     // 処理
   case (式):
@@ -603,7 +603,7 @@ fmt.Printf(&quot;%d&quot;, intarray[3]) // 47
 <li>switch先がtrue固定の場合は省略形で書ける</li>
 <li>case (式)のいずれかがtrueになった場合に処理を行う</li>
 </ul>
-<pre><code>switch {
+<pre tabindex="0"><code>switch {
   case (式):
     // 処理
   case (式):

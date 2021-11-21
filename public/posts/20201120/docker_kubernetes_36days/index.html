@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回はパッケージ管理ツールのHelmをインストールしました。 今回はChartsのインストール等を" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20201120/docker_kubernetes_36days/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-20T23:42:39&#43;09:00" />
-<meta property="article:modified_time" content="2020-11-20T23:42:39&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-11-20T23:42:39+09:00" />
+<meta property="article:modified_time" content="2020-11-20T23:42:39+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -256,12 +256,12 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>incubatorリポジトリを利用するには、次の対応をする必要がある。</p>
 </li>
 </ul>
-<pre><code>$ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+<pre tabindex="0"><code>$ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 &quot;incubator&quot; has been added to your repositories
 </code></pre><ul>
 <li>リポジトリから利用できるChartを検索</li>
 </ul>
-<pre><code>$ helm search
+<pre tabindex="0"><code>$ helm search
 NAME                                            CHART VERSION   APP VERSION                     DESCRIPTION
 incubator/artifactory                           5.2.2           5.2.0                           DEPRECATED Universal Repository Manager supporting all ma...
 incubator/aws-alb-ingress-controller            1.0.4           v1.1.8                          DEPRECATED A Helm chart for AWS ALB Ingress Controller
@@ -269,7 +269,7 @@ incubator/azuremonitor-containers               2.7.8           7.0.0-1         
 incubator/burrow                                0.3.3           0.17.1                          Burrow is a permissionable smart contract machine
 ......
 </code></pre><h3 id="chartの構成">Chartの構成</h3>
-<pre><code>chart_name/ --- templates/ マニフェストファイルのテンプレートディレクトリ
+<pre tabindex="0"><code>chart_name/ --- templates/ マニフェストファイルのテンプレートディレクトリ
              | |- xxxxx.yaml 各種Kubernetesリソースのマニフェストテンプレート
              | |- _helper.tpl マニフェスト構築に利用されるテンプレートヘルパー
              | |- NOTE.txt Chartの利用方法等のドキュメントのテンプレート
@@ -295,7 +295,7 @@ incubator/burrow                                0.3.3           0.17.1          
 <li>helm installコマンドで行う</li>
 <li>更新・削除する際にリリース名が必要になるので、&ndash;nameでクラスタ内で一意になるリリース名をつける</li>
 </ul>
-<pre><code>helm install [--name リリース名] Chartリポジトリ/Chart名
+<pre tabindex="0"><code>helm install [--name リリース名] Chartリポジトリ/Chart名
 </code></pre><ul>
 <li>
 <p>helm install時、Chartに含まれるvalues.yamlの設定に基づいてインストールされる。</p>
@@ -316,7 +316,7 @@ incubator/burrow                                0.3.3           0.17.1          
 <p>redmine.yaml</p>
 </li>
 </ul>
-<pre><code>redmineUsername: gihyo # ユーザー名をgihyo
+<pre tabindex="0"><code>redmineUsername: gihyo # ユーザー名をgihyo
 redminePassword: gihyo # パスワードをgihyo
 redmineLanguage: ja # 言語を日本語
 
@@ -324,14 +324,14 @@ serviceType: NodePort # Ingressを利用せずにNodePort Serviceを使ってSer
 </code></pre><ul>
 <li>-fオプションでカスタムvalueファイルを指定してRedmineをインストール</li>
 </ul>
-<pre><code>$ helm install -f redmine.yaml --name redmine stable/redmine --version 4.0.0
+<pre tabindex="0"><code>$ helm install -f redmine.yaml --name redmine stable/redmine --version 4.0.0
 Error: validation failed: [unable to recognize &quot;&quot;: no matches for kind &quot;Deployment&quot; in version &quot;extensions/v1beta1&quot;, unable to recognize &quot;&quot;: no matches for kind &quot;StatefulSet&quot; in version &quot;apps/v1beta1&quot;]
 </code></pre><ul>
 <li>エラーが出る</li>
 <li>テンプレートヘルパーでapiversionを出力しているみたい。</li>
 <li><a href="https://github.com/helm/charts/blob/master/stable/redmine/templates/_helpers.tpl">https://github.com/helm/charts/blob/master/stable/redmine/templates/_helpers.tpl</a></li>
 </ul>
-<pre><code>Return the appropriate apiVersion for deployment.
+<pre tabindex="0"><code>Return the appropriate apiVersion for deployment.
 */}}
 {{- define &quot;redmine.deployment.apiVersion&quot; -}}
 {{- if semverCompare &quot;&lt;1.14-0&quot; .Capabilities.KubeVersion.GitVersion -}}
@@ -344,7 +344,7 @@ Error: validation failed: [unable to recognize &quot;&quot;: no matches for kind
 <li>バージョン固定しているため、古いapiversinoになっているのか？？</li>
 <li>バージョンを消して再試行。またエラー。</li>
 </ul>
-<pre><code>$ helm install -f redmine.yaml --name redmine stable/redmine
+<pre tabindex="0"><code>$ helm install -f redmine.yaml --name redmine stable/redmine
 Error: failed to download &quot;stable/redmine&quot; (hint: running `helm repo update` may help)
 </code></pre><ul>
 <li>
@@ -362,13 +362,13 @@ Error: failed to download &quot;stable/redmine&quot; (hint: running `helm repo u
 </ul>
 </li>
 </ul>
-<pre><code>$ kubectl version
+<pre tabindex="0"><code>$ kubectl version
 Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;18&quot;, GitVersion:&quot;v1.18.8&quot;, GitCommit:&quot;9f2892aab98fe339f3bd70e3c470144299398ace&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2020-08-13T16:12:48Z&quot;, GoVersion:&quot;go1.13.15&quot;, Compiler:&quot;gc&quot;, Platform:&quot;windows/amd64&quot;}
 Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;16+&quot;, GitVersion:&quot;v1.16.13-gke.404&quot;, GitCommit:&quot;81e2afbf51b876d15f0af546998c670207fdd592&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2020-10-30T23:52:44Z&quot;, GoVersion:&quot;go1.13.9b4&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
 </code></pre><ul>
 <li>Helmのバージョンはクリアしている</li>
 </ul>
-<pre><code>$ helm version
+<pre tabindex="0"><code>$ helm version
 Client: &amp;version.Version{SemVer:&quot;v2.14.0&quot;, GitCommit:&quot;05811b84a3f93603dd6c2fcfe57944dfa7ab7fd0&quot;, GitTreeState:&quot;clean&quot;}
 Server: &amp;version.Version{SemVer:&quot;v2.14.0&quot;, GitCommit:&quot;05811b84a3f93603dd6c2fcfe57944dfa7ab7fd0&quot;, GitTreeState:&quot;clean&quot;}
 </code></pre><ul>
@@ -378,7 +378,7 @@ Server: &amp;version.Version{SemVer:&quot;v2.14.0&quot;, GitCommit:&quot;05811b8
 </ul>
 </li>
 </ul>
-<pre><code>$ helm repo add bitnami https://charts.bitnami.com/bitnami
+<pre tabindex="0"><code>$ helm repo add bitnami https://charts.bitnami.com/bitnami
 &quot;bitnami&quot; has been added to your repositories
 
 $ helm install -f redmine.yaml --name redmine bitnami/redmine
@@ -443,7 +443,7 @@ NOTES:
 </code></pre><ul>
 <li>リリース一覧でインストールできたことを確認する。</li>
 </ul>
-<pre><code>$ helm ls
+<pre tabindex="0"><code>$ helm ls
 NAME    REVISION        UPDATED                         STATUS          CHART           APP VERSION     NAMESPACE
 redmine 1               Sat Nov 21 00:45:06 2020        DEPLOYED        redmine-14.2.13 4.1.1           default
 </code></pre><ul>
@@ -453,13 +453,13 @@ redmine 1               Sat Nov 21 00:45:06 2020        DEPLOYED        redmine-
 </ul>
 </li>
 </ul>
-<pre><code>$ kubectl get service,deployment --selector release=redmine
+<pre tabindex="0"><code>$ kubectl get service,deployment --selector release=redmine
 NAME                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 service/redmine-mariadb   ClusterIP   10.55.251.137   &lt;none&gt;        3306/TCP   13m
 </code></pre><ul>
 <li>また、NodePortになっているはずだけど、LoadBalancerのまま…</li>
 </ul>
-<pre><code>$ kubectl get service,deployment
+<pre tabindex="0"><code>$ kubectl get service,deployment
 NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
 service/basic-auth        NodePort       10.55.248.194   &lt;none&gt;           80:30060/TCP   3d
 service/kubernetes        ClusterIP      10.55.240.1     &lt;none&gt;           443/TCP        3d2h
@@ -477,23 +477,23 @@ deployment.apps/redmine      1/1     1            1           19m
 <ul>
 <li>リリース名を指定してChartを削除する</li>
 </ul>
-<pre><code>$ helm delete redmine
+<pre tabindex="0"><code>$ helm delete redmine
 release &quot;redmine&quot; deleted
 </code></pre><ul>
 <li>Helmにはロールバック機能がある。指定したリビジョンに戻れる。</li>
 <li>リビジョン番号を確認する</li>
 </ul>
-<pre><code>$ helm ls --all
+<pre tabindex="0"><code>$ helm ls --all
 NAME    REVISION        UPDATED                         STATUS  CHART           APP VERSION     NAMESPACE
 redmine 1               Sat Nov 21 00:45:06 2020        DELETED redmine-14.2.13 4.1.1           default
 </code></pre><ul>
 <li>ロールバックする場合</li>
 </ul>
-<pre><code>$ helm rollback redmine 1
+<pre tabindex="0"><code>$ helm rollback redmine 1
 </code></pre><ul>
 <li>リビジョンの記録を残さず削除する場合</li>
 </ul>
-<pre><code>$ helm del --purge redmine
+<pre tabindex="0"><code>$ helm del --purge redmine
 </code></pre><h2 id="今日の学び">今日の学び</h2>
 <ul>
 <li>helm installでChartをインストールしてくると、そのままChartのマニフェストファイルを使ってクラスタにアプリケーションが展開される。設定等は大変だと思うが、出来てしまえばワンコマンドでアプリケーション構築が出来てしまう夢のようなツール</li>

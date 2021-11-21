@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="新しいプロジェクトはDocker &#43; Rails &#43; PostgreSQLで開発しており、 「rails er図」で調べると大体rails-ERDが候補で上がっ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210703/schemaspy/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-07-03T18:13:43&#43;09:00" />
-<meta property="article:modified_time" content="2021-07-03T18:13:43&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-07-03T18:13:43+09:00" />
+<meta property="article:modified_time" content="2021-07-03T18:13:43+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -221,18 +221,18 @@ Schemaspyコンテナの<code>/output</code>はホストの<code>/schema</code>�
 <p><img src="schemaspy.png" alt="イメージ"></p>
 <h3 id="手順">手順</h3>
 <p><code>docker pull</code>でschemaspyのイメージを取得。</p>
-<pre><code>docker pull schemaspy/schemaspy:snapshot
+<pre tabindex="0"><code>docker pull schemaspy/schemaspy:snapshot
 </code></pre><p><code>docker-compose up</code>等でプロジェクトのdbコンテナを起動しておきます。</p>
 <p>Schemaspyを使ってER図を生成します。<br>
 今回対象のDBはpostgreSQLになります。</p>
-<pre><code>docker run -v &quot;$PWD/schema:/output&quot; --net=&quot;host&quot; -u root:root schemaspy/schemaspy:snapshot -t pgsql -host localhost:5432 -db app_development -u root -p app_dev_password -connprops useSSL\\\\=false -all
+<pre tabindex="0"><code>docker run -v &quot;$PWD/schema:/output&quot; --net=&quot;host&quot; -u root:root schemaspy/schemaspy:snapshot -t pgsql -host localhost:5432 -db app_development -u root -p app_dev_password -connprops useSSL\\\\=false -all
 
 # 上記コマンドの説明
 docker run -v &quot;[ホスト側のディレクトリ]:/output&quot; --net=&quot;host&quot; -u root:root schemaspy/schemaspy:snapshot -t [データベースの種類] -host localhost:[DBの接続ポート] -db [DB名] -u [DBのユーザー名] -p [DBのパスワード] -connprops useSSL\\\\=false -all
 </code></pre><p>ホスト側の<code>$PWD/schema</code>に出力されるので、<br>
 ホスト側の<code>schema/index.html</code>をブラウザで開いてER図確認します。</p>
 <p>出力する際にGraphvizがないために下記のエラーがでますが、GraphvizがなくてもとりあえずER図は確認できました。</p>
-<pre><code>ERROR - dot -Tpng:cairo clients.2degrees.dot -oclients.2degrees.png -Tcmapx: in label of node inspections
+<pre tabindex="0"><code>ERROR - dot -Tpng:cairo clients.2degrees.dot -oclients.2degrees.png -Tcmapx: in label of node inspections
 ERROR - dot -Tpng:cairo clients.2degrees.dot -oclients.2degrees.png -Tcmapx: Warning: cell size too small for content
 </code></pre><h2 id="参考">参考</h2>
 <p><a href="http://tech.high5.science/2017/03/19/schemaspy-20170319/">数ステップでテーブル定義書やER図を作成できるSchemaspyはすごく便利 | High5&rsquo;s Menlo Park</a></p>

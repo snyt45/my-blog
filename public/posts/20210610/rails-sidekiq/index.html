@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="今までRedisとSidekiqを使ったことがなかったのでdocker-composeで環境を作ってみようと思います。 せっかくなので、DBは" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210610/rails-sidekiq/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-06-10T22:07:25&#43;09:00" />
-<meta property="article:modified_time" content="2021-06-10T22:07:25&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-06-10T22:07:25+09:00" />
+<meta property="article:modified_time" content="2021-06-10T22:07:25+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -210,14 +210,14 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 せっかくなので、DBはMySQLではなくPostgreSQLにしてみました。特に意味はありません！<br>
 一通り動作確認できることが今回のゴールです。</p>
 <h2 id="プロジェクトの作成">プロジェクトの作成</h2>
-<pre><code>mkdir -p ~/tmp/sample-rails
+<pre tabindex="0"><code>mkdir -p ~/tmp/sample-rails
 cd ~/tmp/sample-rails
 </code></pre><h2 id="dockerfileの作成">Dockerfileの作成</h2>
 <ul>
 <li>Ruby: 2.6.5</li>
 </ul>
-<pre><code>vi Dockerfile
-</code></pre><pre><code>FROM ruby:2.6.5
+<pre tabindex="0"><code>vi Dockerfile
+</code></pre><pre tabindex="0"><code>FROM ruby:2.6.5
 
 RUN apt-get update -qq &amp;&amp; \
     apt-get install -y build-essential \
@@ -235,14 +235,14 @@ COPY . $APP_ROOT
 <ul>
 <li>Rails: 5.2.6</li>
 </ul>
-<pre><code>vi Gemfile
-</code></pre><pre><code>source 'https://rubygems.org'
+<pre tabindex="0"><code>vi Gemfile
+</code></pre><pre tabindex="0"><code>source 'https://rubygems.org'
 gem 'rails', '5.2.6'
 </code></pre><h2 id="gemfilelockの作成">Gemfile.lockの作成</h2>
-<pre><code>touch Gemfile.lock
+<pre tabindex="0"><code>touch Gemfile.lock
 </code></pre><h2 id="docker-composeymlの作成">docker-compose.ymlの作成</h2>
-<pre><code>vi docker-compose.yml
-</code></pre><pre><code>version: '3'
+<pre tabindex="0"><code>vi docker-compose.yml
+</code></pre><pre tabindex="0"><code>version: '3'
 services:
 
   web:
@@ -297,12 +297,12 @@ volumes:
   postgres:
   redis:
 </code></pre><h2 id="プロジェクトをビルド">プロジェクトをビルド</h2>
-<pre><code>docker-compose run web rails new . --force --database=postgresql --skip-bundle
+<pre tabindex="0"><code>docker-compose run web rails new . --force --database=postgresql --skip-bundle
 </code></pre><p>WSL上のUbutu環境なので下記コマンドを実行しておく</p>
-<pre><code>sudo chown -R 1000:1000 .
+<pre tabindex="0"><code>sudo chown -R 1000:1000 .
 </code></pre><h2 id="databaseymlの編集">database.ymlの編集</h2>
-<pre><code>vi config/database.yml
-</code></pre><pre><code>default: &amp;default
+<pre tabindex="0"><code>vi config/database.yml
+</code></pre><pre tabindex="0"><code>default: &amp;default
   adapter: postgresql
   encoding: unicode
   host: db
@@ -311,22 +311,22 @@ volumes:
   pool: &lt;%= ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 } %&gt;
 </code></pre><h2 id="コンテナビルド起動">コンテナビルド&amp;起動</h2>
 <p><strong>この時点ではsidekiqコンテナは起動に失敗します。</strong></p>
-<pre><code>docker-compose build
+<pre tabindex="0"><code>docker-compose build
 docker-compose up
 </code></pre><h2 id="gemインストール">gemインストール</h2>
 <p>Gemfileに追加。</p>
-<pre><code>gem 'sidekiq'
+<pre tabindex="0"><code>gem 'sidekiq'
 </code></pre><p>bundle installする。</p>
-<pre><code>docker-compose run web bundle install
+<pre tabindex="0"><code>docker-compose run web bundle install
 </code></pre><h2 id="sidekiqの設定">sidekiqの設定</h2>
 <p>routesに追加。</p>
-<pre><code>require 'sidekiq/web'
+<pre tabindex="0"><code>require 'sidekiq/web'
 
 Rails.application.routes.draw do
   mount Sidekiq::Web, at: '/sidekiq'
 end
 </code></pre><p><code>config/initializers/sidekiq.rb</code>を作成する。</p>
-<pre><code>Sidekiq.configure_server do |config|
+<pre tabindex="0"><code>Sidekiq.configure_server do |config|
   config.redis = { url: ENV[&quot;REDIS_URL&quot;] }
 end
 
@@ -334,22 +334,22 @@ Sidekiq.configure_client do |config|
   config.redis = { url: ENV[&quot;REDIS_URL&quot;] }
 end
 </code></pre><h2 id="db作成">DB作成</h2>
-<pre><code>docker-compose run web rails db:create
+<pre tabindex="0"><code>docker-compose run web rails db:create
 </code></pre><h2 id="再度起動しなおす">再度起動しなおす</h2>
 <p>sidekiqのgemを入れたので今度は全てのコンテナが起動する。</p>
-<pre><code>docker-compose down
+<pre tabindex="0"><code>docker-compose down
 docker-compose up
 </code></pre><h2 id="httplocalhost3000-にアクセス">http://localhost:3000/ にアクセス</h2>
 <p>いつもの画面が表示されていればOK。</p>
 <p><img src="Snipaste_2021-06-11_23-44-52.png" alt="Railsの画面"></p>
 <h2 id="sidekiqが動作するか確認する">sidekiqが動作するか確認する</h2>
 <p>ワーカーを作成する。</p>
-<pre><code>docker-compose exec web rails g sidekiq:worker Hello
+<pre tabindex="0"><code>docker-compose exec web rails g sidekiq:worker Hello
 </code></pre><p>下記ファイルが作成される。</p>
-<pre><code>create  app/workers/hello_worker.rb
+<pre tabindex="0"><code>create  app/workers/hello_worker.rb
 create  test/workers/hello_worker_test.rb
 </code></pre><p><code>app/workers/hello_worker.rb</code>を編集する。</p>
-<pre><code>class HelloWorker
+<pre tabindex="0"><code>class HelloWorker
   include Sidekiq::Worker
 
   def perform(*args)
@@ -357,27 +357,27 @@ create  test/workers/hello_worker_test.rb
   end
 end
 </code></pre><p>sidekiqはファイルを編集したら再度起動しないと読み込まないらしいので再起動。</p>
-<pre><code>docker-compose down
+<pre tabindex="0"><code>docker-compose down
 docker-compose up
 </code></pre><p>ワーカーをキューに登録する。<br>
 正常に登録されると、IDのような文字列が表示される。</p>
-<pre><code>docker-compose exec web rails c
+<pre tabindex="0"><code>docker-compose exec web rails c
 
 irb(main):001:0&gt; HelloWorker.perform_async
 =&gt; &quot;702ce6a25525ee495fac36ef&quot;
 </code></pre><p>キューに登録したワーカーはすぐに実行される。<br>
 sidekiqコンテナのログを確認する。</p>
-<pre><code>sidekiq_1  | 2021-06-11T14:53:41.775Z pid=1 tid=grbnhzgoh class=HelloWorker jid=702ce6a25525ee495fac36ef INFO: start
+<pre tabindex="0"><code>sidekiq_1  | 2021-06-11T14:53:41.775Z pid=1 tid=grbnhzgoh class=HelloWorker jid=702ce6a25525ee495fac36ef INFO: start
 sidekiq_1  | Hello
 sidekiq_1  | 2021-06-11T14:53:41.775Z pid=1 tid=grbnhzgoh class=HelloWorker jid=702ce6a25525ee495fac36ef elapsed=0.0 INFO: done
 </code></pre><p>Helloが出力されていることが確認できた。</p>
 <p>また、 http://localhost:3000/sidekiq にアクセスすると、次のようにダッシュボードが表示されます。</p>
 <p><img src="Snipaste_2021-06-11_23-55-06.png" alt="sidekiqダッシュボード"></p>
 <h2 id="redisが動作しているか確認する">Redisが動作しているか確認する</h2>
-<pre><code>docker-compose exec redis /bin/bash
+<pre tabindex="0"><code>docker-compose exec redis /bin/bash
 </code></pre><p>いちおう、redis-cli動作して値が保存されていることは確認できたが、<br>
 sidekiqのキューが保存されているかなどはいまいち理解できていないので次回の宿題としたい。</p>
-<pre><code>root@d0444689a353:/data# redis-cli
+<pre tabindex="0"><code>root@d0444689a353:/data# redis-cli
 127.0.0.1:6379&gt; keys *
 1) &quot;stat:failed:2021-06-11&quot;
 2) &quot;queues&quot;
@@ -388,7 +388,7 @@ sidekiqのキューが保存されているかなどはいまいち理解でき�
 7) &quot;25ef69e9cc2a:1:3caa06ecd9cc&quot;
 </code></pre><h2 id="参考docker-composeymlの説明">参考：docker-compose.ymlの説明</h2>
 <h3 id="webコンテナの説明">webコンテナの説明</h3>
-<pre><code>  web:
+<pre tabindex="0"><code>  web:
     build: .
     tty: true
     stdin_open: true
@@ -439,7 +439,7 @@ sidekiqのキューが保存されているかなどはいまいち理解でき�
 </li>
 </ul>
 <h3 id="docker-composeyml-dbコンテナの説明">docker-compose.yml: dbコンテナの説明</h3>
-<pre><code>  db:
+<pre tabindex="0"><code>  db:
     image: postgres
     volumes:
       - postgres:/var/lib/postgresql/data
@@ -470,7 +470,7 @@ sidekiqのキューが保存されているかなどはいまいち理解でき�
 </li>
 </ul>
 <h3 id="docker-composeyml-redisコンテナの説明">docker-compose.yml: redisコンテナの説明</h3>
-<pre><code>  redis:
+<pre tabindex="0"><code>  redis:
     image: redis
     command: redis-server --appendonly yes
     ports:
@@ -498,7 +498,7 @@ sidekiqのキューが保存されているかなどはいまいち理解でき�
 </li>
 </ul>
 <h3 id="docker-composeyml-sidekiqコンテナの説明">docker-compose.yml: sidekiqコンテナの説明</h3>
-<pre><code>  sidekiq:
+<pre tabindex="0"><code>  sidekiq:
     build: .
     command: bundle exec sidekiq
     volumes:

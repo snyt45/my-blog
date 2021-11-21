@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 前回はNginxの構築を行いました。 サービスが立ち上がっていない気がするのですが、いったん進んで" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20201103/docker_kubernetes_20days/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-03T19:17:37&#43;09:00" />
-<meta property="article:modified_time" content="2020-11-03T19:17:37&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-11-03T19:17:37+09:00" />
+<meta property="article:modified_time" content="2020-11-03T19:17:37+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -214,11 +214,11 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>TODOの進行状況を確認できるカンバンを表示するWebアプリをNode.jsで構築</li>
 <li>利用するFWは、Nuxt.jsというVue.jsベースのFW</li>
 </ul>
-<pre><code>$ git clone https://github.com/gihyodocker/todoweb
+<pre tabindex="0"><code>$ git clone https://github.com/gihyodocker/todoweb
 </code></pre><ul>
 <li>treeコマンドでディレクトリ構造を確認</li>
 </ul>
-<pre><code>$ tree .\todoweb\ /f
+<pre tabindex="0"><code>$ tree .\todoweb\ /f
 フォルダー パスの一覧:  ボリューム Windows
 ボリューム シリアル番号は 6607-7B7E です
 C:\USERS\SNYT45\DESKTOP\DOCKER_KUBERNETES 実践コンテナ開発入門\4-2\TODOWEB
@@ -274,7 +274,7 @@ C:\USERS\SNYT45\DESKTOP\DOCKER_KUBERNETES 実践コンテナ開発入門\4-2\TOD
 </ul>
 </li>
 </ul>
-<pre><code>&lt;script&gt;
+<pre tabindex="0"><code>&lt;script&gt;
 import axios from 'axios'
 let todoApiUrl = process.env.TODO_API_URL || 'http://localhost:8000'
 export default {
@@ -298,13 +298,13 @@ export default {
 </ul>
 </li>
 </ul>
-<pre><code>(todoweb) $ npm install # 依存モジュールのダウンロード
+<pre tabindex="0"><code>(todoweb) $ npm install # 依存モジュールのダウンロード
 (todoweb) $ npm run build # リリース用ビルド
 (todoweb) $ npm run start # アプリケーションサーバの開始
 </code></pre><ul>
 <li>Dockerfile</li>
 </ul>
-<pre><code>FROM node:9.2.0
+<pre tabindex="0"><code>FROM node:9.2.0
 
 WORKDIR /todoweb
 COPY . /todoweb
@@ -321,7 +321,7 @@ EXPOSE 3000
 </code></pre><ul>
 <li>ch04/todoweb:latestという名前でイメージをビルド</li>
 </ul>
-<pre><code>$ docker image build -t ch04/todoweb:latest .
+<pre tabindex="0"><code>$ docker image build -t ch04/todoweb:latest .
 [+] Building 170.4s (11/11) FINISHED
  =&gt; [internal] load .dockerignore                                                                                                                                                  0.0s 
  =&gt; =&gt; transferring context: 2B                                                                                                                                                    0.0s 
@@ -381,7 +381,7 @@ EXPOSE 3000
 <p>静的ファイルをNginxからレスポンスするためにnuxt.conf.tmplを作成する</p>
 </li>
 </ul>
-<pre><code>(todonginx) $ cp etc/nginx/conf.d/public.conf.tmpl etc/nginx/conf.d/nuxt.conf.tmpl
+<pre tabindex="0"><code>(todonginx) $ cp etc/nginx/conf.d/public.conf.tmpl etc/nginx/conf.d/nuxt.conf.tmpl
 </code></pre><ul>
 <li>etc/nginx/conf.d/nuxt.conf.tmpl
 <ul>
@@ -390,7 +390,7 @@ EXPOSE 3000
 </ul>
 </li>
 </ul>
-<pre><code>server {
+<pre tabindex="0"><code>server {
     listen {{ var &quot;SERVER_PORT&quot; | default &quot;80&quot; }} default_server;
     server_name {{ var &quot;SERVER_NAME&quot; | default &quot;localhost&quot; }};
     charset utf-8;
@@ -430,7 +430,7 @@ EXPOSE 3000
 </ul>
 </li>
 </ul>
-<pre><code>FROM nginx:1.13
+<pre tabindex="0"><code>FROM nginx:1.13
 
 RUN apt-get update
 RUN apt-get install -y wget
@@ -461,7 +461,7 @@ CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
 <li>Dockerfileの名前が普段と違うので、-fでファイル名を指定してイメージをビルド</li>
 <li>タグを付けてregistryにpush</li>
 </ul>
-<pre><code>(todonginx) $ docker image build -f Dockerfile-nuxt -t ch04/nginx-nuxt:latest .
+<pre tabindex="0"><code>(todonginx) $ docker image build -f Dockerfile-nuxt -t ch04/nginx-nuxt:latest .
 (todonginx) $ docker image tag ch04/nginx-nuxt:latest localhost:5000/ch04/nginx-nuxt:latest
 (todonginx) $ docker image push localhost:5000/ch04/nginx-nuxt:latest
 </code></pre><ul>
@@ -488,7 +488,7 @@ CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
 </ul>
 </li>
 </ul>
-<pre><code>version: &quot;3&quot;
+<pre tabindex="0"><code>version: &quot;3&quot;
 services:
   nginx:
     image: registry:5000/ch04/nginx-nuxt:latest
@@ -538,13 +538,13 @@ volumes: # ← ⑥
 </code></pre><ul>
 <li>todo_fronted Stackとしてデプロイ</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-frontend.yml todo_frontend
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-frontend.yml todo_frontend
 todoapp Additional property todoapp is not allowed
 </code></pre><ul>
 <li>todo-frontend.ymlのインデントで間違っている箇所があったようだ。</li>
 <li>修正して、再度デプロイ</li>
 </ul>
-<pre><code>Creating service todo_frontend_nginx
+<pre tabindex="0"><code>Creating service todo_frontend_nginx
 Creating service todo_frontend_web
 </code></pre><h3 id="455-ingressで公開する">4.5.5 Ingressで公開する</h3>
 <ul>
@@ -558,7 +558,7 @@ Creating service todo_frontend_web
 <p>todo-ingress.yml</p>
 </li>
 </ul>
-<pre><code>version: &quot;3&quot;
+<pre tabindex="0"><code>version: &quot;3&quot;
 services:
   haproxy:
     image: dockercloud/haproxy
@@ -581,18 +581,18 @@ networks:
 </code></pre><ul>
 <li>todo-ingress.ymlをデプロイ</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-ingress.yml todo_ingress
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-ingress.yml todo_ingress
 services.haproxy.deploy.placement must be a mapping
 </code></pre><ul>
 <li>また、ymlのインデント・・・修正して、再度デプロイ。</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-ingress.yml todo_ingress
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-ingress.yml todo_ingress
 Creating service todo_ingress_haproxy
 </code></pre><ul>
 <li>Swarmのmanagerノードの80番ポートは、ホストの8000番ポートから参照できる。</li>
 <li>curlでGETリクエストを送信してみる。</li>
 </ul>
-<pre><code>$ curl -I http://localhost:8000/
+<pre tabindex="0"><code>$ curl -I http://localhost:8000/
 HTTP/1.0 503 Service Unavailable
 Cache-Control: no-cache
 Connection: close
@@ -607,7 +607,7 @@ Content-Type: text/html
 </ul>
 </li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ls
 ID                  NAME                   MODE                REPLICAS            IMAGE                                  PORTS
 nz210v1bx7ar        todo_app_api           replicated          2/2                 registry:5000/ch04/todoapi:latest
 0s0ivsgitps7        todo_app_nginx         replicated          0/2                 registry:5000/ch04/nginx:latest
@@ -620,13 +620,13 @@ cdt3g4mmmo6a        todo_mysql_slave       replicated          2/2              
 <li>nginxのイメージ単体でコンテナ起動してみる。</li>
 <li>動いてないけど、そもそも環境変数渡してないからな気が・・</li>
 </ul>
-<pre><code>$ docker container run --rm ch04/nginx
+<pre tabindex="0"><code>$ docker container run --rm ch04/nginx
 2020/11/03 13:04:57 [emerg] 1#1: host not found in upstream &quot;max_fails=3&quot; in /etc/nginx/conf.d/upstream.conf:2
 nginx: [emerg] host not found in upstream &quot;max_fails=3&quot; in /etc/nginx/conf.d/upstream.conf:2
 </code></pre><ul>
 <li>プロセスを確認すると、イメージがなくて落ちてる！？</li>
 </ul>
-<pre><code>$ docker-compose exec manager docker service ps todo_app_nginx
+<pre tabindex="0"><code>$ docker-compose exec manager docker service ps todo_app_nginx
 ID                  NAME                   IMAGE                             NODE                DESIRED STATE       CURRENT STATE             ERROR                              PORTS
 oi2p5hf0yqpu        todo_app_nginx.1       registry:5000/ch04/nginx:latest   3cb697256825        Ready               Rejected 2 seconds ago    &quot;No such image: registry:5000/…&quot;
 jlrjtk16x7vv         \_ todo_app_nginx.1   registry:5000/ch04/nginx:latest   3a2de3f08dbe        Shutdown            Rejected 7 seconds ago    &quot;No such image: registry:5000/…&quot;
@@ -645,7 +645,7 @@ wv5xrh2vqxa0         \_ todo_app_nginx.2   registry:5000/ch04/nginx:latest   3a2
 <ul>
 <li>pushしたはずだけど&hellip;再度push</li>
 </ul>
-<pre><code>$ docker image push localhost:5000/ch04/nginx:latest
+<pre tabindex="0"><code>$ docker image push localhost:5000/ch04/nginx:latest
 </code></pre><ul>
 <li>
 <p>registryにnginxイメージが追加された
@@ -655,7 +655,7 @@ wv5xrh2vqxa0         \_ todo_app_nginx.2   registry:5000/ch04/nginx:latest   3a2
 <p>todo_app_nginxは正常に起動してくれた！</p>
 </li>
 </ul>
-<pre><code>$ docker-compose exec manager docker service ls
+<pre tabindex="0"><code>$ docker-compose exec manager docker service ls
 ID                  NAME                   MODE                REPLICAS            IMAGE                               PORTS
 ksi15hu9vkhm        todo_app_api           replicated          2/2                 registry:5000/ch04/todoapi:latest
 jujn53qfffbp        todo_app_nginx         replicated          2/2                 registry:5000/ch04/nginx:latest
@@ -665,11 +665,11 @@ cdt3g4mmmo6a        todo_mysql_slave       replicated          2/2              
 </code></pre><ul>
 <li>改めて、todo-frontendをデプロイ。</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-frontend.yml todo_frontend
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-frontend.yml todo_frontend
 </code></pre><ul>
 <li>あれ、todo_frontendはだめだ。でも、registryみると同じくイメージが足りてないみたいだ。</li>
 </ul>
-<pre><code>$ docker-compose exec manager docker service ls
+<pre tabindex="0"><code>$ docker-compose exec manager docker service ls
 ID                  NAME                   MODE                REPLICAS            IMAGE                                  PORTS
 ksi15hu9vkhm        todo_app_api           replicated          2/2                 registry:5000/ch04/todoapi:latest
 jujn53qfffbp        todo_app_nginx         replicated          2/2                 registry:5000/ch04/nginx:latest
@@ -681,12 +681,12 @@ cdt3g4mmmo6a        todo_mysql_slave       replicated          2/2              
 </code></pre><ul>
 <li>todowebのイメージをregistryにpush</li>
 </ul>
-<pre><code>$ docker image tag ch04/todoweb:latest localhost:5000/ch04/todoweb:latest
+<pre tabindex="0"><code>$ docker image tag ch04/todoweb:latest localhost:5000/ch04/todoweb:latest
 $ docker image push localhost:5000/ch04/todoweb:latest
 </code></pre><ul>
 <li>todo_frontend_nginxは起動した！todo_frontend_webは死んでる・・・</li>
 </ul>
-<pre><code>$ docker-compose exec manager docker service ls
+<pre tabindex="0"><code>$ docker-compose exec manager docker service ls
 ID                  NAME                   MODE                REPLICAS            IMAGE                                  PORTS
 ksi15hu9vkhm        todo_app_api           replicated          2/2                 registry:5000/ch04/todoapi:latest
 jujn53qfffbp        todo_app_nginx         replicated          2/2                 registry:5000/ch04/nginx:latest
@@ -698,7 +698,7 @@ cdt3g4mmmo6a        todo_mysql_slave       replicated          2/2              
 </code></pre><ul>
 <li>起動に時間がかかってただけみたいだった。</li>
 </ul>
-<pre><code>$ docker-compose exec manager docker service ls
+<pre tabindex="0"><code>$ docker-compose exec manager docker service ls
 ID                  NAME                   MODE                REPLICAS            IMAGE                                  PORTS
 ksi15hu9vkhm        todo_app_api           replicated          2/2                 registry:5000/ch04/todoapi:latest
 jujn53qfffbp        todo_app_nginx         replicated          2/2                 registry:5000/ch04/nginx:latest
@@ -711,7 +711,7 @@ cdt3g4mmmo6a        todo_mysql_slave       replicated          2/2              
 <li>再度、webアプリにcurl。成功。</li>
 <li>NginxからNode.jsを経由してレスポンスを返しているため、X-Powered-By: Expresとなっている。</li>
 </ul>
-<pre><code>$ curl -I http://localhost:8000
+<pre tabindex="0"><code>$ curl -I http://localhost:8000
 HTTP/1.1 200 OK
 Server: nginx/1.13.12
 Date: Tue, 03 Nov 2020 14:02:28 GMT
@@ -724,7 +724,7 @@ Vary: Accept-Encoding
 <li>nginxに共有しているファイルをリクエストしたときにNode.jsを介していないかの確認をする。</li>
 <li>Nginxのファイル名を調べるため、todo_frontend_nginxコンテナに接続するためのコマンド取得</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ps todo_frontend_nginx --no-trunc --filter &quot;desired-state=running&quot; --format &quot;docker container exec -it {{.Node}} docker container exec -it {{.Name}}.{{.ID}} bash&quot;
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ps todo_frontend_nginx --no-trunc --filter &quot;desired-state=running&quot; --format &quot;docker container exec -it {{.Node}} docker container exec -it {{.Name}}.{{.ID}} bash&quot;
 docker container exec -it 9372f731e1c1 docker container exec -it todo_frontend_nginx.1.5wtot6m3obiwwsu3jdjnvgoxe bash
 docker container exec -it 9372f731e1c1 docker container exec -it todo_frontend_nginx.2.qljby7jvtbke031c3le5c08jt bash
 </code></pre><ul>
@@ -732,7 +732,7 @@ docker container exec -it 9372f731e1c1 docker container exec -it todo_frontend_n
 <li>何もファイル名が返ってこないので、ボリュームの共有がうまくいっていない気がする。</li>
 <li>調査に時間がかかりそうなので、この件は今回はスルーする。</li>
 </ul>
-<pre><code>$ docker container exec -it 9372f731e1c1 docker container exec -it todo_frontend_nginx.1.5wtot6m3obiwwsu3jdjnvgoxe ls var/www/_nuxt
+<pre tabindex="0"><code>$ docker container exec -it 9372f731e1c1 docker container exec -it todo_frontend_nginx.1.5wtot6m3obiwwsu3jdjnvgoxe ls var/www/_nuxt
 </code></pre><ul>
 <li>localhost:8000にアクセス</li>
 <li>assetsが共有されておらずスタイルが効いていないけど、OK！（笑）</li>

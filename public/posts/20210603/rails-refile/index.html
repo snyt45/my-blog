@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="プロジェクトで使っている箇所があったので試しに触ってみようという記事です。 Rails5 &#43; MySQL &#43; DockerでRails部分が動けばいいので下記を参考に進" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210603/rails-refile/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-06-03T22:11:05&#43;09:00" />
-<meta property="article:modified_time" content="2021-06-03T22:11:05&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-06-03T22:11:05+09:00" />
+<meta property="article:modified_time" content="2021-06-03T22:11:05+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -211,13 +211,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><a href="https://qiita.com/azul915/items/5b7063cbc80192343fc0">丁寧すぎるDocker-composeによるrails5 + MySQL on Dockerの環境構築(Docker for Mac) - Qiita</a></p>
 <h2 id="プロジェクトの作成">プロジェクトの作成</h2>
 <p>まずはプロジェクトの作成を行います。</p>
-<pre><code>mkdir -p ~/tmp/sample-rails
+<pre tabindex="0"><code>mkdir -p ~/tmp/sample-rails
 cd ~/tmp/sample-rails
 </code></pre><h2 id="dockerfileの作成">Dockerfileの作成</h2>
-<pre><code>vi Dockerfile
+<pre tabindex="0"><code>vi Dockerfile
 </code></pre><p>Dockerfileの中身。</p>
 <p>imagemagickはrefile用。</p>
-<pre><code>FROM ruby:2.6.5
+<pre tabindex="0"><code>FROM ruby:2.6.5
 
 RUN apt-get update -qq &amp;&amp; \
     apt-get install -y build-essential \
@@ -233,17 +233,17 @@ COPY ./Gemfile.lock $APP_ROOT/Gemfile.lock
 RUN bundle install
 COPY . $APP_ROOT
 </code></pre><h2 id="gemfileを作成編集">Gemfileを作成、編集</h2>
-<pre><code>vi Gemfile
+<pre tabindex="0"><code>vi Gemfile
 </code></pre><p>Gemfileの中身。</p>
-<pre><code>source 'https://rubygems.org'
+<pre tabindex="0"><code>source 'https://rubygems.org'
 gem 'rails', '5.2.6'
 </code></pre><h2 id="空のgemfilelockを作成">空のGemfile.lockを作成</h2>
-<pre><code>touch Gemfile.lock
+<pre tabindex="0"><code>touch Gemfile.lock
 </code></pre><h2 id="docker-composeymlを作成編集">docker-compose.ymlを作成、編集</h2>
-<pre><code>vi docker-compose.yml
+<pre tabindex="0"><code>vi docker-compose.yml
 </code></pre><p>docker-compose.ymlの中身。<br>
 dbのデータとbundleのデータはvolumesで永続化しています。</p>
-<pre><code>version: '3'
+<pre tabindex="0"><code>version: '3'
 services:
   db:
     image: mysql:5.7
@@ -273,10 +273,10 @@ volumes:
   db_data:
   bundle_data:
 </code></pre><h2 id="rails-newを実行する">rails newを実行する</h2>
-<pre><code>docker-compose run -u 1000:1000 web rails new . --force --database=mysql --skip-bundle
+<pre tabindex="0"><code>docker-compose run -u 1000:1000 web rails new . --force --database=mysql --skip-bundle
 </code></pre><p>webコンテナ上でrails new ~ が走る。<br>
 docker-compose.ymlでvolumesでコンテナのappフォルダをホストのカレントディレクトリに共有するのでrails newで作られたファイル等がホスト側にできる。</p>
-<pre><code>.
+<pre tabindex="0"><code>.
 ├── Dockerfile
 ├── Gemfile
 ├── Gemfile.lock
@@ -307,7 +307,7 @@ docker-compose runコマンドには-uオプションはあるが-vオプショ�
 <a href="https://docs.docker.jp/compose/reference/run.html">run — Docker-docs-ja 19.03 ドキュメント</a></p>
 <p>そのため、-vオプションの内容はdocker-compose.ymlに記載している。<br>
 /etc/groupと/etc/passwdを読み取り権限でコンテナに共有している。</p>
-<pre><code>    volumes:
+<pre tabindex="0"><code>    volumes:
       - .:/app
       - /etc/group:/etc/group:ro
       - /etc/passwd:/etc/passwd:ro
@@ -316,17 +316,17 @@ docker-compose runコマンドには-uオプションはあるが-vオプショ�
 <p>これは私の中では結構大きな発見。</p>
 <p>また、この実行ユーザーを指定するのは実際に自分が触るファイルが生成されるときだけでとりあえず大丈夫そうだ。</p>
 <p>あとから権限を変更する場合は下記コマンドを実行すれば問題ない。</p>
-<pre><code>sudo chown -R $(whoami) .
+<pre tabindex="0"><code>sudo chown -R $(whoami) .
 </code></pre><h2 id="databaseymlの編集">database.ymlの編集</h2>
-<pre><code>vi config/database.yml
-</code></pre><pre><code>default: &amp;default
+<pre tabindex="0"><code>vi config/database.yml
+</code></pre><pre tabindex="0"><code>default: &amp;default
   adapter: mysql2
   encoding: utf8
   username: root
   password: password
   host: db
 </code></pre><h2 id="コンテナ起動">コンテナ起動</h2>
-<pre><code>docker-compose build
+<pre tabindex="0"><code>docker-compose build
 docker-compose up
 </code></pre><p>build時にエラー</p>
 <blockquote>
@@ -334,21 +334,21 @@ docker-compose up
 </blockquote>
 <p>GemfileのRubyのバージョンを2.6.5にする。</p>
 <h2 id="db作成">DB作成</h2>
-<pre><code>docker-compose run web rails db:create
+<pre tabindex="0"><code>docker-compose run web rails db:create
 </code></pre><h2 id="refile-gemの導入">refile gemの導入</h2>
 <p><a href="https://note.com/maron_ta/n/n14e40e64138e">refileの使い方徹底解説｜まろん｜note</a>
 <a href="https://note.com/maron_ta/n/nf0f1a079fe85">refileの使い方徹底解説②｜まろん｜note</a></p>
 <p><code>Gemfile</code>に追加</p>
-<pre><code>gem &quot;refile&quot;, require: &quot;refile/rails&quot;, github: 'manfe/refile'
+<pre tabindex="0"><code>gem &quot;refile&quot;, require: &quot;refile/rails&quot;, github: 'manfe/refile'
 gem &quot;refile-mini_magick&quot;
 
 # developmentの中に記載。動作確認用
 gem 'pry-rails'
 gem 'pry-byebug'
 </code></pre><p>bundle installする。</p>
-<pre><code>docker-compose run web bundle install
+<pre tabindex="0"><code>docker-compose run web bundle install
 </code></pre><p>scaffoldを使って一気に作成。</p>
-<pre><code>docker-compose run -u 1000:1000 web rails g scaffold book
+<pre tabindex="0"><code>docker-compose run -u 1000:1000 web rails g scaffold book
 
 Creating sample-rails_web_run ... done
 Rails Error: Unable to access log file. Please ensure that /app/log/development.log exists and is writable (ie, make it writable for user and group: chmod 0664 /app/log/development.log). The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.
@@ -387,7 +387,7 @@ Rails Error: Unable to access log file. Please ensure that /app/log/development.
       invoke  scss
       create    app/assets/stylesheets/scaffolds.scss
 </code></pre><p>最低限、image_idカラムがあればよいがメタデータも保存できるようなので、image_filename、image_size、image_content_typeも追加している。</p>
-<pre><code>class CreateBooks &lt; ActiveRecord::Migration[5.2]
+<pre tabindex="0"><code>class CreateBooks &lt; ActiveRecord::Migration[5.2]
   def change
     create_table :books do |t|
       t.string :title
@@ -401,16 +401,16 @@ Rails Error: Unable to access log file. Please ensure that /app/log/development.
   end
 end
 </code></pre><p>マイグレーションする。</p>
-<pre><code>docker-compose run web rails db:migrate
+<pre tabindex="0"><code>docker-compose run web rails db:migrate
 </code></pre><p>Bookモデルにattachmentメソッドも追加する。<br>
 今回はimage_idというカラムを追加したので、_idを取ったimageにする。</p>
-<pre><code>class Book &lt; ApplicationRecord
+<pre tabindex="0"><code>class Book &lt; ApplicationRecord
   attachment :image
 end
 </code></pre><p>タイトルと画像を保存できるようにします。<br>
 画像をアップロードするためのヘルパー<code>attachment_field</code>をrefileが用意しているのでそれを使います。</p>
 <p><code>app/views/books/new.html.erb</code></p>
-<pre><code>&lt;h1&gt;New Book&lt;/h1&gt;
+<pre tabindex="0"><code>&lt;h1&gt;New Book&lt;/h1&gt;
 
 &lt;%= form_with(model: @book, local: true) do |f| %&gt;
  &lt;%= f.text_field :title %&gt;
@@ -425,7 +425,7 @@ end
 <p><img src="Snipaste_2021-06-05_17-44-34.png" alt="作成画面"></p>
 <p>実際に画像をアップロードできるようにコントローラーのbook_params部分を修正します。</p>
 <p><code>app/controllers/books_controller.rb</code></p>
-<pre><code>def book_params
+<pre tabindex="0"><code>def book_params
   params.require(:book).permit(:title, :image)
 end
 </code></pre><p>タイトルと画像を選択して、Create Bookします。</p>
@@ -436,7 +436,7 @@ end
 <p>デフォルトだとファイルはtmp/uploads/storeに保存されていました。<br>
 ファイル名とimage_idが同じことが確認できます。</p>
 <p><img src="Snipaste_2021-06-05_17-58-43.png" alt="ファイル保存場所"></p>
-<pre><code>From: /app/app/controllers/books_controller.rb:25 BooksController#create:
+<pre tabindex="0"><code>From: /app/app/controllers/books_controller.rb:25 BooksController#create:
 
     23: def create
     24:   binding.pry
@@ -483,7 +483,7 @@ end
  updated_at: Sat, 05 Jun 2021 08:54:13 UTC +00:00&gt;
 </code></pre><p>今度はViewに保存した画像を表示します。</p>
 <p><code>app/views/books/show.html.erb</code></p>
-<pre><code>&lt;p id=&quot;notice&quot;&gt;&lt;%= notice %&gt;&lt;/p&gt;
+<pre tabindex="0"><code>&lt;p id=&quot;notice&quot;&gt;&lt;%= notice %&gt;&lt;/p&gt;
 
 &lt;%= attachment_image_tag(@book, :image, :fill, 300, 300) %&gt;
 

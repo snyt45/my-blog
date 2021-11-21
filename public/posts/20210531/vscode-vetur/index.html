@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="この記事と同じプロジェクトのディレクトリ構成の時に次のVeturの警告が出っぱなしだったので解決したという話。 エラー Vetur can&#39;t find \`package.json\` in /workspaces/my-portal. Vetur can&#39;t find \`tsconfig.json\` or \`jsconfig.json\`" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210531/vscode-vetur/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-31T10:38:45&#43;09:00" />
-<meta property="article:modified_time" content="2021-05-31T10:38:45&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-05-31T10:38:45+09:00" />
+<meta property="article:modified_time" content="2021-05-31T10:38:45+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -208,13 +208,13 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   <div class="post">
     <p>この<a href="/posts/20210531/vscode-eslint/">記事</a>と同じプロジェクトのディレクトリ構成の時に次のVeturの警告が出っぱなしだったので解決したという話。</p>
 <h2 id="エラー">エラー</h2>
-<pre><code>Vetur can't find \`package.json\` in /workspaces/my-portal.
-</code></pre><pre><code>Vetur can't find \`tsconfig.json\` or \`jsconfig.json\` in /workspaces/my-portal.
+<pre tabindex="0"><code>Vetur can't find \`package.json\` in /workspaces/my-portal.
+</code></pre><pre tabindex="0"><code>Vetur can't find \`tsconfig.json\` or \`jsconfig.json\` in /workspaces/my-portal.
 </code></pre><p>package.jsonとtsconfig.jsonが見つけられないといわれている。</p>
 <p><a href="https://vuejs.github.io/vetur/guide/FAQ.html#vetur-can-t-find-tsconfig-json-jsconfig-json-in-xxxx-xxxxxx">FAQ | Vetur</a></p>
 <h2 id="エラー解決のためにやったこと">エラー解決のためにやったこと</h2>
 <p><code>vetur.config.js</code>をルートに配置したら警告が解消した。</p>
-<pre><code>// vetur.config.js
+<pre tabindex="0"><code>// vetur.config.js
 /** @type {import('vls').VeturConfig} */
 module.exports = {
   // **optional** default: `{}`

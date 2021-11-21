@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="Docker/Kubernetes 実践コンテナ開発入門：書籍案内｜技術評論社 今日はNginxの構築をできるところまでやっていきます。 4.4 Nginxの構築 クライアントから受け取" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20201102/docker_kubernetes_19days/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-02T00:30:50&#43;09:00" />
-<meta property="article:modified_time" content="2020-11-02T00:30:50&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-11-02T00:30:50+09:00" />
+<meta property="article:modified_time" content="2020-11-02T00:30:50+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -229,11 +229,11 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>git cloneする</p>
 </li>
 </ul>
-<pre><code>$ git clone https://github.com/gihyodocker/todonginx
+<pre tabindex="0"><code>$ git clone https://github.com/gihyodocker/todonginx
 </code></pre><ul>
 <li>trreでディレクトリ構造確認</li>
 </ul>
-<pre><code>$ tree .\todonginx\ /f
+<pre tabindex="0"><code>$ tree .\todonginx\ /f
 フォルダー パスの一覧:  ボリューム Windows
 ボリューム シリアル番号は 6607-7B7E です
 C:\USERS\SNYT45\DESKTOP\DOCKER_KUBERNETES 実践コンテナ開発入門\4-2\TODONGINX
@@ -291,7 +291,7 @@ C:\USERS\SNYT45\DESKTOP\DOCKER_KUBERNETES 実践コンテナ開発入門\4-2\TOD
 <p>性能に関わる値は固定値を定義ではなく、環境変数化したい</p>
 </li>
 </ul>
-<pre><code>user nginx;
+<pre tabindex="0"><code>user nginx;
 worker_processes 1; # ← ①
 
 error_log /var/log/nginx/error.log warn;
@@ -330,7 +330,7 @@ http {
 <p>次のように環境変数を埋め込む</p>
 </li>
 </ul>
-<pre><code>{{ var &quot;環境変数名&quot; }}
+<pre tabindex="0"><code>{{ var &quot;環境変数名&quot; }}
 {{ var &quot;環境変数名&quot; | default &quot;デフォルト値&quot; }}
 </code></pre><ul>
 <li>
@@ -344,7 +344,7 @@ http {
 </ul>
 </li>
 </ul>
-<pre><code>user  nginx;
+<pre tabindex="0"><code>user  nginx;
 worker_processes  {{ var &quot;WORKER_PROCESSES&quot; | default &quot;1&quot; }}; # ← ①
 
 error_log  /var/log/nginx/error.log warn;
@@ -416,7 +416,7 @@ http {
 <li>Dockerで挙動を変えたい部分は環境変数化し、デフォルト値を設定する癖をつけておこう</li>
 </ul>
 <h3 id="442-nginxのdockerle">4.4.2 NginxのDockerle</h3>
-<pre><code>FROM nginx:1.13
+<pre tabindex="0"><code>FROM nginx:1.13
 
 RUN apt-get update
 RUN apt-get install -y wget
@@ -448,7 +448,7 @@ CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
 </code></pre><ul>
 <li>entrykitの準備後は、①でコンテナの中が次のようなディレクトリ構造になる</li>
 </ul>
-<pre><code>└── etc
+<pre tabindex="0"><code>└── etc
   └── nginx
     ├── conf.d
     │   ├── log.conf
@@ -466,7 +466,7 @@ CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
 <p>ch04/nginx:latestという名前でイメージを作成</p>
 </li>
 </ul>
-<pre><code>$ docker image build -t ch04/nginx:latest .
+<pre tabindex="0"><code>$ docker image build -t ch04/nginx:latest .
 [+] Building 29.0s (16/16) FINISHED
  =&gt; [internal] load build definition from Dockerfile                                                                                                                   0.1s 
  =&gt; =&gt; transferring dockerfile: 713B                                                                                                                                   0.0s 
@@ -503,11 +503,11 @@ CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
 </code></pre><ul>
 <li>先ほど作成したイメージをlocalhost:5000/ch04/nginx:latestというイメージとして作成</li>
 </ul>
-<pre><code>$ docker image tag ch04/nginx:latest localhost:5000/ch04/nginx:latest
+<pre tabindex="0"><code>$ docker image tag ch04/nginx:latest localhost:5000/ch04/nginx:latest
 </code></pre><ul>
 <li>registryにpush</li>
 </ul>
-<pre><code>$ docker image push localhost:5000/ch04/nginx:latest
+<pre tabindex="0"><code>$ docker image push localhost:5000/ch04/nginx:latest
 The push refers to repository [localhost:5000/ch04/nginx]
 Get http://localhost:5000/v2/: dial tcp [::1]:5000: connect: connection refused
 </code></pre><h3 id="443-nginxを通してアクセスできるようにする">4.4.3 Nginxを通してアクセスできるようにする</h3>
@@ -519,7 +519,7 @@ Get http://localhost:5000/v2/: dial tcp [::1]:5000: connect: connection refused
 </ul>
 </li>
 </ul>
-<pre><code>version: &quot;3&quot;
+<pre tabindex="0"><code>version: &quot;3&quot;
 services:
   nginx:
     image: registry:5000/ch04/nginx:latest
@@ -562,12 +562,12 @@ networks:
 </code></pre><ul>
 <li>todo_appのStackを更新</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c /stack/todo-app.yml todo_app
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c /stack/todo-app.yml todo_app
 </code></pre><p>と思いきや、PCを再起動したため最初からやり直す必要がありそう。。</p>
 <ul>
 <li>registry、manager、workerコンテナ起動</li>
 </ul>
-<pre><code>$ docker-compose up
+<pre tabindex="0"><code>$ docker-compose up
 </code></pre><ul>
 <li>managerコンテナからサービス一覧確認。
 <ul>
@@ -575,16 +575,16 @@ networks:
 </ul>
 </li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ls
 Error response from daemon: This node is not a swarm manager. Use &quot;docker swarm init&quot; or &quot;docker swarm join&quot; to connect this node to swarm and try again.
 </code></pre><ul>
 <li>managerコンテナをSwarmのmanagerに設定</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker swarm init
+<pre tabindex="0"><code>$ docker container exec -it manager docker swarm init
 </code></pre><ul>
 <li>worker01~03をSwarmクラスタに追加</li>
 </ul>
-<pre><code>$ docker container exec -it worker01 docker swarm join --token SWMTKN-1-1bt724fy34a1ghxypkxny8fhtz8jsp09z39nswag60bonxejyu-3nvmveic1vyx3vipzwmqesap3 172.18.0.3:2377
+<pre tabindex="0"><code>$ docker container exec -it worker01 docker swarm join --token SWMTKN-1-1bt724fy34a1ghxypkxny8fhtz8jsp09z39nswag60bonxejyu-3nvmveic1vyx3vipzwmqesap3 172.18.0.3:2377
 This node joined a swarm as a worker.
 
 $ docker container exec -it worker02 docker swarm join --token SWMTKN-1-1bt724fy34a1ghxypkxny8fhtz8jsp09z39nswag60bonxejyu-3nvmveic1vyx3vipzwmqesap3 172.18.0.3:2377
@@ -595,7 +595,7 @@ This node joined a swarm as a worker.
 </code></pre><ul>
 <li>ノードに追加されているか確認</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker node ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker node ls
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 mc2re0d06joon80xef0qb2s4n     3a2de3f08dbe        Ready               Active                                  18.05.0-ce
 bhhwcxzfqil5bmhjt53rh6ona     3cb697256825        Ready               Active                                  18.05.0-ce
@@ -604,12 +604,12 @@ w1nrjoj1qs03221ujay7c1a49     9372f731e1c1        Ready               Active    
 </code></pre><ul>
 <li>サービス確認。まだ何もない。</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ls
 ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
 </code></pre><ul>
 <li>ネットワーク確認。todoappネットワークがないことを確認。</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker network ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 6572733214ed        bridge              bridge              local
 52a0ad425489        docker_gwbridge     bridge              local
@@ -619,18 +619,18 @@ fjhzcrl5x3l1        ingress             overlay             swarm
 </code></pre><ul>
 <li>todoappネットワーク作成</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker network create --driver=overlay --attachable todoapp
+<pre tabindex="0"><code>$ docker container exec -it manager docker network create --driver=overlay --attachable todoapp
 3j1wnc6fzh2niknr3e6ehusfg
 </code></pre><ul>
 <li>MySQLスタックをデプロイ</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-mysql.yml todo_mysql
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-mysql.yml todo_mysql
 Creating service todo_mysql_slave
 Creating service todo_mysql_master
 </code></pre><ul>
 <li>MySQLコンテナに初期データ投入</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ps todo_mysql_master --no-trunc --filter &quot;desired-state=running&quot; --format &quot;docker container exec -it {{.Node}} docker container exec -it {{.Name}}.{{.ID}} bash&quot;
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ps todo_mysql_master --no-trunc --filter &quot;desired-state=running&quot; --format &quot;docker container exec -it {{.Node}} docker container exec -it {{.Name}}.{{.ID}} bash&quot;
 docker container exec -it 9372f731e1c1 docker container exec -it todo_mysql_master.1.xbdp5ypk08ozt7ov4cna531ga bash
 
 $ docker container exec -it 9372f731e1c1 docker container exec -it todo_mysql_master.1.xbdp5ypk08ozt7ov4cna531ga bash
@@ -665,7 +665,7 @@ updated: 2020-11-01 17:50:03
 </code></pre><ul>
 <li>todo_appスタックをデプロイ</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-app.yml todo_app
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-app.yml todo_app
 Creating service todo_app_nginx
 Creating service todo_app_api
 
@@ -679,7 +679,7 @@ todo_app_api.2.2ail031y5c0k@3a2de3f08dbe    | 2020/11/01 17:54:50 Listen HTTP Se
 </ul>
 </li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-app.yml todo_app
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-app.yml todo_app
 Updating service todo_app_api (id: kclcv92gfwdsjwjgt95xnubba)
 Updating service todo_app_nginx (id: klx1x8racba49tdguglh0r2ur)
 image registry:5000/ch04/nginx:latest could not be accessed on a registry to record
@@ -689,7 +689,7 @@ versions of the image.
 </code></pre><ul>
 <li>todo_app_nginxがうまく起動していないなー</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ls
 ID                  NAME                MODE                REPLICAS            IMAGE                               PORTS
 kclcv92gfwds        todo_app_api        replicated          2/2                 registry:5000/ch04/todoapi:latest
 klx1x8racba4        todo_app_nginx      replicated          0/2                 registry:5000/ch04/nginx:latest
@@ -698,19 +698,19 @@ cdt3g4mmmo6a        todo_mysql_slave    replicated          2/2                 
 </code></pre><ul>
 <li>いったん削除。</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack rm todo_app
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack rm todo_app
 Removing service todo_app_api
 Removing service todo_app_nginx
 </code></pre><ul>
 <li>そうか今回の章では前回のtodo_appスタックを更新する形だから二重にデプロイしていたから変なエラーが出たのか。。これでよさそう。</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker stack deploy -c stack/todo-app.yml todo_app
+<pre tabindex="0"><code>$ docker container exec -it manager docker stack deploy -c stack/todo-app.yml todo_app
 Creating service todo_app_api
 Creating service todo_app_nginx
 </code></pre><ul>
 <li>ただ、todo_app_nginxのレプリカが0/2なのは気になる・・・ダメそうだが、、とりあえず今日はここまで</li>
 </ul>
-<pre><code>$ docker container exec -it manager docker service ls
+<pre tabindex="0"><code>$ docker container exec -it manager docker service ls
 ID                  NAME                MODE                REPLICAS            IMAGE                               PORTS
 nz210v1bx7ar        todo_app_api        replicated          2/2                 registry:5000/ch04/todoapi:latest
 0s0ivsgitps7        todo_app_nginx      replicated          0/2                 registry:5000/ch04/nginx:latest

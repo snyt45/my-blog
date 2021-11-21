@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="たった1日で基本が身に付く！ Go言語 超入門：書籍案内｜技術評論社 CHAPTER 5 複雑なデータ構造を記述する構造体 構造体(struct)はデータ型 構造体の" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20201125/1day_go_3days/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-25T22:16:57&#43;09:00" />
-<meta property="article:modified_time" content="2020-11-25T22:16:57&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-11-25T22:16:57+09:00" />
+<meta property="article:modified_time" content="2020-11-25T22:16:57+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -212,7 +212,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>構造体(struct)はデータ型</li>
 </ul>
 <h3 id="構造体の定義">構造体の定義</h3>
-<pre><code>type 構造体名 struct {
+<pre tabindex="0"><code>type 構造体名 struct {
   name   string
   group  string
   height int
@@ -226,11 +226,11 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>構造体の中では、属性を指定できる。Goでは属性を<strong>フィールド</strong>と呼ぶ</li>
 </ul>
 <h3 id="構造体からインスタンスを生成する">構造体からインスタンスを生成する</h3>
-<pre><code>pome := dog{&quot;ポメ&quot;, &quot;ポメラニアン&quot;, 25}
+<pre tabindex="0"><code>pome := dog{&quot;ポメ&quot;, &quot;ポメラニアン&quot;, 25}
 </code></pre><h3 id="インスタンスからフィールドを取り出す">インスタンスからフィールドを取り出す</h3>
-<pre><code>pome.name
+<pre tabindex="0"><code>pome.name
 </code></pre><h3 id="構造体のインスタンスを関数の引数に取る">構造体のインスタンスを関数の引数に取る</h3>
-<pre><code>func bigger(d1 dog, d2 dog) string {
+<pre tabindex="0"><code>func bigger(d1 dog, d2 dog) string {
   // 処理
 }
 
@@ -243,7 +243,7 @@ bigger(pome, maru)
 <li>呼び出し側では、構造体のインスタンスをいれるだけ。</li>
 </ul>
 <h3 id="構造体のインスタンスを戻り値とする関数">構造体のインスタンスを戻り値とする関数</h3>
-<pre><code>func biggest(dogs []dog) dog {
+<pre tabindex="0"><code>func biggest(dogs []dog) dog {
   biggest := dogs[0]
   // 処理
   return biggest
@@ -252,21 +252,21 @@ bigger(pome, maru)
 <li>関数の戻り値にも使える</li>
 </ul>
 <h3 id="構造体にメソッドを持たせる">構造体にメソッドを持たせる</h3>
-<pre><code>// 通常のメソッド
+<pre tabindex="0"><code>// 通常のメソッド
 func describe(引数 引数のデータ型) 戻り値のデータ型 {
   // 処理
 }
 </code></pre><ul>
 <li>funcのあとにレシーバーを書くところが通常のメソッドとの違い</li>
 </ul>
-<pre><code>// 構造体のインスタンスのメソッド
+<pre tabindex="0"><code>// 構造体のインスタンスのメソッド
 func (構造体のインスタンス名(レシーバー) 構造体のデータ型) describe(引数 引数のデータ型) 戻り値のデータ型 {
   // 処理
 }
 </code></pre><ul>
 <li>練習でダイとポップが必殺技を使うメソッドを作った</li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -307,7 +307,7 @@ func main() {
 =&gt; 勇者ダイは必殺技アバンストラッシュを使った
 魔法使いポップは必殺技メドローアを使った
 </code></pre><h3 id="引数を取るメソッド">引数を取るメソッド</h3>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import &quot;fmt&quot;
 
@@ -368,7 +368,7 @@ func main() {
 <ul>
 <li>initializeメソッドのようなものがあるわけではなく通常のメソッドを使っている模様だ。</li>
 </ul>
-<pre><code>// 毎回このように値を入力するのは大変
+<pre tabindex="0"><code>// 毎回このように値を入力するのは大変
 dai := yuusya{&quot;ダイ&quot;, &quot;勇者&quot;, &quot;アバンストラッシュ&quot;, 10000}
 
 // 初期化メソッドを定義する
@@ -383,7 +383,7 @@ dai := newyuusya(&quot;ダイ&quot;)
 <ul>
 <li>レシーバーを受け取って、高さと重さを書き換えてそのままレシーバーを返しているように見えるが、実はインスタンスのコピーを返しているとのこと。</li>
 </ul>
-<pre><code>func (pat patient) bodys(height int, weight int) patient {
+<pre tabindex="0"><code>func (pat patient) bodys(height int, weight int) patient {
   pat.height = height
   pat.weight = weight
   return pat
@@ -392,7 +392,7 @@ dai := newyuusya(&quot;ダイ&quot;)
 <ul>
 <li>このようにメソッドを繋げて書ける。</li>
 </ul>
-<pre><code>hm := newpatient(&quot;HM&quot;).bodys(165, 70).bloodp(120,80)
+<pre tabindex="0"><code>hm := newpatient(&quot;HM&quot;).bodys(165, 70).bloodp(120,80)
 </code></pre><h3 id="インターフェイスとは">インターフェイスとは</h3>
 <ul>
 <li>インターフェースとは、メソッドのシグネチャの集まりに名前を付けたものである。</li>
@@ -402,7 +402,7 @@ dai := newyuusya(&quot;ダイ&quot;)
 <li>シグネチャとは、関数やメソッドの名前、引数の数やデータ型、返り値の型などの組み合わせのこと</li>
 </ul>
 <h3 id="インターフェイスの定義方法">インターフェイスの定義方法</h3>
-<pre><code>type input interface {
+<pre tabindex="0"><code>type input interface {
   read() string
 }
 </code></pre><ul>
@@ -412,7 +412,7 @@ dai := newyuusya(&quot;ダイ&quot;)
 <ul>
 <li>構造体が違っても、同名のメソッドを持っていれば、各インスタンスをまとめて扱える。</li>
 </ul>
-<pre><code>// インターフェイスを定義
+<pre tabindex="0"><code>// インターフェイスを定義
 // 同じシグネチャを持つメソッドをまとめる
 type input interface { read() string }
 
@@ -452,7 +452,7 @@ methods := []input{keyboard{}, file{}, mic{}, sensor{}}
 </ul>
 </li>
 </ul>
-<pre><code>package main
+<pre tabindex="0"><code>package main
 
 import (
 	&quot;fmt&quot;

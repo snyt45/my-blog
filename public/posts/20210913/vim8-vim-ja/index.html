@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="最近dotfiles管理周りを色々やってます。 このタイミングで何度かあきらめているVim周りも整備してVimで開発もできたらいいなーと思いま" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20210913/vim8-vim-ja/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-09-13T00:49:50&#43;09:00" />
-<meta property="article:modified_time" content="2021-09-13T00:49:50&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-09-13T00:49:50+09:00" />
+<meta property="article:modified_time" content="2021-09-13T00:49:50+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -234,7 +234,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </ul>
 <p>例えば、次のようなイメージ</p>
 <p><code>mapackage</code>と<code>myplugin</code>の部分はどんな名前でもよい。</p>
-<pre><code>.vim
+<pre tabindex="0"><code>.vim
 └── pack # vim8標準のパッケージ管理
     └── mypackage # どんな名前でもOK
         └── start 
@@ -245,7 +245,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>インストール、更新、削除するのに便利なコマンド等はないみたいだが、シェルスクリプトで代用している記事もいくつか見たのでシェルスクリプトで代用する方向で一旦よさそう。</p>
 <h2 id="vim8の標準パッケージ管理でvim-jaプラグインを入れる">Vim8の標準パッケージ管理でvim-jaプラグインを入れる</h2>
 <p>Vim8のパッケージ管理について大体わかったので、手始めにvimのhelpコマンドの説明を日本語化してくれるvim-jaというプラグインを入れてみる。</p>
-<pre><code># パッケージ管理のディレクトリ作成
+<pre tabindex="0"><code># パッケージ管理のディレクトリ作成
 mkdir -p ~/.vim/pack/mypackage/start
 
 # vim-jaプラグインをダウンロード
@@ -256,7 +256,7 @@ git clone https://github.com/vim-jp/vimdoc-ja.git
 cd ~/.vim
 vi vimrc
 </code></pre><p><code>vimrc</code>に設定を追加する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">helplang</span>=<span style="color:#a6e22e">ja</span>,<span style="color:#a6e22e">en</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">helplang</span>=<span style="color:#a6e22e">ja</span>,<span style="color:#a6e22e">en</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><h2 id="help-runtimeで日本語化されたことを確認する">:help runtimeで日本語化されたことを確認する</h2>
 <p><img src="Snipaste_2021-09-13_01-31-39.png" alt="日本語化されたhelp"></p>
 <h2 id="まとめ">まとめ</h2>

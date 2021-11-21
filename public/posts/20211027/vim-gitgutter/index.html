@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.89.4" />
 
     
     
@@ -30,8 +30,8 @@
 <meta property="og:description" content="ファイルの左端にgitの差分情報を表示するといのうはVSCodeでいうこんなやつです。 (青や赤のやつです。) 似たようなvimプラグインとして" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://snyt45.com/posts/20211027/vim-gitgutter/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-10-27T21:07:14&#43;09:00" />
-<meta property="article:modified_time" content="2021-10-27T21:07:14&#43;09:00" /><meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2021-10-27T21:07:14+09:00" />
+<meta property="article:modified_time" content="2021-10-27T21:07:14+09:00" /><meta property="og:site_name" content="Title" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=">
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -214,7 +214,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h2 id="インストール方法">インストール方法</h2>
 <p>プラグイン管理にはvim-plugを使っています。<br>
 vimrcに下記を追加して、<code>:PlugInstall</code>します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;airblade/vim-gitgutter&#39;</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;airblade/vim-gitgutter&#39;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><h2 id="設定">設定</h2>
 <ul>
 <li><code>set signcolumn=yes</code>は常に左端のサイン列を表示させます。gitgutterは変更があるとサイン列が表示され、そこに記号が表示されます。常にサイン列を表示させることでガタつかないようにしています。</li>
@@ -223,7 +223,7 @@ vimrcに下記を追加して、<code>:PlugInstall</code>します。</p>
 <li><code>g:gitgutter_map_keys = 0</code>はデフォルトのキーマッピングをオフにしています。これはvim-gitgutterをインストールすると色々なショートカットキーが設定されるのが嫌だったのでオフにしています。</li>
 <li>autocomdはサイン列の背景と記号の色を設定しています。<code>:verbose highlight Statement</code>を実行すると、最後に適用された設定がどれかがわかるのですが、普通に色を設定するとcolorschemeに上書きされていて設定が効かないことが判明したため、autocmdでcolorschemeの後に色が設定されるようにしました。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#75715e">&#34; Always show sign column</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#75715e">&#34; Always show sign column</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">signcolumn</span>=<span style="color:#a6e22e">yes</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
 </span><span style="color:#75715e">&#34; By default updatetime is 4000 ms</span><span style="color:#960050;background-color:#1e0010">
@@ -254,7 +254,7 @@ vimrcに下記を追加して、<code>:PlugInstall</code>します。</p>
 </span></code></pre></div><ul>
 <li>デフォルトで設定されるキーマッピングは全てオフにしたため、個別で必要なキーマッピングで割り当て直しています。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#75715e">&#34; g is for git</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vimrc" data-lang="vimrc"><span style="color:#75715e">&#34; g is for git</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">which_key_map</span>.<span style="color:#a6e22e">g</span> = {<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>      \ <span style="color:#e6db74">&#39;name&#39;</span> : <span style="color:#e6db74">&#39;+git&#39;</span> ,<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>      \ <span style="color:#e6db74">&#39;b&#39;</span> : [<span style="color:#e6db74">&#39;:BlamerToggle&#39;</span>      , <span style="color:#e6db74">&#39;git blame toggle&#39;</span>],<span style="color:#960050;background-color:#1e0010">
