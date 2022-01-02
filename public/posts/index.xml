@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Small Changes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 Dec 2021 17:15:07 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jan 2022 17:47:58 +0900</lastBuildDate><atom:link href="https://snyt45.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021年の振り返りと2022年の目標</title>
+      <link>https://snyt45.com/posts/20220102/furikaeri/</link>
+      <pubDate>Sun, 02 Jan 2022 17:47:58 +0900</pubDate>
+      
+      <guid>https://snyt45.com/posts/20220102/furikaeri/</guid>
+      <description>2021年の振り返り 1月～2月 このときはまだ受託開発会社で働いていていたなー。 1つの機能を設計～実装～テストまで全てを任せられるようになった</description>
+    </item>
+    
     <item>
       <title>2021年11月の振返り</title>
       <link>https://snyt45.com/posts/20211204/furikaeri/</link>
